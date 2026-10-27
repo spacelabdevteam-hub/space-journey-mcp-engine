@@ -1,0 +1,60 @@
+================================================================================
+SPACE JOURNEY — DUAL-LAYER OPEN COMMONS & PROPRIETARY VAULT LICENSE
+================================================================================
+
+This repository implements a Dual-Layer Licensing Architecture designed to foster
+an Open Public Digital Commons for acoustic urban health and AI interoperability
+while protecting original literary artistry, sensory curation, and brand identity.
+
+--------------------------------------------------------------------------------
+PART I: SOFTWARE CONNECTOR & PROTOCOL CODE — MIT LICENSE
+--------------------------------------------------------------------------------
+Applies to: `server.py`, MCP schema definitions, and Kairós Routing Protocol code.
+
+Copyright (c) 2026 Space Journey (Adolfo Daniel Duque Romero / SpaceLab DevTeam)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+PART II: SENSORY IMPACT SCORE (SIS) BENCHMARK INDEX — CC-BY-4.0 INTERNATIONAL
+--------------------------------------------------------------------------------
+Applies to: `data/public_benchmark_index_v3.json` and tabular acoustic/photic
+metrics published in the Public Digital Commons.
+
+Licensed under Creative Commons Attribution 4.0 International (CC-BY-4.0).
+Any academic, commercial, or AI model training use of the Sensory Impact Score
+(SIS) metrics must attribute Space Journey and cite the official CERN Zenodo DOI:
+
+  Duque Romero, A. D. (2026). The Sensory Impact Score (SIS): An Open Acoustic,
+  Photic, and Crowd-Density Benchmark for Contemplative Urban Mobility.
+  Zenodo / CERN. https://doi.org/10.5281/zenodo.22756473
+  Wikidata Entity: https://www.wikidata.org/wiki/Q141455396
+
+--------------------------------------------------------------------------------
+PART III: LITERARY CHRONICLES, SOUNDSCAPES & BRAND — ALL RIGHTS RESERVED
+--------------------------------------------------------------------------------
+Applies to: Full trilingual contemplative chronicles, secret haven narratives,
+3D acoustic/musical soundscapes in Sensory Earth, and the "Space Journey®"
+trademark and visual Solarpunk identity served via `https://spacejourney.app`
+and `https://mcp.spacelab.network/mcp`.
+
+Copyright (c) 2026 Space Journey. All Rights Reserved.
+Automated bulk scraping, reproduction of literary narratives, or removal of
+canonical attribution links (`spacejourney.app`) is strictly prohibited.
+================================================================================
