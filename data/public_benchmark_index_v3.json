@@ -1,0 +1,2736 @@
+{
+  "dataset": "spacejourney/contemplative-travel-benchmark-index",
+  "version": "3.2.0",
+  "license_code": "MIT",
+  "license_data": "CC-BY-4.0 (Attribution Required: Space Journey - https://spacejourney.app)",
+  "author": "Daniel Adolfo Duque Romero (Space Journey & Space Lab)",
+  "notice": "Full literary narratives, audio streams, and interactive itinerary hydration are served exclusively via https://spacejourney.app.",
+  "experiences": [
+    {
+      "haven_id": "MIA-3380",
+      "wp_id": 3380,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7617,
+        "lng": -80.7667
+      },
+      "duration_minutes": 120,
+      "optimal_window": "08:00 - 10:00",
+      "sis_score": 88,
+      "verified_db": 52,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Everglades Airboat | El pulso del río de hierba",
+        "en": "Everglades Airboat | The pulse of the river of grass",
+        "pt": "Aerobarco Everglades | A pulsação do rio de grama"
+      },
+      "neighborhood": "Everglades National Park / Shark Valley",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/everglades-airboat-pulso-rio-hierba/",
+        "en": "https://spacejourney.app/en/experiencia/everglades-airboat-the-pulse-of-the-river-of-grass/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/aerobarco-everglades-a-pulsacao-do-rio-de-grama/"
+      }
+    },
+    {
+      "haven_id": "MIA-3378",
+      "wp_id": 3378,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.798,
+        "lng": -80.213
+      },
+      "duration_minutes": 150,
+      "optimal_window": "11:00 - 13:00",
+      "sis_score": 89,
+      "verified_db": 48,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Rubell Museum | El santuario del arte contemporáneo",
+        "en": "Rubell Museum | The sanctuary of contemporary art",
+        "pt": "Museu Rubell | O santuário da arte contemporânea"
+      },
+      "neighborhood": "Allapattah",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/rubell-museum-santuario-arte-contemporaneo/",
+        "en": "https://spacejourney.app/en/experiencia/rubell-museum-the-sanctuary-of-contemporary-art/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-rubell-o-santuario-da-arte-contemporanea/"
+      }
+    },
+    {
+      "haven_id": "MIA-3376",
+      "wp_id": 3376,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7865,
+        "lng": -80.187
+      },
+      "duration_minutes": 180,
+      "optimal_window": "11:00 - 14:00",
+      "sis_score": 87,
+      "verified_db": 58,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Frost Science Museum | El ojo del océano",
+        "en": "Frost Science Museum | The eye of the ocean",
+        "pt": "Museu da Ciência Frost | O olho do oceano"
+      },
+      "neighborhood": "Downtown Miami / Maurice A. Ferré Park",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/frost-science-museum-ojo-oceano/",
+        "en": "https://spacejourney.app/en/experiencia/frost-science-museum-the-eye-of-the-ocean/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-da-ciencia-frost-o-olho-do-oceano/"
+      }
+    },
+    {
+      "haven_id": "MIA-3373",
+      "wp_id": 3373,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.777,
+        "lng": -80.1315
+      },
+      "duration_minutes": 75,
+      "optimal_window": "15:00 - 17:00",
+      "sis_score": 86,
+      "verified_db": 60,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Artechouse Miami | El laboratorio de luz",
+        "en": "Artechouse Miami | The light laboratory",
+        "pt": "Artechouse Miami | O laboratório de luz"
+      },
+      "neighborhood": "South Beach / Art Deco District",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/artechouse-miami-laboratorio-luz/",
+        "en": "https://spacejourney.app/en/experiencia/artechouse-miami-the-light-laboratory/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/artechouse-miami-o-laboratorio-de-luz/"
+      }
+    },
+    {
+      "haven_id": "MIA-3371",
+      "wp_id": 3371,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.786,
+        "lng": -80.186
+      },
+      "duration_minutes": 120,
+      "optimal_window": "14:00 - 16:00",
+      "sis_score": 88,
+      "verified_db": 52,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Pérez Art Museum Miami | El jardín colgante de la bahía",
+        "en": "Pérez Art Museum Miami | The Hanging Garden by the Bay",
+        "pt": "Museu de Arte Pérez Miami | O jardim suspenso à beira da baía"
+      },
+      "neighborhood": "Downtown Miami / Maurice A. Ferré Park",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/perez-art-museum-miami-pamm-jardin-colgante/",
+        "en": "https://spacejourney.app/en/experiencia/perez-art-museum-miami-the-hanging-garden-by-the-bay/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-de-arte-perez-miami-o-jardim-suspenso-a-beira-da-baia/"
+      }
+    },
+    {
+      "haven_id": "MIA-3368",
+      "wp_id": 3368,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7985,
+        "lng": -80.2135
+      },
+      "duration_minutes": 90,
+      "optimal_window": "14:00:00 - 16:00:00",
+      "sis_score": 85,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Superblue Miami | El portal de las dimensiones",
+        "en": "Superblue Miami | The portal of dimensions",
+        "pt": "Superazul Miami | O portal das dimensões"
+      },
+      "neighborhood": "Allapattah / Wynwood",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/superblue-miami-portal-dimensiones/",
+        "en": "https://spacejourney.app/en/experiencia/superblue-miami-the-portal-of-dimensions/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/superazul-miami-o-portal-das-dimensoes/"
+      }
+    },
+    {
+      "haven_id": "MIA-3364",
+      "wp_id": 3364,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.9,
+        "lng": -80.165
+      },
+      "duration_minutes": 45,
+      "optimal_window": "08:00:00 - 09:30:00",
+      "sis_score": 94,
+      "verified_db": 38,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Enchanted Forest Miami | El bosque de las hadas de Miami",
+        "en": "Enchanted Forest Miami | Miami Fairy Forest",
+        "pt": "Floresta Encantada Miami | Floresta das Fadas de Miami"
+      },
+      "neighborhood": "North Miami",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/enchanted-forest-bosque-hadas-miami/",
+        "en": "https://spacejourney.app/en/experiencia/enchanted-forest-miami-miami-fairy-forest/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/floresta-encantada-miami-floresta-das-fadas-de-miami/"
+      }
+    },
+    {
+      "haven_id": "MIA-3362",
+      "wp_id": 3362,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.6795,
+        "lng": -80.2565
+      },
+      "duration_minutes": 120,
+      "optimal_window": "15:30:00 - 17:30:00",
+      "sis_score": 88,
+      "verified_db": 54,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Matheson Hammock Park Miami | El atolón artificial",
+        "en": "Matheson Hammock Park Miami | The artificial atoll",
+        "pt": "Matheson Hammock Park Miami | O atol artificial"
+      },
+      "neighborhood": "Coral Gables",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/matheson-hammock-park-atolon-artificial-miami/",
+        "en": "https://spacejourney.app/en/experiencia/matheson-hammock-park-miami-the-artificial-atoll/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/matheson-hammock-park-miami-o-atol-artificial/"
+      }
+    },
+    {
+      "haven_id": "MIA-3360",
+      "wp_id": 3360,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7505,
+        "lng": -80.1985
+      },
+      "duration_minutes": 60,
+      "optimal_window": "08:30:00 - 10:30:00",
+      "sis_score": 92,
+      "verified_db": 48,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Alice Wainwright Park Miami | El mirador del manglar",
+        "en": "Alice Wainwright Park Miami | The mangrove viewpoint",
+        "pt": "Parque Alice Wainwright Miami | O mirante do mangue"
+      },
+      "neighborhood": "South Brickell / Coconut Grove",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/alice-wainwright-park-mirador-manglar-miami/",
+        "en": "https://spacejourney.app/en/experiencia/alice-wainwright-park-miami-the-mangrove-viewpoint/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-alice-wainwright-miami-o-mirante-do-mangue/"
+      }
+    },
+    {
+      "haven_id": "MIA-3357",
+      "wp_id": 3357,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.9295,
+        "lng": -80.155
+      },
+      "duration_minutes": 90,
+      "optimal_window": "14:00:00 - 16:00:00",
+      "sis_score": 91,
+      "verified_db": 42,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Ancient Spanish Monastery Miami | El laberinto místico",
+        "en": "Ancient Spanish Monastery Miami | The mystical labyrinth",
+        "pt": "Antigo Mosteiro Espanhol Miami | O labirinto místico"
+      },
+      "neighborhood": "North Miami Beach",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/ancient-spanish-monastery-laberinto-mistico-miami/",
+        "en": "https://spacejourney.app/en/experiencia/ancient-spanish-monastery-miami-the-mystical-labyrinth/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/antigo-mosteiro-espanhol-miami-o-labirinto-mistico/"
+      }
+    },
+    {
+      "haven_id": "MIA-3355",
+      "wp_id": 3355,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7444,
+        "lng": -80.2105
+      },
+      "duration_minutes": 150,
+      "optimal_window": "09:30:00 - 12:30:00",
+      "sis_score": 88,
+      "verified_db": 52,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Vizcaya Museum &#038; Gardens Miami | El renacimiento del agua",
+        "en": "Vizcaya Museum &#038; Gardens Miami | The rebirth of water",
+        "pt": "Museu e Jardins Vizcaya Miami | O renascimento da água"
+      },
+      "neighborhood": "Coconut Grove / North Grove",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/vizcaya-museum-gardens-renacimiento-agua-miami/",
+        "en": "https://spacejourney.app/en/experiencia/vizcaya-museum-gardens-miami-the-rebirth-of-water/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-e-jardins-vizcaya-miami-o-renascimento-da-agua/"
+      }
+    },
+    {
+      "haven_id": "MIA-3352",
+      "wp_id": 3352,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.723,
+        "lng": -80.245
+      },
+      "duration_minutes": 120,
+      "optimal_window": "10:00:00 - 12:30:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Kampong Miami | El refugio botánico de Coconut Grove",
+        "en": "The Kampong Miami | Coconut Grove Botanical Refuge",
+        "pt": "O Kampong Miami | Refúgio Botânico Coconut Grove"
+      },
+      "neighborhood": "Coconut Grove",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-kampong-refugio-botanico-miami/",
+        "en": "https://spacejourney.app/en/experiencia/the-kampong-miami-coconut-grove-botanical-refuge/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-kampong-miami-refugio-botanico-coconut-grove/"
+      }
+    },
+    {
+      "haven_id": "MIA-3349",
+      "wp_id": 3349,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.779,
+        "lng": -80.1305
+      },
+      "duration_minutes": 75,
+      "optimal_window": "17:30:00 - 19:30:00",
+      "sis_score": 87,
+      "verified_db": 68,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Lummus Park Miami | El jardín de neón de Ocean Drive",
+        "en": "Lummus Park Miami | The Ocean Drive Neon Garden",
+        "pt": "Parque Lummus Miami | Jardim de néon da Ocean Drive"
+      },
+      "neighborhood": "South Beach (Art Deco District)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/lummus-park-jardin-neon-ocean-drive-miami/",
+        "en": "https://spacejourney.app/en/experiencia/lummus-park-miami-the-ocean-drive-neon-garden/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-lummus-miami-jardim-de-neon-da-ocean-drive/"
+      }
+    },
+    {
+      "haven_id": "MIA-3346",
+      "wp_id": 3346,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.801,
+        "lng": -80.199
+      },
+      "duration_minutes": 120,
+      "optimal_window": "11:00:00 - 16:00:00",
+      "sis_score": 83,
+      "verified_db": 72,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Wynwood Pathways Miami | El museo de las calles",
+        "en": "Wynwood Pathways Miami | The museum of the streets",
+        "pt": "Wynwood Caminhos Miami | O museu das ruas"
+      },
+      "neighborhood": "Wynwood Arts District",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/wynwood-pathways-museo-calles-miami/",
+        "en": "https://spacejourney.app/en/experiencia/wynwood-pathways-miami-the-museum-of-the-streets/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/wynwood-caminhos-miami-o-museu-das-ruas/"
+      }
+    },
+    {
+      "haven_id": "MIA-3343",
+      "wp_id": 3343,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7915,
+        "lng": -80.133
+      },
+      "duration_minutes": 60,
+      "optimal_window": "19:00:00 - 21:00:00",
+      "sis_score": 89,
+      "verified_db": 60,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "SoundScape Park Miami | Sinfonía bajo las palmeras",
+        "en": "SoundScape Park Miami | Symphony under the palm trees",
+        "pt": "Parque SoundScape Miami | Sinfonia sob as palmeiras"
+      },
+      "neighborhood": "City Center, Miami Beach",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/soundscape-park-sinfonia-palmeras-miami/",
+        "en": "https://spacejourney.app/en/experiencia/soundscape-park-miami-symphony-under-the-palm-trees/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-soundscape-miami-sinfonia-sob-as-palmeiras/"
+      }
+    },
+    {
+      "haven_id": "MIA-3340",
+      "wp_id": 3340,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.765,
+        "lng": -80.13
+      },
+      "duration_minutes": 90,
+      "optimal_window": "17:00:00 - 19:30:00",
+      "sis_score": 88,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "South Pointe Park Miami | El umbral del Atlántico",
+        "en": "South Pointe Park Miami | The threshold of the Atlantic",
+        "pt": "Parque South Pointe Miami | O limiar do Atlântico"
+      },
+      "neighborhood": "South of Fifth (SoFi), Miami Beach",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/south-pointe-park-umbral-atlantico-miami/",
+        "en": "https://spacejourney.app/en/experiencia/south-pointe-park-miami-the-threshold-of-the-atlantic/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-south-pointe-miami-o-limiar-do-atlantico/"
+      }
+    },
+    {
+      "haven_id": "NEW-3325",
+      "wp_id": 3325,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7012,
+        "lng": -74.009
+      },
+      "duration_minutes": 20,
+      "optimal_window": "14:00:00 - 17:30:00",
+      "sis_score": 80,
+      "verified_db": 85,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Helicopter Tour New York | El oráculo del Skyline",
+        "en": "Helicopter Tour New York | The Skyline Oracle",
+        "pt": "Passeio de helicóptero em Nova York | O Oráculo do Horizonte"
+      },
+      "neighborhood": "Downtown Manhattan Heliport / Hudson River",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/helicopter-tour-oraculo-skyline-new-york/",
+        "en": "https://spacejourney.app/en/experiencia/helicopter-tour-new-york-the-skyline-oracle/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/passeio-de-helicoptero-em-nova-york-o-oraculo-do-horizonte/"
+      }
+    },
+    {
+      "haven_id": "NEW-3323",
+      "wp_id": 3323,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.783,
+        "lng": -73.959
+      },
+      "duration_minutes": 120,
+      "optimal_window": "11:00:00 - 14:00:00",
+      "sis_score": 91,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Guggenheim Museum New York | La espiral del arte moderno",
+        "en": "Guggenheim Museum New York | The spiral of modern art",
+        "pt": "Museu Guggenheim Nova York | A espiral da arte moderna"
+      },
+      "neighborhood": "Upper East Side / Museum Mile",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/guggenheim-museum-espiral-arte-moderno-new-york/",
+        "en": "https://spacejourney.app/en/experiencia/guggenheim-museum-new-york-the-spiral-of-modern-art/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-guggenheim-nova-york-a-espiral-da-arte-moderna/"
+      }
+    },
+    {
+      "haven_id": "NEW-3320",
+      "wp_id": 3320,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7533,
+        "lng": -73.9785
+      },
+      "duration_minutes": 150,
+      "optimal_window": "18:00:00 - 22:30:00",
+      "sis_score": 88,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Le Pavillon New York | Jardín comestible de Daniel Boulud",
+        "en": "Le Pavillon New York | Daniel Boulud's Edible Garden",
+        "pt": "Le Pavillon Nova York | Jardim comestível de Daniel Boulud"
+      },
+      "neighborhood": "Midtown Manhattan (One Vanderbilt)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/le-pavillon-jardin-comestible-new-york/",
+        "en": "https://spacejourney.app/en/experiencia/le-pavillon-new-york-daniel-bouluds-edible-garden/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/le-pavillon-nova-york-jardim-comestivel-de-daniel-boulud/"
+      }
+    },
+    {
+      "haven_id": "NEW-3316",
+      "wp_id": 3316,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.8649,
+        "lng": -73.9317
+      },
+      "duration_minutes": 120,
+      "optimal_window": "10:00:00 - 16:30:00",
+      "sis_score": 91,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Met Cloisters New York | Mística medieval en el Hudson",
+        "en": "The Met Cloisters New York | Medieval mystique on the Hudson",
+        "pt": "O Met Cloisters Nova York | Mística medieval no Hudson"
+      },
+      "neighborhood": "Washington Heights / Fort Tryon Park",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-met-cloisters-mistica-medieval-hudson-new-york/",
+        "en": "https://spacejourney.app/en/experiencia/the-met-cloisters-new-york-medieval-mystique-on-the-hudson/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-met-cloisters-nova-york-mistica-medieval-no-hudson/"
+      }
+    },
+    {
+      "haven_id": "NEW-3313",
+      "wp_id": 3313,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7533,
+        "lng": -73.9785
+      },
+      "duration_minutes": 90,
+      "optimal_window": "17:00:00 - 20:00:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Summit One Vanderbilt New York | Inmersión en las nubes",
+        "en": "Summit One Vanderbilt New York | Dive into the clouds",
+        "pt": "Summit One Vanderbilt Nova York | Mergulhe nas nuvens"
+      },
+      "neighborhood": "Midtown Manhattan",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/summit-one-vanderbilt-inmersion-nubes-new-york/",
+        "en": "https://spacejourney.app/en/experiencia/summit-one-vanderbilt-new-york-dive-into-the-clouds/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/summit-one-vanderbilt-nova-york-mergulhe-nas-nuvens/"
+      }
+    },
+    {
+      "haven_id": "NEW-3310",
+      "wp_id": 3310,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.776,
+        "lng": -73.9723
+      },
+      "duration_minutes": 50,
+      "optimal_window": "08:00 - 11:00",
+      "sis_score": 91,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Ramble | El bosque secreto de Central Park",
+        "en": "The Ramble | The secret forest of Central Park",
+        "pt": "A caminhada | A floresta secreta do Central Park"
+      },
+      "neighborhood": "Central Park (Upper West Side / Upper East Side)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-ramble-central-park-bosque-secreto-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/the-ramble-the-secret-forest-of-central-park/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/a-caminhada-a-floresta-secreta-do-central-park/"
+      }
+    },
+    {
+      "haven_id": "NEW-3306",
+      "wp_id": 3306,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.6953,
+        "lng": -73.9967
+      },
+      "duration_minutes": 45,
+      "optimal_window": "17:00 - 20:00",
+      "sis_score": 89,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Brooklyn Heights Promenade | El balcón de la ciudad",
+        "en": "Brooklyn Heights Promenade | The city balcony",
+        "pt": "Passeio de Brooklyn Heights | A varanda da cidade"
+      },
+      "neighborhood": "Brooklyn Heights",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/brooklyn-heights-promenade-balcon-ciudad-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/brooklyn-heights-promenade-the-city-balcony/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/passeio-de-brooklyn-heights-a-varanda-da-cidade/"
+      }
+    },
+    {
+      "haven_id": "NEW-3303",
+      "wp_id": 3303,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7561,
+        "lng": -73.9691
+      },
+      "duration_minutes": 30,
+      "optimal_window": "08:00 - 18:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Greenacre Park | La cascada escondida de Midtown",
+        "en": "Greenacre Park | Midtown's Hidden Waterfall",
+        "pt": "Parque Greenacre | Cachoeira escondida do centro da cidade"
+      },
+      "neighborhood": "Midtown East",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/greenacre-park-cascada-escondida-midtown-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/greenacre-park-midtowns-hidden-waterfall/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-greenacre-cachoeira-escondida-do-centro-da-cidade/"
+      }
+    },
+    {
+      "haven_id": "NEW-3300",
+      "wp_id": 3300,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7492,
+        "lng": -73.9814
+      },
+      "duration_minutes": 60,
+      "optimal_window": "10:30 - 17:00",
+      "sis_score": 91,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Morgan Library | El búnker del conocimiento en New York",
+        "en": "The Morgan Library | The knowledge bunker in New York",
+        "pt": "A Biblioteca Morgan | O bunker do conhecimento em Nova York"
+      },
+      "neighborhood": "Murray Hill",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-morgan-library-museum-bunker-conocimiento-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/the-morgan-library-the-knowledge-bunker-in-new-york/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/a-biblioteca-morgan-o-bunker-do-conhecimento-em-nova-york/"
+      }
+    },
+    {
+      "haven_id": "NEW-3297",
+      "wp_id": 3297,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7492,
+        "lng": -73.9712
+      },
+      "duration_minutes": 40,
+      "optimal_window": "11:00 - 18:00",
+      "sis_score": 91,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Ford Foundation Atrium | Selva bajo cristal",
+        "en": "Ford Foundation Atrium | Jungle under glass",
+        "pt": "Átrio da Fundação Ford | Selva sob vidro"
+      },
+      "neighborhood": "Midtown East",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/ford-foundation-atrium-selva-bajo-cristal-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/ford-foundation-atrium-jungle-under-glass/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/atrio-da-fundacao-ford-selva-sob-vidro/"
+      }
+    },
+    {
+      "haven_id": "NEW-3295",
+      "wp_id": 3295,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7042,
+        "lng": -74.0092
+      },
+      "duration_minutes": 45,
+      "optimal_window": "07:00 - 22:00",
+      "sis_score": 91,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Elevated Acre | El jardín secreto de Wall Street",
+        "en": "The Elevated Acre | The secret garden of Wall Street",
+        "pt": "O Acre Elevado | O jardim secreto de Wall Street"
+      },
+      "neighborhood": "Financial District (FiDi)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-elevated-acre-jardin-secreto-nyc-wall-street/",
+        "en": "https://spacejourney.app/en/experiencia/the-elevated-acre-the-secret-garden-of-wall-street/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-acre-elevado-o-jardim-secreto-de-wall-street/"
+      }
+    },
+    {
+      "haven_id": "NEW-3291",
+      "wp_id": 3291,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.761,
+        "lng": -73.9642
+      },
+      "duration_minutes": 15,
+      "optimal_window": "06:00:00 - 23:59:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Roosevelt Island Tramway: Vuelo urbano sobre el East River",
+        "en": "Roosevelt Island Tramway: City Flight over the East River",
+        "pt": "Bonde da Ilha Roosevelt: voo urbano sobre o East River"
+      },
+      "neighborhood": "Upper East Side (Manhattan) / Roosevelt Island",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/roosevelt-island-tramway-vuelo-urbano-east-river/",
+        "en": "https://spacejourney.app/en/experiencia/roosevelt-island-tramway-city-flight-over-the-east-river/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/bonde-da-ilha-roosevelt-voo-urbano-sobre-o-east-river/"
+      }
+    },
+    {
+      "haven_id": "NEW-3288",
+      "wp_id": 3288,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.742,
+        "lng": -74.0105
+      },
+      "duration_minutes": 60,
+      "optimal_window": "06:00:00 - 23:00:00",
+      "sis_score": 89,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Little Island: El parque sobre el Hudson",
+        "en": "Little Island: The Park on the Hudson",
+        "pt": "Little Island: O Parque no Hudson"
+      },
+      "neighborhood": "Chelsea / Meatpacking District",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/little-island-parque-suspendido-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/little-island-the-park-on-the-hudson/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/little-island-o-parque-no-hudson/"
+      }
+    },
+    {
+      "haven_id": "NEW-3284",
+      "wp_id": 3284,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7012,
+        "lng": -74.0132
+      },
+      "duration_minutes": 60,
+      "optimal_window": "00:00:00 - 23:59:00",
+      "sis_score": 85,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Staten Island Ferry: El mirador del puerto de New York",
+        "en": "Staten Island Ferry: New York Harbor Overlook",
+        "pt": "Balsa de Staten Island: mirante do porto de Nova York"
+      },
+      "neighborhood": "Lower Manhattan (Financial District)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/staten-island-ferry-mirador-libertad/",
+        "en": "https://spacejourney.app/en/experiencia/staten-island-ferry-new-york-harbor-overlook/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/balsa-de-staten-island-mirante-do-porto-de-nova-york/"
+      }
+    },
+    {
+      "haven_id": "NEW-3282",
+      "wp_id": 3282,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7538,
+        "lng": -74.0022
+      },
+      "duration_minutes": 45,
+      "optimal_window": "10:00:00 - 19:00:00",
+      "sis_score": 89,
+      "verified_db": 60,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Vessel: Geometría urbana y flujo vertical",
+        "en": "The Vessel: Urban geometry and vertical flow",
+        "pt": "O Navio: Geometria urbana e fluxo vertical"
+      },
+      "neighborhood": "Hudson Yards",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/vessel-hudson-yards-geometria-urbana/",
+        "en": "https://spacejourney.app/en/experiencia/the-vessel-urban-geometry-and-vertical-flow/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-navio-geometria-urbana-e-fluxo-vertical/"
+      }
+    },
+    {
+      "haven_id": "CDM-3279",
+      "wp_id": 3279,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4342,
+        "lng": -99.1329
+      },
+      "duration_minutes": 150,
+      "optimal_window": "09:30:00 - 12:30:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Templo Mayor: El corazón sagrado del Imperio Mexica",
+        "en": "Templo Mayor: The sacred heart of the Mexica Empire",
+        "pt": "Templo Mayor: O coração sagrado do Império Mexicano"
+      },
+      "neighborhood": "Centro Histórico",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/templo-mayor-imperio-mexica-corazon/",
+        "en": "https://spacejourney.app/en/experiencia/templo-mayor-the-sacred-heart-of-the-mexica-empire/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/templo-mayor-o-coracao-sagrado-do-imperio-mexicano/"
+      }
+    },
+    {
+      "haven_id": "CDM-3278",
+      "wp_id": 3278,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4323,
+        "lng": -99.1948
+      },
+      "duration_minutes": 210,
+      "optimal_window": "19:30:00 - 23:00:00",
+      "sis_score": 91,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Pujol &#038; Quintonil: El olimpo de la alta cocina mexicana",
+        "en": "Pujol &#038; Quintonil: The Olympus of Mexican haute cuisine",
+        "pt": "Pujol &#038; Quintonil: O Olimpo da alta gastronomia mexicana"
+      },
+      "neighborhood": "Polanco",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/pujol-quintonil-alta-cocina-mexicana/",
+        "en": "https://spacejourney.app/en/experiencia/pujol-quintonil-the-olympus-of-mexican-haute-cuisine/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/pujol-quintonil-o-olimpo-da-alta-gastronomia-mexicana/"
+      }
+    },
+    {
+      "haven_id": "CDM-3277",
+      "wp_id": 3277,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.426,
+        "lng": -99.1863
+      },
+      "duration_minutes": 180,
+      "optimal_window": "09:00:00 - 13:00:00",
+      "sis_score": 91,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Museo Nacional de Antropología: El oráculo del tiempo prehispánico",
+        "en": "National Museum of Anthropology: The oracle of pre-Hispanic time",
+        "pt": "Museu Nacional de Antropologia: O oráculo da época pré-hispânica"
+      },
+      "neighborhood": "Bosque de Chapultepec",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/museo-nacional-antropologia-mexico/",
+        "en": "https://spacejourney.app/en/experiencia/national-museum-of-anthropology-the-oracle-of-pre-hispanic-time/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museu-nacional-de-antropologia-o-oraculo-da-epoca-pre-hispanica/"
+      }
+    },
+    {
+      "haven_id": "CDM-3276",
+      "wp_id": 3276,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.2882,
+        "lng": -99.1035
+      },
+      "duration_minutes": 180,
+      "optimal_window": "06:30:00 - 10:00:00",
+      "sis_score": 91,
+      "verified_db": 15,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Xochimilco: Protocolo de canales privado y mística de las chinampas",
+        "en": "Xochimilco: Private channel protocol and mystique of the chinampas",
+        "pt": "Xochimilco: Protocolo de canal privado e mística das chinampas"
+      },
+      "neighborhood": "Xochimilco (Reserva de Cuemanco)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/xochimilco-protocolo-canales-privado-mistica-chinampas/",
+        "en": "https://spacejourney.app/en/experiencia/xochimilco-private-channel-protocol-and-mystique-of-the-chinampas/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/xochimilco-protocolo-de-canal-privado-e-mistica-das-chinampas/"
+      }
+    },
+    {
+      "haven_id": "CDM-3275",
+      "wp_id": 3275,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.6888,
+        "lng": -98.8396
+      },
+      "duration_minutes": 240,
+      "optimal_window": "05:30:00 - 10:00:00",
+      "sis_score": 91,
+      "verified_db": 25,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Teotihuacán: Vuelo en globo al amanecer con vista a las pirámides",
+        "en": "Teotihuacán: Sunrise Balloon Flight with a View of the Pyramids",
+        "pt": "Teotihuacán: voo de balão ao nascer do sol com vista para as pirâmides"
+      },
+      "neighborhood": "Valle de Teotihuacán",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/teotihuacan-vuelo-globo-amanecer-piramides/",
+        "en": "https://spacejourney.app/en/experiencia/teotihuacan-sunrise-balloon-flight-with-a-view-of-the-pyramids/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/teotihuacan-voo-de-balao-ao-nascer-do-sol-com-vista-para-as-piramides/"
+      }
+    },
+    {
+      "haven_id": "CDM-3273",
+      "wp_id": 3273,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.3496,
+        "lng": -99.1658
+      },
+      "duration_minutes": 80,
+      "optimal_window": "16:30:00 - 19:30:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Coyoacán: Callejones de Frida",
+        "en": "Coyoacán: Alleys of Frida",
+        "pt": "Coyoacán: Becos de Frida"
+      },
+      "neighborhood": "Coyoacán",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/coyoacan-callejones-frida-mistica/",
+        "en": "https://spacejourney.app/en/experiencia/coyoacan-alleys-of-frida/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/coyoacan-becos-de-frida/"
+      }
+    },
+    {
+      "haven_id": "CDM-3272",
+      "wp_id": 3272,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.44741,
+        "lng": -99.15081
+      },
+      "duration_minutes": 90,
+      "optimal_window": "11:00:00 - 17:00:00",
+      "sis_score": 94,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Biblioteca Vasconcelos: El arca de cristal en CDMX",
+        "en": "Vasconcelos Library: The crystal ark in CDMX",
+        "pt": "Biblioteca Vasconcelos: A arca de cristal no CDMX"
+      },
+      "neighborhood": "Buenavista",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/biblioteca-vasconcelos-arca-cristal/",
+        "en": "https://spacejourney.app/en/experiencia/vasconcelos-library-the-crystal-ark-in-cdmx/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/biblioteca-vasconcelos-a-arca-de-cristal-no-cdmx/"
+      }
+    },
+    {
+      "haven_id": "CDM-3269",
+      "wp_id": 3269,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.3128,
+        "lng": -99.3064
+      },
+      "duration_minutes": 120,
+      "optimal_window": "10:00:00 - 14:00:00",
+      "sis_score": 91,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Ex-Convento del Desierto de los Leones: El susurro del bosque",
+        "en": "Ex-Convent of the Desert of the Lions: The whisper of the forest",
+        "pt": "Ex-Convento do Deserto dos Leões: O sussurro da floresta"
+      },
+      "neighborhood": "Cuajimalpa (Parque Nacional)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/ex-convento-desierto-leones-susurro-bosque/",
+        "en": "https://spacejourney.app/en/experiencia/ex-convent-of-the-desert-of-the-lions-the-whisper-of-the-forest/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/ex-convento-do-deserto-dos-leoes-o-sussurro-da-floresta/"
+      }
+    },
+    {
+      "haven_id": "CDM-3261",
+      "wp_id": 3261,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.3475,
+        "lng": -99.1923
+      },
+      "duration_minutes": 60,
+      "optimal_window": "11:00:00 - 16:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Plaza de San Jacinto (San Ángel): El jardín de los artistas",
+        "en": "Plaza de San Jacinto (San Ángel): The artists' garden",
+        "pt": "Plaza de San Jacinto (San Ángel): O jardim dos artistas"
+      },
+      "neighborhood": "San Ángel",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/plaza-san-jacinto-jardin-artistas/",
+        "en": "https://spacejourney.app/en/experiencia/plaza-de-san-jacinto-san-angel-the-artists-garden/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/plaza-de-san-jacinto-san-angel-o-jardim-dos-artistas/"
+      }
+    },
+    {
+      "haven_id": "CDM-3258",
+      "wp_id": 3258,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4373,
+        "lng": -99.1331
+      },
+      "duration_minutes": 40,
+      "optimal_window": "10:00:00 - 13:00:00",
+      "sis_score": 91,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Plaza de Santo Domingo: Los portales de la memoria",
+        "en": "Plaza de Santo Domingo: The portals of memory",
+        "pt": "Plaza de Santo Domingo: Os portais da memória"
+      },
+      "neighborhood": "Centro Histórico",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/plaza-santo-domingo-portales-memoria/",
+        "en": "https://spacejourney.app/en/experiencia/plaza-de-santo-domingo-the-portals-of-memory/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/plaza-de-santo-domingo-os-portais-da-memoria/"
+      }
+    },
+    {
+      "haven_id": "PAR-3251",
+      "wp_id": 3251,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8554,
+        "lng": 2.3448
+      },
+      "duration_minutes": 45,
+      "optimal_window": "10:30:00 - 15:00:00",
+      "sis_score": 91,
+      "verified_db": 20,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Sainte-Chapelle: El relicario de luz medieval",
+        "en": "Sainte-Chapelle: The medieval reliquary of light",
+        "pt": "Sainte-Chapelle: O relicário medieval da luz"
+      },
+      "neighborhood": "Île de la Cité / Distrito 1",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/sainte-chapelle-relicario-luz-medieval/",
+        "en": "https://spacejourney.app/en/experiencia/sainte-chapelle-the-medieval-reliquary-of-light/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/sainte-chapelle-o-relicario-medieval-da-luz/"
+      }
+    },
+    {
+      "haven_id": "PAR-3250",
+      "wp_id": 3250,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.859,
+        "lng": 2.2931
+      },
+      "duration_minutes": 150,
+      "optimal_window": "20:30:00 - 23:00:00",
+      "sis_score": 91,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Cena en el Sena: El crucero de cristal y luces en Paris",
+        "en": "Dinner on the Seine: The glass and lights cruise in Paris",
+        "pt": "Jantar no Sena: O cruzeiro de vidro e luzes em Paris"
+      },
+      "neighborhood": "Río Sena / Distrito 7-8",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/cena-sena-crucero-cristal-luces/",
+        "en": "https://spacejourney.app/en/experiencia/dinner-on-the-seine-the-glass-and-lights-cruise-in-paris/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/jantar-no-sena-o-cruzeiro-de-vidro-e-luzes-em-paris/"
+      }
+    },
+    {
+      "haven_id": "PAR-3249",
+      "wp_id": 3249,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8599,
+        "lng": 2.3265
+      },
+      "duration_minutes": 90,
+      "optimal_window": "09:30:00 - 17:00:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Musée d'Orsay: Impresionismo en la antigua estación",
+        "en": "Musée d'Orsay: Impressionism in the old station",
+        "pt": "Musée d'Orsay: Impressionismo na antiga estação"
+      },
+      "neighborhood": "Saint-Germain-des-Prés / Distrito 7",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/musee-dorsay-impresionismo-antigua-estacion/",
+        "en": "https://spacejourney.app/en/experiencia/musee-dorsay-impressionism-in-the-old-station/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/musee-dorsay-impressionismo-na-antiga-estacao/"
+      }
+    },
+    {
+      "haven_id": "PAR-3247",
+      "wp_id": 3247,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8719,
+        "lng": 2.3316
+      },
+      "duration_minutes": 60,
+      "optimal_window": "10:30:00 - 16:00:00",
+      "sis_score": 91,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Opéra Garnier: El palacio de la música y el oro en Paris",
+        "en": "Opéra Garnier: The palace of music and gold in Paris",
+        "pt": "Ópera Garnier: O palácio da música e do ouro em Paris"
+      },
+      "neighborhood": "Opéra / Distrito 9",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/opera-garnier-palacio-musica-oro/",
+        "en": "https://spacejourney.app/en/experiencia/opera-garnier-the-palace-of-music-and-gold-in-paris/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/opera-garnier-o-palacio-da-musica-e-do-ouro-em-paris/"
+      }
+    },
+    {
+      "haven_id": "PAR-3246",
+      "wp_id": 3246,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8337,
+        "lng": 2.3324
+      },
+      "duration_minutes": 90,
+      "optimal_window": "09:30:00 - 19:00:00",
+      "sis_score": 91,
+      "verified_db": 15,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Catacumbas de París: El imperio de la muerte",
+        "en": "Paris Catacombs: The Empire of Death",
+        "pt": "Catacumbas de Paris: O Império da Morte"
+      },
+      "neighborhood": "Montparnasse / Distrito 14",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/catacumbas-paris-imperio-muerte-vip/",
+        "en": "https://spacejourney.app/en/experiencia/paris-catacombs-the-empire-of-death/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/catacumbas-de-paris-o-imperio-da-morte/"
+      }
+    },
+    {
+      "haven_id": "PAR-3243",
+      "wp_id": 3243,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8631,
+        "lng": 2.2871
+      },
+      "duration_minutes": 40,
+      "optimal_window": "06:30:00 - 22:00:00",
+      "sis_score": 85,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Torre Eiffel: El mirador del Trocadéro",
+        "en": "Eiffel Tower: The Trocadéro viewpoint",
+        "pt": "Torre Eiffel: o mirante do Trocadéro"
+      },
+      "neighborhood": "Trocadéro / 16ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/torre-eiffel-el-mirador-del-trocadero/",
+        "en": "https://spacejourney.app/en/experiencia/eiffel-tower-the-trocadero-viewpoint/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/torre-eiffel-o-mirante-do-trocadero/"
+      }
+    },
+    {
+      "haven_id": "NEW-3242",
+      "wp_id": 3242,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7395,
+        "lng": -74.0085
+      },
+      "duration_minutes": 90,
+      "optimal_window": "08:00:00 - 20:00:00",
+      "sis_score": 91,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The High Line: El jardín lineal elevado de New York",
+        "en": "The High Line: New York's elevated linear garden",
+        "pt": "The High Line: o jardim linear elevado de Nova York"
+      },
+      "neighborhood": "Chelsea / Meatpacking District",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/high-line-jardin-elevado-nyc/",
+        "en": "https://spacejourney.app/en/experiencia/the-high-line-new-yorks-elevated-linear-garden/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/the-high-line-o-jardim-linear-elevado-de-nova-york/"
+      }
+    },
+    {
+      "haven_id": "PAR-3238",
+      "wp_id": 3238,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8715,
+        "lng": 2.3418
+      },
+      "duration_minutes": 45,
+      "optimal_window": "11:30:00 - 15:30:00",
+      "sis_score": 94,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Passage des Panoramas: El laberinto de cristal y sellos",
+        "en": "Passage des Panoramas: The glass and seal labyrinth",
+        "pt": "Passage des Panoramas: O labirinto de vidro e selo"
+      },
+      "neighborhood": "Grands Boulevards / 2ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/passage-des-panoramas-el-laberinto-de-cristal-y-sellos/",
+        "en": "https://spacejourney.app/en/experiencia/passage-des-panoramas-the-glass-and-seal-labyrinth/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/passage-des-panoramas-o-labirinto-de-vidro-e-selo/"
+      }
+    },
+    {
+      "haven_id": "PAR-3235",
+      "wp_id": 3235,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8814,
+        "lng": 2.3338
+      },
+      "duration_minutes": 50,
+      "optimal_window": "10:00:00 - 17:00:00",
+      "sis_score": 91,
+      "verified_db": 28,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Musée de la Vie Romantique: El jardín de las ideas",
+        "en": "Musée de la Vie Romantique: The garden of ideas",
+        "pt": "Musée de la Vie Romantique: O jardim das ideias"
+      },
+      "neighborhood": "Pigalle / 9ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/musee-de-la-vie-romantique-el-jardin-escondido-de-pigalle/",
+        "en": "https://spacejourney.app/en/experiencia/musee-de-la-vie-romantique-the-garden-of-ideas/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/musee-de-la-vie-romantique-o-jardim-das-ideias/"
+      }
+    },
+    {
+      "haven_id": "PAR-3226",
+      "wp_id": 3226,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8548,
+        "lng": 2.3662
+      },
+      "duration_minutes": 60,
+      "optimal_window": "10:00:00 - 17:30:00",
+      "sis_score": 94,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 250,
+        "solar_coins": 100,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Maison de Victor Hugo: El alma de la Place des Vosges",
+        "en": "Victor Hugo's Maison: The soul of the Place des Vosges",
+        "pt": "Maison de Victor Hugo: A alma da Place des Vosges"
+      },
+      "neighborhood": "Le Marais / 4ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/maison-victor-hugo-paris-place-des-vosges/",
+        "en": "https://spacejourney.app/en/experiencia/victor-hugos-maison-the-soul-of-the-place-des-vosges/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/maison-de-victor-hugo-a-alma-da-place-des-vosges/"
+      }
+    },
+    {
+      "haven_id": "PAR-3156",
+      "wp_id": 3156,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.845,
+        "lng": 2.3528
+      },
+      "duration_minutes": 45,
+      "optimal_window": "11:30:00 - 16:30:00",
+      "sis_score": 94,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Arènes de Lutèce: El eco de la Galia romana",
+        "en": "Arènes de Lutèce: The echo of Roman Gaul",
+        "pt": "Arènes de Lutèce: O eco da Gália Romana"
+      },
+      "neighborhood": "Barrio Latino / 5ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/arenes-de-lutece-el-eco-de-la-galia-romana/",
+        "en": "https://spacejourney.app/en/experiencia/arenes-de-lutece-the-echo-of-roman-gaul/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/arenes-de-lutece-o-eco-da-galia-romana/"
+      }
+    },
+    {
+      "haven_id": "PAR-3153",
+      "wp_id": 3153,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8731,
+        "lng": 2.3639
+      },
+      "duration_minutes": 120,
+      "optimal_window": "17:00:00 - 20:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Canal Saint-Martin: La arteria bohemia de París",
+        "en": "Canal Saint-Martin: The bohemian artery of Paris",
+        "pt": "Canal Saint-Martin: a artéria boêmia de Paris"
+      },
+      "neighborhood": "Canal Saint-Martin / 10ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/canal-saint-martin-el-paris-bohemio-y-sus-esclusas/",
+        "en": "https://spacejourney.app/en/experiencia/canal-saint-martin-the-bohemian-artery-of-paris/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/canal-saint-martin-a-arteria-boemia-de-paris/"
+      }
+    },
+    {
+      "haven_id": "PAR-3152",
+      "wp_id": 3152,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8572,
+        "lng": 2.34
+      },
+      "duration_minutes": 45,
+      "optimal_window": "18:00:00 - 21:00:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Square du Vert-Galant: La proa de la Isla de la Cité",
+        "en": "Square du Vert-Galant: The bow of the Ile de la Cité",
+        "pt": "Square du Vert-Galant: a proa da Ile de la Cité"
+      },
+      "neighborhood": "Île de la Cité / 1er Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/square-du-vert-galant-la-proa-de-la-isla-de-la-cite/",
+        "en": "https://spacejourney.app/en/experiencia/square-du-vert-galant-the-bow-of-the-ile-de-la-cite/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/square-du-vert-galant-a-proa-da-ile-de-la-cite/"
+      }
+    },
+    {
+      "haven_id": "PAR-3151",
+      "wp_id": 3151,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8472,
+        "lng": 2.3387
+      },
+      "duration_minutes": 60,
+      "optimal_window": "10:00:00 - 16:30:00",
+      "sis_score": 94,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Jardin du Luxembourg: La elegancia del Barrio Latino",
+        "en": "Jardin du Luxembourg: The elegance of the Latin Quarter",
+        "pt": "Jardin du Luxembourg: a elegância do Quartier Latin"
+      },
+      "neighborhood": "Saint-Germain-des-Prés / Barrio Latino",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/jardin-du-luxembourg-la-elegancia-del-barrio-latino/",
+        "en": "https://spacejourney.app/en/experiencia/jardin-du-luxembourg-the-elegance-of-the-latin-quarter/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/jardin-du-luxembourg-a-elegancia-do-quartier-latin/"
+      }
+    },
+    {
+      "haven_id": "PAR-3150",
+      "wp_id": 3150,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8517,
+        "lng": 2.3705
+      },
+      "duration_minutes": 90,
+      "optimal_window": "09:30:00 - 17:30:00",
+      "sis_score": 97,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Promenade Plantée: El jardín elevado de París",
+        "en": "Promenade Plantée: The elevated garden of Paris",
+        "pt": "Promenade Plantée: O jardim elevado de Paris"
+      },
+      "neighborhood": "Bastille / 12ème Arrondissement",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/promenade-plantee-el-jardin-elevado-de-paris/",
+        "en": "https://spacejourney.app/en/experiencia/promenade-plantee-the-elevated-garden-of-paris/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/promenade-plantee-o-jardim-elevado-de-paris/"
+      }
+    },
+    {
+      "haven_id": "CDM-3149",
+      "wp_id": 3149,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.3333,
+        "lng": -99.1842
+      },
+      "duration_minutes": 90,
+      "optimal_window": "09:00:00 - 18:00:00",
+      "sis_score": 91,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Las Islas de CU | El campus que es patrimonio",
+        "en": "The Islands of CU | The campus that is heritage",
+        "pt": "As Ilhas da CU | O campus que é patrimônio"
+      },
+      "neighborhood": "Ciudad Universitaria (Coyoacán)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/las-islas-de-cu-paisaje-volcanico-y-patrimonio-moderno/",
+        "en": "https://spacejourney.app/en/experiencia/the-islands-of-cu-the-campus-that-is-heritage/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/as-ilhas-da-cu-o-campus-que-e-patrimonio/"
+      }
+    },
+    {
+      "haven_id": "CDM-3148",
+      "wp_id": 3148,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4109,
+        "lng": -99.1698
+      },
+      "duration_minutes": 60,
+      "optimal_window": "08:00:00 - 21:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Parque México | El oasis elíptico de la Condesa",
+        "en": "Mexico Park | The elliptical oasis of the Countess",
+        "pt": "Parque México | O oásis elíptico da Condessa"
+      },
+      "neighborhood": "Hipódromo Condesa",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/parque-mexico-el-corazon-art-deco-de-la-condesa/",
+        "en": "https://spacejourney.app/en/experiencia/mexico-park-the-elliptical-oasis-of-the-countess/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-mexico-o-oasis-eliptico-da-condessa/"
+      }
+    },
+    {
+      "haven_id": "CDM-3147",
+      "wp_id": 3147,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4485,
+        "lng": -99.1572
+      },
+      "duration_minutes": 45,
+      "optimal_window": "10:00:00 - 17:00:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 80,
+        "solar_coins": 40,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Kiosko Morisco | La joya geométrica de Santa María",
+        "en": "Morisco Kiosk | The geometric jewel of Santa María",
+        "pt": "Quiosque Morisco | A joia geométrica de Santa María"
+      },
+      "neighborhood": "Santa María la Ribera",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/kiosko-morisco-la-joya-de-santa-maria-la-ribera/",
+        "en": "https://spacejourney.app/en/experiencia/morisco-kiosk-the-geometric-jewel-of-santa-maria/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/quiosque-morisco-a-joia-geometrica-de-santa-maria/"
+      }
+    },
+    {
+      "haven_id": "CDM-3146",
+      "wp_id": 3146,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.4206,
+        "lng": -99.1813
+      },
+      "duration_minutes": 60,
+      "optimal_window": "09:00:00 - 16:00:00",
+      "sis_score": 97,
+      "verified_db": 20,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Audiorama Chapultepec | El refugio del silencio en CDMX",
+        "en": "Audiorama Chapultepec | The refuge of silence in CDMX",
+        "pt": "Audiorama Chapultepec | O refúgio do silêncio no CDMX"
+      },
+      "neighborhood": "Bosque de Chapultepec",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/audiorama-chapultepec-el-refugio-del-silencio/",
+        "en": "https://spacejourney.app/en/experiencia/audiorama-chapultepec-the-refuge-of-silence-in-cdmx/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/audiorama-chapultepec-o-refugio-do-silencio-no-cdmx/"
+      }
+    },
+    {
+      "haven_id": "LON-3140",
+      "wp_id": 3140,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.5021,
+        "lng": -0.1293
+      },
+      "duration_minutes": 100,
+      "optimal_window": "09:30:00 - 11:30:00",
+      "sis_score": 89,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Churchill War Rooms | El búnker de la libertad",
+        "en": "Churchill War Rooms | The freedom bunker",
+        "pt": "Salas de Guerra de Churchill | O bunker da liberdade"
+      },
+      "neighborhood": "Westminster",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/churchill-war-rooms-bunker-premium/",
+        "en": "https://spacejourney.app/en/experiencia/churchill-war-rooms-the-freedom-bunker/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/salas-de-guerra-de-churchill-o-bunker-da-liberdade/"
+      }
+    },
+    {
+      "haven_id": "LON-3139",
+      "wp_id": 3139,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.505,
+        "lng": -0.1877
+      },
+      "duration_minutes": 90,
+      "optimal_window": "16:00:00 - 18:00:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Kensington Palace | El jardín de las memorias reales",
+        "en": "Kensington Palace | The garden of royal memories",
+        "pt": "Palácio de Kensington | O jardim das memórias reais"
+      },
+      "neighborhood": "Kensington & Chelsea",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/kensington-palace-jardines-reales-premium/",
+        "en": "https://spacejourney.app/en/experiencia/kensington-palace-the-garden-of-royal-memories/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/palacio-de-kensington-o-jardim-das-memorias-reais/"
+      }
+    },
+    {
+      "haven_id": "LON-3137",
+      "wp_id": 3137,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.4998,
+        "lng": -0.1275
+      },
+      "duration_minutes": 120,
+      "optimal_window": "09:30:00 - 11:30:00",
+      "sis_score": 88,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Westminster Abbey | El susurro de la historia en piedra (Verger Tour)",
+        "en": "Westminster Abbey The whisper of history in stone (Verger Tour)",
+        "pt": "Abadia de Westminster O sussurro da história em pedra (Verger Tour)"
+      },
+      "neighborhood": "City of Westminster / West End",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/westminster-abbey-tour-guiado-sacristan-premium/",
+        "en": "https://spacejourney.app/en/experiencia/westminster-abbey-the-whisper-of-history-in-stone-verger-tour/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/abadia-de-westminster-o-sussurro-da-historia-em-pedra-verger-tour/"
+      }
+    },
+    {
+      "haven_id": "MIA-3076",
+      "wp_id": 3076,
+      "city_slug": "miami",
+      "coordinates": {
+        "lat": 25.7671,
+        "lng": -80.1937
+      },
+      "duration_minutes": 52,
+      "optimal_window": "08:30:00 - 20:00:00",
+      "sis_score": 88,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Underline | El oasis urbano bajo el Metrorail de Miami",
+        "en": "The Underline | The urban oasis under the Miami Metrorail",
+        "pt": "O sublinhado | O oásis urbano sob o Metrorail de Miami"
+      },
+      "neighborhood": "Brickell (Financial District)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/the-underline-miami-oasis-urbano-brickell/",
+        "en": "https://spacejourney.app/en/experiencia/the-underline-the-urban-oasis-under-the-miami-metrorail/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-sublinhado-o-oasis-urbano-sob-o-metrorail-de-miami/"
+      }
+    },
+    {
+      "haven_id": "NEW-3062",
+      "wp_id": 3062,
+      "city_slug": "new-york",
+      "coordinates": {
+        "lat": 40.7952,
+        "lng": -73.961
+      },
+      "duration_minutes": 31,
+      "optimal_window": "09:00:00 - 18:00:00",
+      "sis_score": 97,
+      "verified_db": 42,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Central Park (North Woods) | El bosque oculto de Manhattan, NY",
+        "en": "Central Park (North Woods) | The hidden forest of Manhattan, NY",
+        "pt": "Central Park (Bosques do Norte) | A floresta escondida de Manhattan, NY"
+      },
+      "neighborhood": "Central Park (Upper West / Harlem border)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/central-park-north-woods-manhattan-ny/",
+        "en": "https://spacejourney.app/en/experiencia/central-park-north-woods-the-hidden-forest-of-manhattan-ny/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/central-park-bosques-do-norte-a-floresta-escondida-de-manhattan-ny/"
+      }
+    },
+    {
+      "haven_id": "PAR-3054",
+      "wp_id": 3054,
+      "city_slug": "paris",
+      "coordinates": {
+        "lat": 48.8785,
+        "lng": 2.3811
+      },
+      "duration_minutes": 75,
+      "optimal_window": "16:30:00 - 19:30:00",
+      "sis_score": 91,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Parc des Buttes-Chaumont | El templo sobre el abismo",
+        "en": "Parc des Buttes-Chaumont | The temple over the abyss",
+        "pt": "Parque des Buttes-Chaumont | O templo sobre o abismo"
+      },
+      "neighborhood": "Distrito 19 / Belleville",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/buttes-chaumont-templo-sibila-abismo/",
+        "en": "https://spacejourney.app/en/experiencia/parc-des-buttes-chaumont-the-temple-over-the-abyss/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parque-des-buttes-chaumont-o-templo-sobre-o-abismo/"
+      }
+    },
+    {
+      "haven_id": "CDM-3043",
+      "wp_id": 3043,
+      "city_slug": "cdmx",
+      "coordinates": {
+        "lat": 19.41118,
+        "lng": -99.15931
+      },
+      "duration_minutes": 90,
+      "optimal_window": "11:00 AM - 04:00 PM",
+      "sis_score": 97,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Huerto Roma Verde | El laboratorio de resiliencia urbana",
+        "en": "Roma Green Garden | The urban resilience laboratory",
+        "pt": "Jardim Verde Roma | O laboratório de resiliência urbana"
+      },
+      "neighborhood": "Roma Sur",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/huerto-roma-verde-el-refugio-comunitario-de-cdmx/",
+        "en": "https://spacejourney.app/en/experiencia/roma-green-garden-the-urban-resilience-laboratory/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/jardim-verde-roma-o-laboratorio-de-resiliencia-urbana/"
+      }
+    },
+    {
+      "haven_id": "LON-3033",
+      "wp_id": 3033,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.4829,
+        "lng": -0.0096
+      },
+      "duration_minutes": 2,
+      "optimal_window": "10:15:00 - 11:15:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Cutty Sark | El gigante de cobre bajo el cristal",
+        "en": "Cutty Sark | The copper giant under the glass",
+        "pt": "Cutty Sark | O gigante de cobre sob o vidro"
+      },
+      "neighborhood": "Greenwich",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/cutty-sark-gigante-cobre-cristal/",
+        "en": "https://spacejourney.app/en/experiencia/cutty-sark-the-copper-giant-under-the-glass/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/cutty-sark-o-gigante-de-cobre-sob-o-vidro/"
+      }
+    },
+    {
+      "haven_id": "LON-2912",
+      "wp_id": 2912,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.5081,
+        "lng": -0.0762
+      },
+      "duration_minutes": 3,
+      "optimal_window": "08:45:00 - 11:30:00",
+      "sis_score": 89,
+      "verified_db": 48,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Tower of London: Protocolo de primer acceso y Ceremonia de las llaves",
+        "en": "Tower of London: First Access Protocol and Key Ceremony",
+        "pt": "Torre de Londres: Primeiro Protocolo de Acesso e Cerimônia de Chave"
+      },
+      "neighborhood": "Tower Hill / City of London",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/tower-of-london-primer-acceso-ceremonia-llaves/",
+        "en": "https://spacejourney.app/en/experiencia/tower-of-london-first-access-protocol-and-key-ceremony/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/torre-de-londres-primeiro-protocolo-de-acesso-e-cerimonia-de-chave/"
+      }
+    },
+    {
+      "haven_id": "LON-2821",
+      "wp_id": 2821,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.539,
+        "lng": -0.16
+      },
+      "duration_minutes": 8,
+      "optimal_window": "06:00:00 - 07:30:00",
+      "sis_score": 97,
+      "verified_db": 25,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Primrose Hill | El horizonte de Londres",
+        "en": "Primrose Hill | London skyline",
+        "pt": "Colina da Prímula | Horizonte de Londres"
+      },
+      "neighborhood": "Primrose Hill (Camden, Norte de Londres)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/primrose-hill-londres-amanecer-mirador-secreto/",
+        "en": "https://spacejourney.app/en/experiencia/primrose-hill-london-skyline/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/colina-da-primula-horizonte-de-londres/"
+      }
+    },
+    {
+      "haven_id": "LON-2814",
+      "wp_id": 2814,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.51105,
+        "lng": -0.0838
+      },
+      "duration_minutes": 6,
+      "optimal_window": "17:30:00 - 19:00:00",
+      "sis_score": 90,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Sky Garden | El bosque en las nubes",
+        "en": "Sky Garden | The forest in the clouds",
+        "pt": "Jardim do Céu | A floresta nas nuvens"
+      },
+      "neighborhood": "La City (Distrito Financiero)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/sky-garden-londres-como-entrar-gratis/",
+        "en": "https://spacejourney.app/en/experiencia/sky-garden-the-forest-in-the-clouds/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/jardim-do-ceu-a-floresta-nas-nuvens/"
+      }
+    },
+    {
+      "haven_id": "LON-2807",
+      "wp_id": 2807,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.5065,
+        "lng": -0.0735
+      },
+      "duration_minutes": 1245,
+      "optimal_window": "16:00:00 - 17:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "St Katharine Docks | El puerto secreto del Tower Bridge",
+        "en": "St Katharine Docks | The secret port of Tower Bridge",
+        "pt": "Docas de Santa Catarina | O porto secreto da Tower Bridge"
+      },
+      "neighborhood": "Tower Hamlets (Junto a Tower Hill)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/st-katharine-docks-londres-puerto-secreto-tower-bridge/",
+        "en": "https://spacejourney.app/en/experiencia/st-katharine-docks-the-secret-port-of-tower-bridge/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/docas-de-santa-catarina-o-porto-secreto-da-tower-bridge/"
+      }
+    },
+    {
+      "haven_id": "LON-2798",
+      "wp_id": 2798,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.5482,
+        "lng": -0.2505
+      },
+      "duration_minutes": 120,
+      "optimal_window": "10:00:00 - 12:00:00",
+      "sis_score": 94,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "BAPS Shri Swaminarayan Mandir | El templo hindú oculto",
+        "en": "BAPS Shri Swaminarayan Mandir | The hidden Hindu temple",
+        "pt": "BAPS Shri Swaminarayan Mandir | O templo hindu escondido"
+      },
+      "neighborhood": "Neasden (Noroeste de Londres)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/baps-shri-swaminarayan-mandir-londres-templo-hindu-oculto/",
+        "en": "https://spacejourney.app/en/experiencia/baps-shri-swaminarayan-mandir-the-hidden-hindu-temple/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/baps-shri-swaminarayan-mandir-o-templo-hindu-escondido/"
+      }
+    },
+    {
+      "haven_id": "LON-2786",
+      "wp_id": 2786,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.512683,
+        "lng": -0.083475
+      },
+      "duration_minutes": 45,
+      "optimal_window": "06:00:00 - 07:30:00",
+      "sis_score": 94,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Leadenhall Market | El callejón Diagon a las 6:00 am",
+        "en": "Leadenhall Market | Diagon Alley at 6:00 am",
+        "pt": "Mercado Leadenhall | Beco Diagonal às 6h"
+      },
+      "neighborhood": "La City (Distrito Financiero)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/leadenhall-market-callejon-diagon-amanecer/",
+        "en": "https://spacejourney.app/en/experiencia/leadenhall-market-diagon-alley-at-600-am/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/mercado-leadenhall-beco-diagonal-as-6h/"
+      }
+    },
+    {
+      "haven_id": "LON-2771",
+      "wp_id": 2771,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.501,
+        "lng": -0.1188
+      },
+      "duration_minutes": 89,
+      "optimal_window": "16:30:00 - 18:00:00",
+      "sis_score": 85,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "The Queen's Walk | Paseo del Támesis",
+        "en": "The Queen's Walk | Thames Walk",
+        "pt": "A caminhada da rainha | Caminhada pelo Tâmisa"
+      },
+      "neighborhood": "South Bank / Waterloo",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/queens-walk-londres-paseo-tamesis/",
+        "en": "https://spacejourney.app/en/experiencia/the-queens-walk-thames-walk/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/a-caminhada-da-rainha-caminhada-pelo-tamisa/"
+      }
+    },
+    {
+      "haven_id": "LON-2764",
+      "wp_id": 2764,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.503063,
+        "lng": -0.203348
+      },
+      "duration_minutes": 90,
+      "optimal_window": "08:00:00 - 09:30:00",
+      "sis_score": 97,
+      "verified_db": 30,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Kyoto Garden: El jardín japonés en Londres",
+        "en": "Kyoto Garden: The Japanese garden in London",
+        "pt": "Jardim de Kyoto: o jardim japonês em Londres"
+      },
+      "neighborhood": "Kensington (Holland Park)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/kyoto-garden-londres-jardin-japones/",
+        "en": "https://spacejourney.app/en/experiencia/kyoto-garden-the-japanese-garden-in-london/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/jardim-de-kyoto-o-jardim-japones-em-londres/"
+      }
+    },
+    {
+      "haven_id": "LON-2753",
+      "wp_id": 2753,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.52182,
+        "lng": -0.183011
+      },
+      "duration_minutes": 89,
+      "optimal_window": "08:30:00 - 10:00:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Little Venice: El paseo más tranquilo por los canales de Londres",
+        "en": "Little Venice: The quietest walk through London's canals",
+        "pt": "Little Venice: o passeio mais tranquilo pelos canais de Londres"
+      },
+      "neighborhood": "Maida Vale / Paddington",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/little-venice-londres-canales-tranquilidad/",
+        "en": "https://spacejourney.app/en/experiencia/little-venice-the-quietest-walk-through-londons-canals/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/little-venice-o-passeio-mais-tranquilo-pelos-canais-de-londres/"
+      }
+    },
+    {
+      "haven_id": "LON-2746",
+      "wp_id": 2746,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.52003,
+        "lng": -0.09322
+      },
+      "duration_minutes": 60,
+      "optimal_window": "10:00:00 - 11:00:00",
+      "sis_score": 97,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Barbican Conservatory: El oasis solarpunk de Londres",
+        "en": "Barbican Conservatory: London's solarpunk oasis",
+        "pt": "Conservatório Barbican: o oásis solarpunk de Londres"
+      },
+      "neighborhood": "City of London (Barbican Estate)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/barbican-conservatory-londres-oasis-solarpunk/",
+        "en": "https://spacejourney.app/en/experiencia/barbican-conservatory-londons-solarpunk-oasis/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/conservatorio-barbican-o-oasis-solarpunk-de-londres/"
+      }
+    },
+    {
+      "haven_id": "ROM-2671",
+      "wp_id": 2671,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.9026,
+        "lng": 12.4663
+      },
+      "duration_minutes": 90,
+      "optimal_window": "17:30:00 - 00:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Castel Sant'Angelo: El corredor secreto",
+        "en": "Castel Sant'Angelo: The secret corridor",
+        "pt": "Castel Sant'Angelo: O corredor secreto"
+      },
+      "neighborhood": "Borgo / Prati",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/castillo-sant-angelo-entradas-oficiales-roma/",
+        "en": "https://spacejourney.app/en/experiencia/castel-santangelo-the-secret-corridor/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/castel-santangelo-o-corredor-secreto/"
+      }
+    },
+    {
+      "haven_id": "ROM-2659",
+      "wp_id": 2659,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.9139,
+        "lng": 12.4922
+      },
+      "duration_minutes": 120,
+      "optimal_window": "09:00:00 - 11:00:00",
+      "sis_score": 94,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Galleria Borghese: La perfección escultórica",
+        "en": "Galleria Borghese: Sculptural perfection",
+        "pt": "Galleria Borghese: perfeição escultural"
+      },
+      "neighborhood": "Parioli / Pinciano (Villa Borghese)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/galleria-borghese-entradas-oficiales-guia-bernini/",
+        "en": "https://spacejourney.app/en/experiencia/galleria-borghese-sculptural-perfection/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/galleria-borghese-perfeicao-escultural/"
+      }
+    },
+    {
+      "haven_id": "ROM-2651",
+      "wp_id": 2651,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.9066,
+        "lng": 12.4526
+      },
+      "duration_minutes": 180,
+      "optimal_window": "08:00:00 - 11:00:00",
+      "sis_score": 84,
+      "verified_db": 70,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Museos Vaticanos & Capilla Sixtina",
+        "en": "Vatican Museums & Sistine Chapel",
+        "pt": "Museus e Museus do Vaticano Capela Sistina"
+      },
+      "neighborhood": "Ciudad del Vaticano (Prati)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/museos-vaticanos-capilla-sixtina-entradas-oficiales/",
+        "en": "https://spacejourney.app/en/experiencia/vatican-museums-sistine-chapel/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/museus-e-museus-do-vaticano-capela-sistina/"
+      }
+    },
+    {
+      "haven_id": "ROM-2642",
+      "wp_id": 2642,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8906,
+        "lng": 12.492
+      },
+      "duration_minutes": 180,
+      "optimal_window": "08:30:00 - 11:30:00",
+      "sis_score": 85,
+      "verified_db": 65,
+      "gamification_rewards": {
+        "exp_points": 400,
+        "solar_coins": 150,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Coliseo, Foro Romano & Monte Palatino",
+        "en": "Colosseum, Roman Forum & Palatine Hill",
+        "pt": "Coliseu, Fórum Romano e Roma Monte Palatino"
+      },
+      "neighborhood": "Celio / Campitelli",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/coliseo-foro-romano-entradas-oficiales-guia/",
+        "en": "https://spacejourney.app/en/experiencia/colosseum-roman-forum-palatine-hill/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/coliseu-forum-romano-e-roma-monte-palatino/"
+      }
+    },
+    {
+      "haven_id": "ROM-2633",
+      "wp_id": 2633,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.901,
+        "lng": 12.4832
+      },
+      "duration_minutes": 45,
+      "optimal_window": "05:30:00 - 06:30:00",
+      "sis_score": 94,
+      "verified_db": 55,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Fontana di Trevi en silencio: El ritual del agua",
+        "en": "Trevi Fountain in silence: The ritual of water",
+        "pt": "Fontana di Trevi em silêncio: O ritual da água"
+      },
+      "neighborhood": "Trevi",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/fontana-di-trevi-en-silencio-el-ritual-del-agua/",
+        "en": "https://spacejourney.app/en/experiencia/trevi-fountain-in-silence-the-ritual-of-water/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/fontana-di-trevi-em-silencio-o-ritual-da-agua/"
+      }
+    },
+    {
+      "haven_id": "ROM-2625",
+      "wp_id": 2625,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8991,
+        "lng": 12.4768
+      },
+      "duration_minutes": 60,
+      "optimal_window": "11:15:00 - 12:45:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El Panteón: El portal de luz",
+        "en": "The Pantheon: The portal of light",
+        "pt": "O Panteão: O portal da luz"
+      },
+      "neighborhood": "Centro Storico (Pigna)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/panteon-roma-portal-de-luz-secreto/",
+        "en": "https://spacejourney.app/en/experiencia/the-pantheon-the-portal-of-light/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-panteao-o-portal-da-luz/"
+      }
+    },
+    {
+      "haven_id": "ROM-2616",
+      "wp_id": 2616,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8517,
+        "lng": 12.5532
+      },
+      "duration_minutes": 120,
+      "optimal_window": "16:30:00 - 18:30:00",
+      "sis_score": 97,
+      "verified_db": 40,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Parco degli acquedotti: Los gigantes de piedra",
+        "en": "Parco degli acquedotti: The stone giants",
+        "pt": "Parco degli acquedotti: Os gigantes de pedra"
+      },
+      "neighborhood": "Appia Pignatelli / Subaugusta",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/parque-de-los-acueductos-roma-secreta/",
+        "en": "https://spacejourney.app/en/experiencia/parco-degli-acquedotti-the-stone-giants/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/parco-degli-acquedotti-os-gigantes-de-pedra/"
+      }
+    },
+    {
+      "haven_id": "ROM-2603",
+      "wp_id": 2603,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8732,
+        "lng": 12.502
+      },
+      "duration_minutes": 150,
+      "optimal_window": "09:00:00 - 11:30:00",
+      "sis_score": 97,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 150,
+        "solar_coins": 60,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Via appia antica: El ritmo de la eternidad",
+        "en": "Via appia antica: The rhythm of eternity",
+        "pt": "Via appia antica: O ritmo da eternidade"
+      },
+      "neighborhood": "Appia Antica (Parco Regionale)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/via-appia-antica-el-ritmo-de-la-eternidad/",
+        "en": "https://spacejourney.app/en/experiencia/via-appia-antica-the-rhythm-of-eternity/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/via-appia-antica-o-ritmo-da-eternidade/"
+      }
+    },
+    {
+      "haven_id": "ROM-2588",
+      "wp_id": 2588,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8667,
+        "lng": 12.4833
+      },
+      "duration_minutes": 105,
+      "optimal_window": "16:30:00 - 18:10:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 200,
+        "solar_coins": 80,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Garbatella: El pueblo jardín dentro de Roma",
+        "en": "Garbatella: The garden village within Rome",
+        "pt": "Garbatella: a vila-jardim em Roma"
+      },
+      "neighborhood": "Garbatella (Ostiense)",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/garbatella-el-pueblo-jardin-dentro-de-roma/",
+        "en": "https://spacejourney.app/en/experiencia/garbatella-the-garden-village-within-rome/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/garbatella-a-vila-jardim-em-roma/"
+      }
+    },
+    {
+      "haven_id": "ROM-2569",
+      "wp_id": 2569,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8913,
+        "lng": 12.46078
+      },
+      "duration_minutes": 90,
+      "optimal_window": "11:30:00 - 19:30:00",
+      "sis_score": 96,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El Gianicolo: La colina panorámica de Roma",
+        "en": "The Gianicolo: Rome's panoramic hill",
+        "pt": "O Gianicolo: a colina panorâmica de Roma"
+      },
+      "neighborhood": "Gianicolo / Trastevere Alto",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/el-gianicolo-vista-panoramica-de-roma/",
+        "en": "https://spacejourney.app/en/experiencia/the-gianicolo-romes-panoramic-hill/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-gianicolo-a-colina-panoramica-de-roma/"
+      }
+    },
+    {
+      "haven_id": "ROM-2557",
+      "wp_id": 2557,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.89461,
+        "lng": 12.48312
+      },
+      "duration_minutes": 60,
+      "optimal_window": "18:30:00 - 20:00:00",
+      "sis_score": 92,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 250,
+        "solar_coins": 100,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El Vittoriano: La mirada de las cuadrigas",
+        "en": "The Vittoriano: The look of the chariots",
+        "pt": "O Vittoriano: O visual das carruagens"
+      },
+      "neighborhood": "Piazza Venezia / Centro Storico",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/vittoriano-terraza-cuadrigas-premium/",
+        "en": "https://spacejourney.app/en/experiencia/the-vittoriano-the-look-of-the-chariots/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-vittoriano-o-visual-das-carruagens/"
+      }
+    },
+    {
+      "haven_id": "ROM-2282",
+      "wp_id": 2282,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.89578,
+        "lng": 12.48227
+      },
+      "duration_minutes": 120,
+      "optimal_window": "09:30:00 - 11:30:00",
+      "sis_score": 95,
+      "verified_db": 50,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El Vittoriano: La máquina del tiempo en mármol",
+        "en": "The Vittoriano: The marble time machine",
+        "pt": "O Vittoriano: A máquina do tempo do mármore"
+      },
+      "neighborhood": "Piazza Venezia / Rione Pigna",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/vittoriano-altare-della-patria-roma/",
+        "en": "https://spacejourney.app/en/experiencia/the-vittoriano-the-marble-time-machine/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-vittoriano-a-maquina-do-tempo-do-marmore/"
+      }
+    },
+    {
+      "haven_id": "ROM-2164",
+      "wp_id": 2164,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.88974,
+        "lng": 12.49302
+      },
+      "duration_minutes": 120,
+      "optimal_window": "07:30:00 - 09:30:00",
+      "sis_score": 89,
+      "verified_db": 60,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El Coliseo romano: visita exterior",
+        "en": "The Roman Colosseum: exterior visit",
+        "pt": "O Coliseu Romano: visita exterior"
+      },
+      "neighborhood": "Colosseo / Barrio Celio",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/coliseo-exterior-gratis-roma/",
+        "en": "https://spacejourney.app/en/experiencia/the-roman-colosseum-exterior-visit/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-coliseu-romano-visita-exterior/"
+      }
+    },
+    {
+      "haven_id": "LON-560",
+      "wp_id": 560,
+      "city_slug": "londres",
+      "coordinates": {
+        "lat": 51.5097,
+        "lng": -0.082782
+      },
+      "duration_minutes": 60,
+      "optimal_window": "12:00:00 - 14:00:00",
+      "sis_score": 93,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "St Dunstan in the East: El jardín entre las ruinas",
+        "en": "St Dunstan in the East: The Garden Among the Ruins",
+        "pt": "St Dunstan no Oriente: o jardim entre as ruínas"
+      },
+      "neighborhood": "The Square Mile | City of London",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/st-dunstan-in-the-east-londres-jardin/",
+        "en": "https://spacejourney.app/en/experiencia/st-dunstan-in-the-east-the-garden-among-the-ruins/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/st-dunstan-no-oriente-o-jardim-entre-as-ruinas/"
+      }
+    },
+    {
+      "haven_id": "ROM-482",
+      "wp_id": 482,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.886,
+        "lng": 12.48
+      },
+      "duration_minutes": 90,
+      "optimal_window": "18:00:00 - 19:30:00",
+      "sis_score": 97,
+      "verified_db": 35,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "El jardín de los naranjos y la llave secreta",
+        "en": "The orange garden and the secret key",
+        "pt": "O jardim de laranjas e a chave secreta"
+      },
+      "neighborhood": "Aventino",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/giardino-degli-aranci-roma-llave/",
+        "en": "https://spacejourney.app/en/experiencia/the-orange-garden-and-the-secret-key/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/o-jardim-de-laranjas-e-a-chave-secreta/"
+      }
+    },
+    {
+      "haven_id": "ROM-182",
+      "wp_id": 182,
+      "city_slug": "roma",
+      "coordinates": {
+        "lat": 41.8928,
+        "lng": 12.4711
+      },
+      "duration_minutes": 90,
+      "optimal_window": "17:00:00 - 19:30:00",
+      "sis_score": 96,
+      "verified_db": 45,
+      "gamification_rewards": {
+        "exp_points": 100,
+        "solar_coins": 50,
+        "community_publish_bonus_solar_coins": 10
+      },
+      "titles": {
+        "es": "Trastevere: El susurro de los adoquines",
+        "en": "Trastevere: The whisper of the cobblestones",
+        "pt": "Trastevere: o sussurro dos paralelepípedos"
+      },
+      "neighborhood": "Roma | Trastevere",
+      "canonical_urls": {
+        "es": "https://spacejourney.app/experiencia/que-ver-en-trastevere-roma/",
+        "en": "https://spacejourney.app/en/experiencia/trastevere-the-whisper-of-the-cobblestones/",
+        "pt": "https://spacejourney.app/pt-br/experiencia/trastevere-o-sussurro-dos-paralelepipedos/"
+      }
+    }
+  ]
+}
