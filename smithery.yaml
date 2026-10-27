@@ -1,0 +1,12 @@
+# Smithery.ai MCP Registry Configuration — Space Journey Contemplative Engine v3.0
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction:
+    |-
+    (config) => ({
+      command: 'python',
+      args: ['server.py']
+    })
