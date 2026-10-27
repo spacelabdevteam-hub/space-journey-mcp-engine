@@ -1,0 +1,19 @@
+# ============================================================================
+# SPACE JOURNEY — 7-LAYER MOAT GITIGNORE (PUBLIC DIGITAL COMMONS EDITION)
+# ============================================================================
+data/contemplative_catalog_v3.json
+data/*_private*.json
+data/*_vault*.json
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+dist/
+*.log
+.DS_Store
+Thumbs.db
