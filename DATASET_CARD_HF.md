@@ -36,15 +36,17 @@ tags:
 
 # 🌍 Space Journey — Global Sensory Impact Score (SIS v3.0) Benchmark & MCP Index
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/spacelabdevteam-hub/sensory-impact-score-datasets/blob/main/explore_global_sensory_benchmark.ipynb)
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
 [![Live MCP Server](https://img.shields.io/badge/MCP_Endpoint-mcp.spacelab.network-10B981)](https://mcp.spacelab.network/mcp)
 
 ## Dataset Summary
 
-The **Global Sensory Impact Benchmark (SIS v3.0)** is an open, machine-readable index (`public_benchmark_index_v3.json`) quantifying the acoustic ($\text{dB}$), photic ($\text{lx}$), and crowd-density ($\rho$) profiles of **64 curated cultural sanctuaries** across **6 flagship global capitals** (**Rome, Paris, London, Mexico City, New York City, and Miami**), paired with the **227-country Sensory Earth WebGL index**.
+The **Global Sensory Impact Benchmark (SIS v3.0)** is an open, machine-readable index (`public_benchmark_index_v3.json`) quantifying the acoustic (dB), photic (lx), and crowd-density (pax/m²) profiles of **64 curated cultural sanctuaries** across **6 flagship global capitals** (**Rome, Paris, London, Mexico City, New York City, and Miami**), paired with the **227-country Sensory Earth WebGL index**.
 
-Designed as a **Public Digital Commons** aligned with the **World Health Organization (WHO) 53 dB $L_{\text{den}}$ environmental noise guidelines**, this dataset enables AI Agents, urban researchers, and LLM travel planners to route human mobility away from saturated tourist bottlenecks toward restorative cultural spaces.
+Designed as a **Public Digital Commons** aligned with the **World Health Organization (WHO) 53 dB Lden environmental noise guidelines**, this dataset enables AI Agents, urban researchers, and LLM travel planners to route human mobility away from saturated tourist bottlenecks toward restorative cultural spaces.
 
 ---
 
