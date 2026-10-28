@@ -7,7 +7,7 @@
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
 
 > **The Open Standard & Model Context Protocol (MCP) Server for Acoustic Urban Health, Contemplative Travel, and Low-Density Cultural Routing.**  
-> *Aligned with World Health Organization (WHO) Environmental Noise Guidelines ($L_{den} < 53\text{ dB}$).*
+> *Aligned with World Health Organization (WHO) Environmental Noise Guidelines (WHO Lden < 53 dB).*
 
 ---
 
@@ -17,7 +17,7 @@ Conventional search engines and LLM travel assistants route millions of traveler
 
 **Space Journey** introduces a **Public Digital Commons** for sensory-aware human mobility. Powered by the peer-cited **Sensory Impact Score (SIS)** ([DOI: `10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)) and the **Kairós Sensory Routing Protocol (KRP)**, this MCP Server equips any AI Agent (Claude, OpenWebUI, Llama, Mistral, DeepSeek, Cursor, Gemini) with:
 
-1. **Acoustic & Photic Urban Telemetry:** Real-time and time-windowed decibel ($\text{dB}$), illuminance ($\text{lx}$), and crowd-density benchmarks across **64 curated cultural sanctuaries** in **Rome, Paris, London, Mexico City, New York, and Miami**—plus universal Kairós routing for **any city on Earth**.
+1. **Acoustic & Photic Urban Telemetry:** Real-time and time-windowed decibel (dB), illuminance (lx), and crowd-density benchmarks across **64 curated cultural sanctuaries** in **Rome, Paris, London, Mexico City, New York, and Miami**—plus universal Kairós routing for **any city on Earth**.
 2. **Kairós Directional Routing Protocol (KRP):** Automatic origin-destination disambiguation (`BOG ✈️ MAD`, `JFK ✈️ FCO`), IATA airport normalization, and great-circle flight duration estimation.
 3. **227-Country Sensory Earth Integration:** Direct deep-linking into [**Sensory Earth 3D**](https://spacejourney.app/sensory-earth/), an open WebGL globe preserving regional musical heritage and cultural dedications across 227 countries and territories.
 4. **Zero-Trust Privacy & GDPR by Design:** Stateless MCP architecture. Zero personal identifiable information (PII), zero tracking cookies, and full interoperability with local and open-weights LLMs.
@@ -68,13 +68,13 @@ python server.py
 
 ## 📐 Scientific Methodology: The Sensory Impact Score (SIS)
 
-Defined in our open technical standard ([`/standards/sensory-impact-score/`](https://spacejourney.app/standards/sensory-impact-score/) & [CERN Zenodo DOI `10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)), the **Sensory Impact Score ($\text{SIS} \in [0, 100]$)** quantifies the restorative quality of a cultural space:
+Defined in our open technical standard ([`/standards/sensory-impact-score/`](https://spacejourney.app/standards/sensory-impact-score/) & [CERN Zenodo DOI `10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)), the **Sensory Impact Score (SIS 0–100)** quantifies the restorative quality of a cultural space:
 
-$$\text{SIS} = 100 - \left( 0.35 \cdot P_{\text{noise}}(\text{dB}) + 0.30 \cdot P_{\text{crowd}}(\rho) + 0.20 \cdot P_{\text{exertion}}(E) - 0.15 \cdot B_{\text{light}}(\text{lx}, \theta_{\odot}) \right)$$
+$$\text{SIS} = 100 - \left( 0.35 \cdot P_{\text{noise}}(dB) + 0.30 \cdot P_{\text{crowd}}(\rho) + 0.20 \cdot P_{\text{exertion}}(E) - 0.15 \cdot B_{\text{light}}(\text{lx}, \theta_{\odot}) \right)$$
 
 Where:
-- **$P_{\text{noise}}(\text{dB})$:** Non-linear acoustic penalty anchored to the **WHO $53\text{ dB } L_{\text{den}}$** threshold.
-- **$P_{\text{crowd}}(\rho)$:** Pedestrian density penalty ($\text{pax/m}^2$) derived from hourly visitation curves.
+- **$P_{\text{noise}}(dB)$:** Non-linear acoustic penalty anchored to the **WHO 53 dB Lden** threshold.
+- **$P_{\text{crowd}}(\rho)$:** Pedestrian density penalty (pax/m²) derived from hourly visitation curves.
 - **$P_{\text{exertion}}(E)$:** Biomechanical and thermal friction index.
 - **$B_{\text{light}}(\text{lx}, \theta_{\odot})$:** Photic harmony bonus during golden hour and architectural twilight.
 
