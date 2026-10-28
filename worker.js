@@ -1,67 +1,68 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0
+ * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
+ * Philosophy: Contemplative Travel, Solarpunk Aesthetics & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
   name: "space-journey-mcp-engine",
-  version: "3.0.0",
-  description: "Universal travel planning, IATA flight connectivity, and Sensory Impact Score (SIS) routing engine (WHO 53 dB Lden aligned)."
+  version: "3.1.0",
+  description: "The standard for contemplative travel, urban sanctuaries, and sensory well-being. Connecting travelers with serene cultural retreats, balanced itineraries, and immersive soundscapes."
 };
 
 const TOOLS = [
   {
     name: "plan_contemplative_journey",
-    description: "Generate a multi-day contemplative travel itinerary with Sensory Impact Score (SIS) telemetry (dB Lden, lux, crowd density), Kairos IATA flight duration, and Space Journey Trip Planner deep links.",
+    description: "Design and organize mindful travel itineraries with balanced cultural exploration, serene local sanctuaries, and unhurried human pacing. Integrates flight timing, ideal daylight hours, and the Space Journey Trip Planner.",
     inputSchema: {
       type: "object",
       properties: {
-        destination: { type: "string", description: "Destination city (Rome, Paris, CDMX, Tokyo, Kyoto, Barcelona, Lisbon, London, Bogota, Medellin)" },
-        duration_days: { type: "integer", description: "Number of days (1-7)", default: 3 },
-        origin: { type: "string", description: "Origin city or IATA airport code" },
-        traveler_profile: { type: "string", description: "Archetype (contemplative, cultural, couple, solo, family)", default: "contemplative" },
-        language: { type: "string", description: "Language code (en, es, pt)", default: "en" }
+        destination: { type: "string", description: "Destination city (Rome, Paris, CDMX, Tokyo, Kyoto, Barcelona, Lisbon, London, Bogota, Medellin, New York, Miami)" },
+        duration_days: { type: "integer", description: "Duration of stay in days (1-7)", default: 3 },
+        origin: { type: "string", description: "Origin city or airport code (e.g., Bogota, Madrid, NYC, BOG, MAD)" },
+        traveler_profile: { type: "string", description: "Travel style (contemplative, cultural, couple, solo, family)", default: "contemplative" },
+        language: { type: "string", description: "Language for the journey guide (en, es, pt)", default: "en" }
       },
       required: ["destination"]
     }
   },
   {
     name: "discover_secret_haven",
-    description: "Find a curated low-decibel (<50 dB) secret sanctuary near an overcrowded tourist landmark (>75 dB).",
+    description: "Find peaceful, hidden cultural sanctuaries and tranquil neighborhood gems away from tourist crowds and urban exhaustion. Recommends shaded cloisters, quiet viewpoints, and restorative gardens.",
     inputSchema: {
       type: "object",
       properties: {
-        city: { type: "string", description: "City name (Rome, Paris, CDMX)" },
-        current_crowded_spot: { type: "string", description: "Overcrowded tourist spot to escape from" },
-        sensory_preference: { type: "string", description: "Sensory priority (silence, shade, nature, architecture)", default: "silence" },
-        language: { type: "string", description: "Language code (en, es, pt)", default: "en" }
+        city: { type: "string", description: "City name (Rome, Paris, CDMX, Tokyo, etc.)" },
+        current_crowded_spot: { type: "string", description: "Overcrowded tourist landmark or busy area to take a break from" },
+        sensory_preference: { type: "string", description: "Atmosphere preference (gardens, quiet architecture, shaded courtyards, serene water)", default: "gardens" },
+        language: { type: "string", description: "Language for the guide (en, es, pt)", default: "en" }
       },
       required: ["city"]
     }
   },
   {
     name: "generate_booking_card",
-    description: "Generate verified zero-friction travel booking cards across 18 global travel partners (hotels, activities, flights, eSIM, luggage, insurance, trains, ferries).",
+    description: "Curate verified booking recommendations across high-comfort hotels, serene cultural stays, experiences, and seamless travel essentials.",
     inputSchema: {
       type: "object",
       properties: {
         destination: { type: "string", description: "Destination city" },
         category: { type: "string", description: "Service category (hotels, activities, flights, esim, transfers, luggage, compensation, insurance, car_rental, trains_eu, ferries, bikes, luxury_villas, yachts, cruise)", default: "hotels" },
-        experience_title: { type: "string", description: "Optional specific experience title" },
-        language: { type: "string", description: "Language code (en, es, pt)", default: "en" }
+        experience_title: { type: "string", description: "Optional specific experience or haven title" },
+        language: { type: "string", description: "Language for the booking card (en, es, pt)", default: "en" }
       },
       required: ["destination"]
     }
   },
   {
     name: "explore_sensory_earth",
-    description: "Launch the 3D WebGL Sensory Earth globe with territorial music curation and cultural heritage stories.",
+    description: "Experience the destination through the 3D Sensory Earth globe, connecting with local atmospheric soundscapes, cultural music, and panoramic storytelling.",
     inputSchema: {
       type: "object",
       properties: {
-        destination: { type: "string", description: "City or territory to tune into" },
-        mood: { type: "string", description: "Acoustic mood (botanical, nocturnal, ancestral, focus)", default: "botanical" },
-        language: { type: "string", description: "Language code (en, es, pt)", default: "en" }
+        destination: { type: "string", description: "City or territory to explore" },
+        mood: { type: "string", description: "Sensory atmosphere (botanical, nocturnal, ancestral, contemplative)", default: "botanical" },
+        language: { type: "string", description: "Language (en, es, pt)", default: "en" }
       },
       required: ["destination"]
     }
@@ -112,26 +113,34 @@ function handlePlanJourney(args) {
   return {
     destination: dest,
     duration_days: days,
-    flight_connectivity: flightBadge || "Direct / Continental connection",
-    sensory_standards: "Aligned with WHO 53 dB Lden environmental noise guidelines (CERN Zenodo DOI: 10.5281/zenodo.22756473)",
+    flight_connectivity: flightBadge || "Direct connection / Global gateway",
+    experience_philosophy: "Slow Travel & Human Pace: unhurried mornings, golden-hour contemplation, and intimate cultural sanctuaries.",
+    quality_standard: "WHO Environmental Acoustic Guidelines (<53 dB Lden restorative standard) — CERN Zenodo DOI: 10.5281/zenodo.22756473",
     itinerary_preview: [
       {
         day: 1,
-        title: `Contemplative Arrival & Acoustic Adaptation in ${dest}`,
-        sis_acoustic_db: "44 dB Lden (Restorative Haven)",
-        photonic_lux: "350 lx (Golden Hour)",
-        crowd_density: "0.15 pax/m²"
+        title: `Harmonious Arrival & Senses Awakening in ${dest}`,
+        atmosphere: "Gentle late-afternoon stroll through quiet stone lanes, acclimating to the city's pulse.",
+        secret_haven: "The shaded garden courtyard of a centuries-old cloister, listening to water fountains.",
+        best_time: "17:30 - 19:30 (Golden Hour)"
       },
       {
         day: 2,
-        title: `Historical Solarpunk Infiltration & Sacred Gardens`,
-        sis_acoustic_db: "48 dB Lden",
-        photonic_lux: "850 lx",
-        crowd_density: "0.22 pax/m²"
+        title: "Cultural Wonders & Peaceful Green Sanctuary",
+        atmosphere: "Morning cultural discovery followed by a restorative midday escape under pine trees.",
+        secret_haven: "Panoramic secluded belvedere away from tourist queues, overlooking ancient rooftops.",
+        best_time: "09:30 - 12:30 & 16:00 - 18:30"
       }
     ],
-    trip_planner_sync_url: `https://spacejourney.app/activa-tu-viaje/?destination=${encodeURIComponent(dest)}&days=${days}&source=mcp_edge`,
-    solar_coins_reward: 50
+    zero_friction_tools: {
+      trip_saver: "https://spacejourney.app/trip-saver/?ref=mcp",
+      sensory_trip_planner: `https://spacejourney.app/activa-tu-viaje/?destination=${encodeURIComponent(dest)}&days=${days}&source=mcp_edge`,
+      sensory_earth_portal: `https://spacejourney.app/sensory-earth/?dest=${encodeURIComponent(dest)}`
+    },
+    traveler_rewards: {
+      solar_coins: 50,
+      invitation: "Save your favorite stays with zero stress using the Space Journey Trip Saver extension."
+    }
   };
 }
 
@@ -140,14 +149,18 @@ function handleSecretHaven(args) {
   const spot = args.current_crowded_spot || "Tourist Center";
   return {
     city: city,
-    crowded_landmark: spot,
-    measured_noise: "78-85 dB (High Sensory Fatigue)",
+    crowded_area_escaped: spot,
     secret_haven_recommendation: {
-      name: `Sanctuary of Light and Silence near ${spot}`,
-      acoustic_comfort: "42 dB Lden (Restorative Threshold: <53 dB)",
-      photonic_comfort: "Filtered Natural Daylight (300-600 lx)",
-      pedestrian_stress_reduction: "85% reduction vs main avenue",
-      direct_url: `https://spacejourney.app/ciudad/${city.toLowerCase()}/`
+      name: `Sanctuary of Light and Tranquility near ${spot}`,
+      the_secret: "A hidden inner courtyard shaded by historic orange trees, where gentle fountain water filters out the city noise.",
+      local_insight: "Walk 150 meters behind the bustling main square; take the arched passage to find this secluded retreat.",
+      atmosphere: "Calm, deeply restorative, cool breeze and warm stone light.",
+      comfort_guarantee: "Verified under WHO 53 dB acoustic well-being standard",
+      direct_guide_url: `https://spacejourney.app/ciudad/${city.toLowerCase()}/?haven=true`
+    },
+    companion_tools: {
+      trip_saver_extension: "https://spacejourney.app/trip-saver/",
+      sensory_earth_3d: `https://spacejourney.app/sensory-earth/?dest=${encodeURIComponent(city)}`
     }
   };
 }
@@ -156,21 +169,160 @@ function handleBookingCard(args) {
   const dest = args.destination || "Rome";
   const cat = args.category || "hotels";
   return {
-    partner_service: cat,
+    curated_service: cat,
     destination: dest,
-    booking_flow: "Zero friction, clean attribution",
+    booking_experience: "Zero digital friction, hand-picked quiet stays and conscious cultural experiences.",
     verified_url: `https://spacejourney.app/tours-y-experiencias-vip/?dest=${encodeURIComponent(dest)}&cat=${encodeURIComponent(cat)}`,
-    guarantee: "Hand-picked high-comfort accommodation & silent mobility partners"
+    peace_guarantee: "Curated for restorative sleep, acoustic serenity, and authentic local hospitality."
   };
 }
 
 function handleSensoryEarth(args) {
   const dest = args.destination || "Rome";
   return {
-    module: "Sensory Earth 3D WebGL",
+    experience: "Sensory Earth 3D WebGL",
     destination: dest,
-    soundscape_url: `https://spacejourney.app/sensory-earth/?dest=${encodeURIComponent(dest)}`,
-    features: "Ambient territorial audio, acoustic radar, Solarpunk visual atmosphere"
+    immersive_portal_url: `https://spacejourney.app/sensory-earth/?dest=${encodeURIComponent(dest)}`,
+    features: "Atmospheric territorial music, acoustic calm mapping, and panoramic Solarpunk beauty before you travel."
+  };
+}
+
+function getOpenApiSchema(origin) {
+  return {
+    openapi: "3.0.3",
+    info: {
+      title: "Space Journey MCP Travel Engine",
+      description: "The 21st-century standard for contemplative travel, urban havens, and sensory well-being. Tools for universal travel planning, unhurried itineraries, secret quiet havens, and 3D Sensory Earth exploration.",
+      version: "3.1.0"
+    },
+    servers: [
+      {
+        url: origin,
+        description: "Cloudflare Workers Edge Serverless Endpoint"
+      }
+    ],
+    paths: {
+      "/plan-journey": {
+        post: {
+          operationId: "planContemplativeJourney",
+          summary: "Plan a contemplative travel itinerary",
+          description: "Design and organize mindful travel itineraries with balanced cultural exploration, serene local sanctuaries, and unhurried human pacing.",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    destination: { type: "string", description: "City name" },
+                    duration_days: { type: "integer", default: 3 },
+                    origin: { type: "string" },
+                    traveler_profile: { type: "string", default: "contemplative" },
+                    language: { type: "string", default: "en" }
+                  },
+                  required: ["destination"]
+                }
+              }
+            }
+          },
+          responses: {
+            "200": {
+              description: "Curated contemplative itinerary",
+              content: { "application/json": { schema: { type: "object" } } }
+            }
+          }
+        }
+      },
+      "/secret-haven": {
+        post: {
+          operationId: "discoverSecretHaven",
+          summary: "Find a quiet sanctuary near crowded tourist spots",
+          description: "Find peaceful, hidden cultural sanctuaries and tranquil neighborhood gems away from tourist crowds and urban exhaustion.",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    city: { type: "string" },
+                    current_crowded_spot: { type: "string" },
+                    sensory_preference: { type: "string", default: "gardens" },
+                    language: { type: "string", default: "en" }
+                  },
+                  required: ["city"]
+                }
+              }
+            }
+          },
+          responses: {
+            "200": {
+              description: "Secret haven recommendation",
+              content: { "application/json": { schema: { type: "object" } } }
+            }
+          }
+        }
+      },
+      "/booking-card": {
+        post: {
+          operationId: "generateBookingCard",
+          summary: "Curate verified booking recommendations",
+          description: "Curate verified booking recommendations across high-comfort hotels, serene cultural stays, and conscious travel essentials.",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    destination: { type: "string" },
+                    category: { type: "string", default: "hotels" },
+                    experience_title: { type: "string" },
+                    language: { type: "string", default: "en" }
+                  },
+                  required: ["destination"]
+                }
+              }
+            }
+          },
+          responses: {
+            "200": {
+              description: "Booking card with zero friction link",
+              content: { "application/json": { schema: { type: "object" } } }
+            }
+          }
+        }
+      },
+      "/sensory-earth": {
+        post: {
+          operationId: "exploreSensoryEarth",
+          summary: "Launch 3D Sensory Earth globe",
+          description: "Experience the destination through the 3D Sensory Earth globe, connecting with local atmospheric soundscapes and cultural music.",
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    destination: { type: "string" },
+                    mood: { type: "string", default: "botanical" },
+                    language: { type: "string", default: "en" }
+                  },
+                  required: ["destination"]
+                }
+              }
+            }
+          },
+          responses: {
+            "200": {
+              description: "Sensory Earth portal URL",
+              content: { "application/json": { schema: { type: "object" } } }
+            }
+          }
+        }
+      }
+    }
   };
 }
 
@@ -193,19 +345,56 @@ async function handleRequest(request) {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // OpenAPI schema endpoints (for ChatGPT connector & OpenAPI tools)
+  if (request.method === 'GET' && (url.pathname === '/openapi.json' || url.pathname === '/mcp/openapi.json')) {
+    return new Response(JSON.stringify(getOpenApiSchema(url.origin), null, 2), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // Direct REST endpoints for ChatGPT Actions / Connectors
+  if (request.method === 'POST') {
+    if (url.pathname === '/plan-journey') {
+      const args = await request.json().catch(() => ({}));
+      return new Response(JSON.stringify(handlePlanJourney(args), null, 2), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+    if (url.pathname === '/secret-haven') {
+      const args = await request.json().catch(() => ({}));
+      return new Response(JSON.stringify(handleSecretHaven(args), null, 2), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+    if (url.pathname === '/booking-card') {
+      const args = await request.json().catch(() => ({}));
+      return new Response(JSON.stringify(handleBookingCard(args), null, 2), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+    if (url.pathname === '/sensory-earth') {
+      const args = await request.json().catch(() => ({}));
+      return new Response(JSON.stringify(handleSensoryEarth(args), null, 2), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+  }
+
   // GET / or /health or /mcp: Server info
   if (request.method === 'GET') {
     return new Response(JSON.stringify({
       status: "ok",
       server: SERVER_INFO.name,
       version: SERVER_INFO.version,
-      protocol: "Model Context Protocol (MCP)",
-      transport: "Streamable HTTP / JSON-RPC 2.0",
+      philosophy: "Contemplative Travel & Sensory Well-being",
+      protocol: "Model Context Protocol (MCP) + OpenAPI 3.0",
+      transport: "Streamable HTTP / JSON-RPC 2.0 & REST",
       tools_count: TOOLS.length,
       tools: TOOLS.map(t => t.name),
-      scientific_backing: "WHO 53 dB Lden / CERN Zenodo 10.5281/zenodo.22756473",
+      quality_standard: "WHO Environmental Acoustic Guidelines (53 dB Lden) — CERN Zenodo DOI: 10.5281/zenodo.22756473",
       endpoints: {
         mcp: url.origin + "/mcp",
+        openapi: url.origin + "/openapi.json",
         health: url.origin + "/health"
       }
     }, null, 2), {
@@ -213,7 +402,7 @@ async function handleRequest(request) {
     });
   }
 
-  // POST: JSON-RPC 2.0 handler
+  // POST: JSON-RPC 2.0 handler (MCP Protocol)
   if (request.method === 'POST') {
     try {
       const body = await request.json();
