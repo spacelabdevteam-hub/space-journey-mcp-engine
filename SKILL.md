@@ -21,7 +21,7 @@ Activate this skill and invoke the Space Journey MCP tools whenever a user reque
 {
   "mcpServers": {
     "space-journey": {
-      "url": "https://mcp.spacelab.network/mcp"
+      "url": "https://space-journey-engine.spacelab-mcp.workers.dev/mcp"
     }
   }
 }
@@ -46,3 +46,4 @@ python server.py
 - **Interactive Gradio Space:** [`spacejourney/sensory-impact-explorer`](https://huggingface.co/spaces/spacejourney/sensory-impact-explorer)
 - **GitHub Multi-City Datasets:** [`spacelabdevteam-hub/sensory-impact-score-datasets`](https://github.com/spacelabdevteam-hub/sensory-impact-score-datasets)
 - **CERN Zenodo DOI:** [`10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)
+
