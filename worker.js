@@ -7,7 +7,7 @@
 
 const SERVER_INFO = {
   name: "space-journey-mcp-engine",
-  version: "3.4.0",
+  version: "3.5.0",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -44,6 +44,16 @@ const AIRPORTS = {
   "lisbon": { iata: "LIS", name: "Lisbon", lat: 38.7756, lng: -9.1354 },
   "lisboa": { iata: "LIS", name: "Lisboa", lat: 38.7756, lng: -9.1354 },
   "lis": { iata: "LIS", name: "Lisbon", lat: 38.7756, lng: -9.1354 }
+};
+
+
+const CITY_HERO_IMAGES = {
+  "roma": "https://spacejourney.app/wp-content/uploads/2026/04/292541fe-36cf-4333-9af9-49ae4b425401.jpg",
+  "paris": "https://spacejourney.app/wp-content/uploads/2026/05/bypass-landscape-sainte-chapelle-relicario-luz-medieval-v13b-1024x576.jpg",
+  "londres": "https://spacejourney.app/wp-content/uploads/2026/05/9edc6c0f-961c-4164-ad77-e74ddd4ffc71.jpg",
+  "cdmx": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80",
+  "new-york": "https://spacejourney.app/wp-content/uploads/2026/05/nyc-pexels-landscape-Manhattan-aerial-view-helicopt-v14-1024x576.jpg",
+  "miami": "https://spacejourney.app/wp-content/uploads/2026/05/miami-custom-landscape-everglades-airboat-pulso-rio-hierba-Everglades-airboat-speed-v15-1024x576.jpg"
 };
 
 const CITY_KEY_MAP = {
@@ -1912,7 +1922,7 @@ async function handlePlanJourney(args) {
       });
     }
 
-    const dayTitle = lang === 'en' ? ("Day " + d + " - Sensory Wonders & Local Pauses") : (lang.startsWith('pt') ? ("Dia " + d + " - Maravilhas Sensoriais e Pausas Locais") : ("Día " + d + " - Maravillas Culturales y Pausas Serenas"));
+    const dayTitle = lang === 'en' ? "Sensory Wonders & Local Pauses" : (lang.startsWith('pt') ? "Maravilhas Sensoriais e Pausas Locais" : "Maravillas Culturales y Pausas Serenas");
     syncDays.push({
       day: d,
       title: dayTitle,
@@ -1933,6 +1943,7 @@ async function handlePlanJourney(args) {
       },
       body: JSON.stringify({
         title: (lang === 'en' ? "Memorable Journey in " : (lang.startsWith('pt') ? "Expedição Memorável em " : "Mi nueva expedición por ")) + destRaw,
+        cover_image: CITY_HERO_IMAGES[cityKey] || "https://spacejourney.app/wp-content/uploads/2026/04/292541fe-36cf-4333-9af9-49ae4b425401.jpg",
         destination: destRaw,
         lang: lang,
         author_name: agencyName,
@@ -2046,7 +2057,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.4.0"
+      version: "3.5.0"
     },
     servers: [
       {
