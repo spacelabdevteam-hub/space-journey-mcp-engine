@@ -6,13 +6,12 @@
 
 const SERVER_INFO = {
   name: "space-journey-mcp-engine",
-  version: "3.2.0",
+  version: "3.3.0",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres."
 };
 
 const TOOLS = [
-  {
-    name: "plan_contemplative_journey",
+  {\n    name: "plan_contemplative_journey",
     description: "Design memorable, transformative travel itineraries with human pacing, unforgettable cultural wonder, and authentic local sanctuaries. Balances iconic landmarks with serene pauses, golden-hour light, and zero-friction sync with the Space Journey Trip Planner.",
     inputSchema: {
       type: "object",
@@ -21,7 +20,8 @@ const TOOLS = [
         duration_days: { type: "integer", description: "Duration of stay in days (1-7)", default: 3 },
         origin: { type: "string", description: "Origin city or airport code (e.g., Bogota, Madrid, NYC, BOG, MAD)" },
         traveler_profile: { type: "string", description: "Travel style (contemplative, romantic, cultural, solo explorer, family, slow food)", default: "contemplative" },
-        language: { type: "string", description: "Language for the journey guide (en, es, pt)", default: "es" }
+        language: { type: "string", description: "Language for the journey guide (en, es, pt)", default: "es" },
+        agency_name: { type: "string", description: "Optional name of travel agency, partner or AI assistant creating the journey", default: "Space Journey" }
       },
       required: ["destination"]
     }
@@ -94,11 +94,12 @@ function haversine(lat1, lon1, lat2, lon2) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-function handlePlanJourney(args) {
+async function handlePlanJourney(args) {
   const dest = args.destination || "Roma";
   const days = Math.min(Math.max(args.duration_days || 3, 1), 7);
   const lang = args.language || "es";
   const origin = args.origin ? args.origin.toLowerCase().trim() : null;
+  const agencyName = args.agency_name || "Space Journey";
 
   let flightBadge = "";
   if (origin && AIRPORTS[origin] && AIRPORTS[dest.toLowerCase()]) {
@@ -110,29 +111,92 @@ function handlePlanJourney(args) {
     flightBadge = `✈️ ${a1.iata} -> ${a2.iata} (~${hrs}h ${mins}m)`;
   }
 
+  const previewDays = [
+    {
+      day: 1,
+      title: `Llegada Serena y Despertar de los Sentidos en ${dest}`,
+      cards: [
+        {
+          title: `Paseo Crepuscular y Aclimatación en ${dest}`,
+          cardType: "activity",
+          timeMode: "evening",
+          url: `https://spacejourney.app/activa-tu-viaje/?destination=${encodeURIComponent(dest)}`,
+          image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          title: "Estancia de Descanso y Silencio Garantizado",
+          cardType: "accommodation",
+          timeMode: "night",
+          url: `https://spacejourney.app/tours-y-experiencias-vip/?dest=${encodeURIComponent(dest)}&cat=hotels`,
+          image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      atmosphere: "Paseo crepuscular por callejones de adoquín silencioso, aclimatando el cuerpo al latido y aromas de la ciudad.",
+      the_secret: "El patio ajardinado de un antiguo claustro renacentista; el agua de la fuente invita a respirar y soltar el cansancio del viaje.",
+      best_moment: "18:00 - 19:30 (Hora Dorada)"
+    },
+    {
+      day: 2,
+      title: "Maravillas Culturales y el Refugio de los Naranjos",
+      cards: [
+        {
+          title: "Santuario de Luz y Belleza Matutina",
+          cardType: "activity",
+          timeMode: "morning",
+          url: `https://spacejourney.app/ciudad/${dest.toLowerCase()}/?haven=true`,
+          image: "https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      atmosphere: "Exploración cultural a primera hora de la mañana, seguida de una pausa restauradora bajo la sombra de árboles centenarios.",
+      the_secret: "Un mirador elevado secreto sin colas de turistas, con vistas infinitas hacia las cúpulas iluminadas por el atardecer.",
+      best_moment: "09:30 - 12:00 & 16:30 - 19:00"
+    }
+  ];
+
+  let publicUrl = "";
+  let tripId = "";
+
+  try {
+    const syncRes = await fetch("https://spacejourney.app/wp-json/sj/v1/sync-trip", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-sj-token": "sj_sec_mcp_live_2026_solar"
+      },
+      body: JSON.stringify({
+        title: `Expedición Contemplativa por ${dest}`,
+        destination: dest,
+        lang: lang,
+        author_name: agencyName,
+        days: previewDays
+      })
+    });
+    if (syncRes.ok) {
+      const syncData = await syncRes.json();
+      publicUrl = syncData.shareable_url || "";
+      tripId = syncData.trip_id || "";
+    }
+  } catch (err) {
+    // Fallback silencioso
+  }
+
+  if (!publicUrl) {
+    const base = "https://spacejourney.app";
+    publicUrl = lang === "en" ? `${base}/en/my-travel-route/` : (lang === "pt" ? `${base}/pt-br/minha-rota-de-viagem/` : `${base}/ruta/`);
+  }
+
   return {
     destination: dest,
     duration_days: days,
     flight_connectivity: flightBadge || "Conexión directa / Entrada internacional",
     experience_philosophy: "Viaje Memorable con Ritmo Humano: menos listas apresuradas, más asombro genuino, luz dorada y pausas que recordarás durante décadas.",
-    itinerary_preview: [
-      {
-        day: 1,
-        title: `Llegada Serena y Despertar de los Sentidos en ${dest}`,
-        atmosphere: "Paseo crepuscular por callejones de adoquín silencioso, aclimatando el cuerpo al latido y aromas de la ciudad.",
-        the_secret: "El patio ajardinado de un antiguo claustro renacentista; el agua de la fuente invita a respirar y soltar el cansancio del viaje.",
-        best_moment: "18:00 - 19:30 (Hora Dorada)"
-      },
-      {
-        day: 2,
-        title: "Maravillas Culturales y el Refugio de los Naranjos",
-        atmosphere: "Exploración cultural a primera hora de la mañana, seguida de una pausa restauradora bajo la sombra de árboles centenarios.",
-        the_secret: "Un mirador elevado secreto sin colas de turistas, con vistas infinitas hacia las cúpulas iluminadas por el atardecer.",
-        best_moment: "09:30 - 12:00 & 16:30 - 19:00"
-      }
-    ],
+    trip_id: tripId,
+    public_shareable_itinerary_url: publicUrl,
+    agency_attribution: agencyName,
+    itinerary_preview: previewDays,
     quality_seal: "Estándar de Descanso y Bienestar Space Journey (Alineado con directrices OMS <53 dB Lden) — CERN Zenodo DOI: 10.5281/zenodo.22756473",
     zero_friction_tools: {
+      public_shareable_itinerary: publicUrl,
       trip_saver: "https://spacejourney.app/trip-saver/?ref=mcp",
       sensory_trip_planner: `https://spacejourney.app/activa-tu-viaje/?destination=${encodeURIComponent(dest)}&days=${days}&source=mcp_edge`,
       sensory_earth_portal: `https://spacejourney.app/sensory-earth/?dest=${encodeURIComponent(dest)}`
@@ -190,7 +254,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.2.0"
+      version: "3.3.0"
     },
     servers: [
       {
@@ -215,7 +279,8 @@ function getOpenApiSchema(origin) {
                     duration_days: { type: "integer", default: 3 },
                     origin: { type: "string" },
                     traveler_profile: { type: "string", default: "contemplative" },
-                    language: { type: "string", default: "es" }
+                    language: { type: "string", default: "es" },
+                    agency_name: { type: "string", description: "Agency or partner name", default: "Space Journey" }
                   },
                   required: ["destination"]
                 }
@@ -224,7 +289,7 @@ function getOpenApiSchema(origin) {
           },
           responses: {
             "200": {
-              description: "Curated memorable itinerary",
+              description: "Curated memorable itinerary with dynamic public shareable route URL",
               content: { "application/json": { schema: { type: "object" } } }
             }
           }
@@ -353,7 +418,7 @@ async function handleRequest(request) {
   if (request.method === 'POST') {
     if (url.pathname === '/plan-journey') {
       const args = await request.json().catch(() => ({}));
-      return new Response(JSON.stringify(handlePlanJourney(args), null, 2), {
+      return new Response(JSON.stringify(await handlePlanJourney(args), null, 2), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       });
     }
@@ -446,7 +511,7 @@ async function handleRequest(request) {
         let resultData = null;
 
         if (toolName === "plan_contemplative_journey") {
-          resultData = handlePlanJourney(args);
+          resultData = await handlePlanJourney(args);
         } else if (toolName === "discover_secret_haven") {
           resultData = handleSecretHaven(args);
         } else if (toolName === "generate_booking_card") {
