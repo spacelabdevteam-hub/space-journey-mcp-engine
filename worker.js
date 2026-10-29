@@ -1,13 +1,13 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Version: 3.4.0 (Live WordPress Itinerary Sync, Affiliate Router & Agency Co-branding)
+ * Version: 3.5.1 (Live WordPress Itinerary Sync, Affiliate Router & Agency Co-branding)
  * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
  * Philosophy: Memorable & Transformative Travel, Cultural Sanctuaries & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
   name: "space-journey-mcp-engine",
-  version: "3.5.0",
+  version: "3.5.1",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -1943,7 +1943,7 @@ async function handlePlanJourney(args) {
       },
       body: JSON.stringify({
         title: (lang === 'en' ? "Memorable Journey in " : (lang.startsWith('pt') ? "Expedição Memorável em " : "Mi nueva expedición por ")) + destRaw,
-        cover_image: CITY_HERO_IMAGES[cityKey] || "https://spacejourney.app/wp-content/uploads/2026/04/292541fe-36cf-4333-9af9-49ae4b425401.jpg",
+        cover_image: CITY_HERO_IMAGES[destKey] || "https://spacejourney.app/wp-content/uploads/2026/04/292541fe-36cf-4333-9af9-49ae4b425401.jpg",
         destination: destRaw,
         lang: lang,
         author_name: agencyName,
@@ -2057,7 +2057,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.5.0"
+      version: "3.5.1"
     },
     servers: [
       {
