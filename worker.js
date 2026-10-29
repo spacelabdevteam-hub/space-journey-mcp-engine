@@ -1,13 +1,13 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Version: 3.5.1 (Live WordPress Itinerary Sync, Affiliate Router & Agency Co-branding)
+ * Version: 3.5.2 (Curated CDN Image Audit, Anti-Misplacement Fix & Verified City Collages)
  * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
  * Philosophy: Memorable & Transformative Travel, Cultural Sanctuaries & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
-  name: "space-journey-mcp-engine",
-  version: "3.5.1",
+  name: "space-journey-engine",
+  version: "3.5.2",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -51,7 +51,7 @@ const CITY_HERO_IMAGES = {
   "roma": "https://spacejourney.app/wp-content/uploads/2026/04/292541fe-36cf-4333-9af9-49ae4b425401.jpg",
   "paris": "https://spacejourney.app/wp-content/uploads/2026/05/bypass-landscape-sainte-chapelle-relicario-luz-medieval-v13b-1024x576.jpg",
   "londres": "https://spacejourney.app/wp-content/uploads/2026/05/9edc6c0f-961c-4164-ad77-e74ddd4ffc71.jpg",
-  "cdmx": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=80",
+  "cdmx": "https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/05/CDMX-City-Collage-Space-Journey-v2.jpg",
   "new-york": "https://spacejourney.app/wp-content/uploads/2026/05/nyc-pexels-landscape-Manhattan-aerial-view-helicopt-v14-1024x576.jpg",
   "miami": "https://spacejourney.app/wp-content/uploads/2026/05/miami-custom-landscape-everglades-airboat-pulso-rio-hierba-Everglades-airboat-speed-v15-1024x576.jpg"
 };
@@ -675,7 +675,7 @@ const CURATED_CATALOG = {
         "en": "https://spacejourney.app/en/experiencia/templo-mayor-the-sacred-heart-of-the-mexica-empire/",
         "pt": "https://spacejourney.app/pt-br/experiencia/templo-mayor-o-coracao-sagrado-do-imperio-mexicano/"
       },
-      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80",
+      "image": "https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/05/gdainznsyfa.jpg",
       "affiliate": "https://www.getyourguide.com/s/?q=Templo%20Mayor%3A%20The%20sacred%20heart%20of%20the%20Mexica%20Empire%20Mexico%20City&partner_id=IKMIGHN&utm_medium=online_publisher&cmp=mcp_CDM-3279",
       "duration": 150,
       "timeMode": "morning"
@@ -692,7 +692,7 @@ const CURATED_CATALOG = {
         "en": "https://spacejourney.app/en/experiencia/pujol-quintonil-the-olympus-of-mexican-haute-cuisine/",
         "pt": "https://spacejourney.app/pt-br/experiencia/pujol-quintonil-o-olimpo-da-alta-gastronomia-mexicana/"
       },
-      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80",
+      "image": "https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/05/44b9c96e-e14b-484a-984b-3d59d4bb646c.jpg",
       "affiliate": "https://www.getyourguide.com/s/?q=Pujol%20%26%23038%3B%20Quintonil%3A%20The%20Olympus%20of%20Mexican%20haute%20cuisine%20Mexico%20City&partner_id=IKMIGHN&utm_medium=online_publisher&cmp=mcp_CDM-3278",
       "duration": 210,
       "timeMode": "afternoon"
@@ -913,7 +913,7 @@ const CURATED_CATALOG = {
         "en": "https://spacejourney.app/en/experiencia/roma-green-garden-the-urban-resilience-laboratory/",
         "pt": "https://spacejourney.app/pt-br/experiencia/jardim-verde-roma-o-laboratorio-de-resiliencia-urbana/"
       },
-      "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80",
+      "image": "https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/05/94d13783-3836-46ea-9987-eff60fbbf6e3.jpg",
       "affiliate": "https://www.getyourguide.com/s/?q=Roma%20Green%20Garden%20%7C%20The%20urban%20resilience%20laboratory%20Mexico%20City&partner_id=IKMIGHN&utm_medium=online_publisher&cmp=mcp_CDM-3043",
       "duration": 90,
       "timeMode": "morning"
@@ -1909,7 +1909,7 @@ async function handlePlanJourney(args) {
         cardType: "activity",
         timeMode: "morning",
         url: gygSearchUrl,
-        image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=600&q=80",
+        image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80",
         notes: lang === 'en' ? "Curated quiet morning walk away from tourist crowds." : (lang.startsWith('pt') ? "Caminhada matutina serena longe das multidões." : "Paseo matutino sereno alejado de las aglomeraciones turísticas.")
       });
       dayCards.push({
