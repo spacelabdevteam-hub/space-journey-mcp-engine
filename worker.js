@@ -1,13 +1,13 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Version: 3.5.2 (Curated CDN Image Audit, Anti-Misplacement Fix & Verified City Collages)
+ * Version: 3.6.0 (Partner Agency & Concierge Desk Integration, Priority Routing & Bespoke Travel Designer)
  * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
  * Philosophy: Memorable & Transformative Travel, Cultural Sanctuaries & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
   name: "space-journey-engine",
-  version: "3.5.2",
+  version: "3.6.0",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -1845,6 +1845,29 @@ async function handlePlanJourney(args) {
       notes: lang === 'en' ? "Walk free of luggage before check-in or after check-out." : (lang.startsWith('pt') ? "Caminhe livre de malas antes do check-in ou após o check-out." : "Camina libre de maletas antes del check-in o tras el check-out.")
     }
   ];
+
+  // 6. Asistencia Privada & Concierge de Viaje (Space Journey Desk - Daniel o Agencia Partner)
+  const waPhone = "573059148568";
+  const conciergeName = "Daniel";
+  const cityCap = destRaw.charAt(0).toUpperCase() + destRaw.slice(1);
+  let waText = "";
+  if (lang === 'en') {
+    waText = "Hello " + conciergeName + ", I was reviewing my Space Journey itinerary for " + cityCap + " and I would like bespoke concierge assistance to manage my bookings, transfers, and private access.";
+  } else if (lang.startsWith('pt')) {
+    waText = "Olá " + conciergeName + ", estive revisando meu roteiro na Space Journey para " + cityCap + " e gostaria de assistência privada de concierge para gerenciar reservas, transfers e acessos exclusivos.";
+  } else {
+    waText = "Hola " + conciergeName + ", estuve revisando mi itinerario en Space Journey para " + cityCap + " y me gustaría contar con asistencia privada de concierge para gestionar reservas, traslados y accesos prioritarios.";
+  }
+  const conciergeUrl = "https://api.whatsapp.com/send?phone=" + waPhone + "&text=" + encodeURIComponent(waText);
+
+  day0Cards.push({
+    title: lang === 'en' ? ("Private Concierge & Journey Assistant (" + conciergeName + ")") : (lang.startsWith('pt') ? ("Concierge Particular & Gestão de Viagem (" + conciergeName + ")") : ("Asistencia Privada & Concierge Local (" + conciergeName + ")")),
+    cardType: "service",
+    timeMode: "Concierge",
+    url: conciergeUrl,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80",
+    notes: lang === 'en' ? "1-on-1 bespoke coordination for private access, fine dining, and VIP bookings." : (lang.startsWith('pt') ? "Coordenação 1-a-1 sob medida para acessos VIP, gastronomia e reservas exclusivas." : "Coordinación 1-a-1 personalizada para accesos VIP, gastronomía y reservas exclusivas.")
+  });
 
   // Si no es un viaje exclusivo de agencia, añadir alojamiento recomendado
   if (!isAgency) {
