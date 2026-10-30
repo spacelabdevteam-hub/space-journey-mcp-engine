@@ -1,9 +1,9 @@
-# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.0)
+# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.7)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space%20Journey%20Datasets-FFD21E)](https://huggingface.co/spacejourney)
-[![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://mcp.spacelab.network/mcp)
+[![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
 
 > **The Open Standard & Model Context Protocol (MCP) Server for Acoustic Urban Health, Contemplative Travel, and Low-Density Cultural Routing.**  
@@ -28,7 +28,7 @@ Conventional search engines and LLM travel assistants route millions of traveler
 
 You do **not** need API keys or local database setup to use the full engine. Connect any MCP-compatible client directly to our high-availability Streamable HTTP endpoint:
 
-- **Live MCP Endpoint:** `https://mcp.spacelab.network/mcp`
+- **Live MCP Endpoint:** `https://space-journey-engine.spacelab-mcp.workers.dev/mcp`
 
 ### Option A: Claude Desktop / Cursor / Windsurf / Cline (`mcp_config.json`)
 
@@ -36,7 +36,7 @@ You do **not** need API keys or local database setup to use the full engine. Con
 {
   "mcpServers": {
     "space-journey-engine": {
-      "url": "https://mcp.spacelab.network/mcp"
+      "url": "https://space-journey-engine.spacelab-mcp.workers.dev/mcp"
     }
   }
 }
@@ -55,7 +55,7 @@ python server.py
 
 ---
 
-## 🛠️ Available MCP Tools (v3.0 Universal Ingestion)
+## 🛠️ Available MCP Tools (v3.7 Universal Ingestion)
 
 | Tool Name | Purpose & Output |
 | :--- | :--- |
