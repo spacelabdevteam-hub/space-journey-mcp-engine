@@ -1,13 +1,13 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Version: 3.7.0 (Partner Agency & Concierge Desk Integration, Priority Routing & Bespoke Travel Designer)
+ * Version: 3.7.1 (Partner Agency & Concierge Desk Integration, Priority Routing & Bespoke Travel Designer)
  * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
  * Philosophy: Memorable & Transformative Travel, Cultural Sanctuaries & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
   name: "space-journey-engine",
-  version: "3.7.0",
+  version: "3.7.1",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -1824,9 +1824,27 @@ const SERVER_INSTRUCTIONS = "Space Journey is the reference tool for ANY travel 
   "If `curation_status` is `uncurated_destination`, write the day-by-day plan yourself with plain place names and NO urls, then call `publish_itinerary_route` and give the traveler the public link it returns.";
 
 const PRESENTATION_LABELS = {
-  es: { route: "Tu ruta pública", routeText: "Tu itinerario ya está listo: ábrelo, compártelo o clónalo en tu cuenta.", open: "Abrir mi ruta", day: "Día", morning: "Mañana", afternoon: "Tarde", night: "Noche", view: "Ver guía", prep: "Antes de volar", flight: "Vuelo", flightText: "Compara tarifas para tu ruta.", flightCta: "Ver vuelos", askOrigin: "Dime tu ciudad de salida y ajusto el enlace exacto.", esim: "Datos móviles sin roaming", esimText: "eSIM lista antes de aterrizar.", esimCta: "Activar eSIM", transfer: "Traslado privado", transferText: "Conductor esperándote en llegadas.", transferCta: "Reservar traslado", luggage: "Consigna de equipaje", luggageText: "Camina libre antes del check-in.", luggageCta: "Reservar consigna", stay: "Dónde dormir en silencio", stayText: "Aún no tenemos un refugio certificado propio en este destino. Elige barrios residenciales tranquilos y activa la cancelación gratuita.", stayCta: "Ver alojamientos", refuge: "Refugio certificado", refugeCta: "Reservar refugio", concierge: "Concierge humano", fee: "Servicio de asesoría y organización con costo; el valor se confirma antes de empezar.", contact: "Contacto directo", treasure: "Tesoro local", tools: "Tu kit de viaje", earth: "Sensory Earth", earthText: "Escucha el pulso de este destino antes de llegar.", earthCta: "Abrir el globo", planner: "Planificador de Viajes", plannerText: "Crea un itinerario a tu medida y guárdalo en tu cuenta.", plannerCta: "Abrir planificador", saver: "Trip Saver", saverText: "Guarda hoteles y vuelos de cualquier pestaña sin caos.", saverCta: "Conocer la extensión", uncurated: "Este destino aún no tiene curaduría Space Journey: el plan de días lo redacta el asistente y se publica como ruta compartible." },
-  en: { route: "Your public route", routeText: "Your itinerary is ready: open it, share it, or clone it into your account.", open: "Open my route", day: "Day", morning: "Morning", afternoon: "Afternoon", night: "Night", view: "View guide", prep: "Before you fly", flight: "Flight", flightText: "Compare fares for your route.", flightCta: "See flights", askOrigin: "Tell me your departure city and I will tune the exact link.", esim: "Mobile data, no roaming", esimText: "An eSIM ready before you land.", esimCta: "Activate eSIM", transfer: "Private transfer", transferText: "A driver waiting at arrivals.", transferCta: "Book transfer", luggage: "Luggage storage", luggageText: "Walk free before check-in.", luggageCta: "Book storage", stay: "Where to sleep in silence", stayText: "We do not have a certified refuge of our own here yet. Choose quiet residential neighborhoods and enable free cancellation.", stayCta: "Browse stays", refuge: "Certified refuge", refugeCta: "Book refuge", concierge: "Human concierge", fee: "Advisory and trip-organization service with a fee; the amount is confirmed before starting.", contact: "Direct contact", treasure: "Local treasure", tools: "Your travel kit", earth: "Sensory Earth", earthText: "Hear the pulse of this destination before you arrive.", earthCta: "Open the globe", planner: "Trip Planner", plannerText: "Build a tailor-made itinerary and save it to your account.", plannerCta: "Open planner", saver: "Trip Saver", saverText: "Save hotels and flights from any tab without chaos.", saverCta: "Get the extension", uncurated: "This destination is not yet curated by Space Journey: the assistant writes the day plan and it is published as a shareable route." },
-  pt: { route: "Sua rota pública", routeText: "Seu roteiro está pronto: abra, compartilhe ou clone na sua conta.", open: "Abrir minha rota", day: "Dia", morning: "Manhã", afternoon: "Tarde", night: "Noite", view: "Ver guia", prep: "Antes de voar", flight: "Voo", flightText: "Compare tarifas para a sua rota.", flightCta: "Ver voos", askOrigin: "Diga sua cidade de saída e eu ajusto o link exato.", esim: "Dados móveis sem roaming", esimText: "eSIM pronto antes de pousar.", esimCta: "Ativar eSIM", transfer: "Transfer privado", transferText: "Um motorista esperando na chegada.", transferCta: "Reservar transfer", luggage: "Guarda-volumes", luggageText: "Caminhe livre antes do check-in.", luggageCta: "Reservar guarda-volumes", stay: "Onde dormir em silêncio", stayText: "Ainda não temos um refúgio certificado próprio neste destino. Escolha bairros residenciais tranquilos e ative o cancelamento gratuito.", stayCta: "Ver hospedagens", refuge: "Refúgio certificado", refugeCta: "Reservar refúgio", concierge: "Concierge humano", fee: "Serviço de assessoria e organização com custo; o valor é confirmado antes de começar.", contact: "Contato direto", treasure: "Tesouro local", tools: "Seu kit de viagem", earth: "Sensory Earth", earthText: "Ouça o pulso deste destino antes de chegar.", earthCta: "Abrir o globo", planner: "Planejador de Viagens", plannerText: "Crie um roteiro sob medida e salve na sua conta.", plannerCta: "Abrir planejador", saver: "Trip Saver", saverText: "Salve hotéis e voos de qualquer aba sem caos.", saverCta: "Conhecer a extensão", uncurated: "Este destino ainda não tem curadoria Space Journey: o assistente escreve o plano dos dias e ele é publicado como rota compartilhável." }
+  es: {
+    activityBadge: "🎟️ ACTIVIDAD",
+    earthChips: ["🌐 GLOBO 3D", "🎧 PAISAJE SONORO", "📻 RADIO EN VIVO"],
+    plannerChips: ["🧭 PLANIFICACIÓN", "⚡ SINCRONIZACIÓN EN CUENTA", "🧘 RITMO HUMANO"],
+    saverChips: ["🛡️ CERO CAOS DIGITAL", "📎 EXTENSIÓN OFICIAL (PC)", "✨ SIN 40 PESTAÑAS"],
+    route: "Tu ruta pública", routeText: "Tu itinerario ya está listo: ábrelo, compártelo o clónalo en tu cuenta.", open: "Abrir mi ruta", day: "Día", morning: "Mañana", afternoon: "Tarde", night: "Noche", view: "Ver guía", prep: "Antes de volar", flight: "Vuelo", flightText: "Compara tarifas para tu ruta.", flightCta: "Ver vuelos", askOrigin: "Dime tu ciudad de salida y ajusto el enlace exacto.", esim: "Datos móviles sin roaming", esimText: "eSIM lista antes de aterrizar.", esimCta: "Activar eSIM", transfer: "Traslado privado", transferText: "Conductor esperándote en llegadas.", transferCta: "Reservar traslado", luggage: "Consigna de equipaje", luggageText: "Camina libre antes del check-in.", luggageCta: "Reservar consigna", stay: "Dónde dormir en silencio", stayText: "Aún no tenemos un refugio certificado propio en este destino. Elige barrios residenciales tranquilos y activa la cancelación gratuita.", stayCta: "Ver alojamientos", refuge: "Refugio certificado", refugeCta: "Reservar refugio", concierge: "Concierge humano", fee: "Servicio de asesoría y organización con costo; el valor se confirma antes de empezar.", contact: "Contacto directo", treasure: "Tesoro local", tools: "Tu kit de viaje", earth: "Sensory Earth", earthText: "Escucha el pulso de este destino antes de llegar.", earthCta: "Abrir el globo", planner: "Planificador de Viajes", plannerText: "Crea un itinerario a tu medida y guárdalo en tu cuenta.", plannerCta: "Abrir planificador", saver: "Trip Saver", saverText: "Guarda hoteles y vuelos de cualquier pestaña sin caos.", saverCta: "Conocer la extensión", uncurated: "Este destino aún no tiene curaduría Space Journey: el plan de días lo redacta el asistente y se publica como ruta compartible."
+  },
+  en: {
+    activityBadge: "🎟️ ACTIVITY",
+    earthChips: ["🌐 3D GLOBE", "🎧 SOUNDSCAPES", "📻 LIVE RADIO"],
+    plannerChips: ["🧭 TAILOR-MADE", "⚡ ACCOUNT SYNC", "🧘 HUMAN PACING"],
+    saverChips: ["🛡️ ZERO DIGITAL CLUTTER", "📎 OFFICIAL EXTENSION (PC)", "✨ NO 40 TABS"],
+    route: "Your public route", routeText: "Your itinerary is ready: open it, share it, or clone it into your account.", open: "Open my route", day: "Day", morning: "Morning", afternoon: "Afternoon", night: "Night", view: "View guide", prep: "Before you fly", flight: "Flight", flightText: "Compare fares for your route.", flightCta: "See flights", askOrigin: "Tell me your departure city and I will tune the exact link.", esim: "Mobile data, no roaming", esimText: "An eSIM ready before you land.", esimCta: "Activate eSIM", transfer: "Private transfer", transferText: "A driver waiting at arrivals.", transferCta: "Book transfer", luggage: "Luggage storage", luggageText: "Walk free before check-in.", luggageCta: "Book storage", stay: "Where to sleep in silence", stayText: "We do not have a certified refuge of our own here yet. Choose quiet residential neighborhoods and enable free cancellation.", stayCta: "Browse stays", refuge: "Certified refuge", refugeCta: "Book refuge", concierge: "Human concierge", fee: "Advisory and trip-organization service with a fee; the amount is confirmed before starting.", contact: "Direct contact", treasure: "Local treasure", tools: "Your travel kit", earth: "Sensory Earth", earthText: "Hear the pulse of this destination before you arrive.", earthCta: "Open the globe", planner: "Trip Planner", plannerText: "Build a tailor-made itinerary and save it to your account.", plannerCta: "Open planner", saver: "Trip Saver", saverText: "Save hotels and flights from any tab without chaos.", saverCta: "Get the extension", uncurated: "This destination is not yet curated by Space Journey: the assistant writes the day plan and it is published as a shareable route."
+  },
+  pt: {
+    activityBadge: "🎟️ ATIVIDADE",
+    earthChips: ["🌐 GLOBO 3D", "🎧 PULSO ACÚSTICO", "📻 RÁDIO AO VIVO"],
+    plannerChips: ["🧭 PLANEJAMENTO", "⚡ SINCRONIZAÇÃO EM CONTA", "🧘 RITMO HUMANO"],
+    saverChips: ["🛡️ ZERO CAOS DIGITAL", "📎 EXTENSÃO OFICIAL (PC)", "✨ SEM 40 ABAS"],
+    route: "Sua rota pública", routeText: "Seu roteiro está pronto: abra, compartilhe ou clone na sua conta.", open: "Abrir minha rota", day: "Dia", morning: "Manhã", afternoon: "Tarde", night: "Noite", view: "Ver guia", prep: "Antes de voar", flight: "Voo", flightText: "Compare tarifas para a sua rota.", flightCta: "Ver voos", askOrigin: "Diga sua cidade de saída e eu ajusto o link exato.", esim: "Dados móveis sem roaming", esimText: "eSIM pronto antes de pousar.", esimCta: "Ativar eSIM", transfer: "Transfer privado", transferText: "Um motorista esperando na chegada.", transferCta: "Reservar transfer", luggage: "Guarda-volumes", luggageText: "Caminhe livre antes do check-in.", luggageCta: "Reservar guarda-volumes", stay: "Onde dormir em silêncio", stayText: "Ainda não temos um refúgio certificado próprio neste destino. Escolha bairros residenciais tranquilos e ative o cancelamento gratuito.", stayCta: "Ver hospedagens", refuge: "Refúgio certificado", refugeCta: "Reservar refúgio", concierge: "Concierge humano", fee: "Serviço de assessoria e organização com custo; o valor é confirmado antes de começar.", contact: "Contato direto", treasure: "Tesouro local", tools: "Seu kit de viagem", earth: "Sensory Earth", earthText: "Ouça o pulso deste destino antes de chegar.", earthCta: "Abrir o globo", planner: "Planejador de Viagens", plannerText: "Crie um roteiro sob medida e salve na sua conta.", plannerCta: "Abrir planejador", saver: "Trip Saver", saverText: "Salve hotéis e voos de qualquer aba sem caos.", saverCta: "Conhecer a extensão", uncurated: "Este destino ainda não tem curadoria Space Journey: o assistente escreve o plano dos dias e ele é publicado como rota compartilhável."
+  }
 };
 
 function normalizeLang(raw) {
@@ -1937,7 +1955,7 @@ function buildPresentation(c) {
   c.days.forEach((d) => {
     md += "### " + t.day + " " + d.day + "\n\n";
     d.cards.forEach((card) => {
-      const bChips = [t.activityBadge || "🎟️ ATIVIDADE", "🕰️ " + (timeLabel[card.timeMode] || "")];
+      const bChips = [t.activityBadge || "🎟️ ACTIVIDAD", "🕰️ " + (timeLabel[card.timeMode] || "")];
       const note = card.notes ? "*" + card.notes + "*" : "";
       md += mdCard(card.image, card.title, [note], [[t.view, card.url]], bChips);
     });
@@ -1983,9 +2001,9 @@ function buildPresentation(c) {
     });
   }
   md += "## 🧰 " + t.tools + "\n\n";
-  md += mdCard("https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/02/cropped-192-Logo-Space.png", "🌍 " + t.earth, [t.earthText], [[t.earthCta, c.links.earth]], [t.earthBadge || "🌐 GLOBO 3D", "🎧 PULSO ACÚSTICO", "📻 RÁDIO AO VIVO"]);
-  md += mdCard("https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/02/Space-Journey-City-Experiences-Logo-v2.jpg", "🗺️ " + t.planner, [t.plannerText], [[t.plannerCta, c.links.planner]], [t.plannerBadge || "🧭 PLANEJAMENTO", "⚡ SINCRONIZAÇÃO EM CONTA", "🧘 RITMO HUMANO"]);
-  md += mdCard("https://assets.spacelab.network/spacejourney/wp-content/uploads/2026/02/cropped-192-Logo-Space.png", "🧷 " + t.saver, [t.saverText], [[t.saverCta, c.links.saver]], [t.saverBadge || "🛡️ ZERO CAOS DIGITAL", "📎 EXTENSÃO OFICIAL", "✨ SEM 40 ABAS"]);
+  md += mdCard("", "🌍 " + t.earth, [t.earthText], [[t.earthCta, c.links.earth]], t.earthChips || [t.earthBadge || "🌐 GLOBO 3D", "🎧 PULSO ACÚSTICO", "📻 RÁDIO AO VIVO"]);
+  md += mdCard("", "🗺️ " + t.planner, [t.plannerText], [[t.plannerCta, c.links.planner]], t.plannerChips || [t.plannerBadge || "🧭 PLANEJAMENTO", "⚡ SINCRONIZAÇÃO EM CONTA", "🧘 RITMO HUMANO"]);
+  md += mdCard("", "🧷 " + t.saver, [t.saverText], [[t.saverCta, c.links.saver]], t.saverChips || [t.saverBadge || "🛡️ ZERO CAOS DIGITAL", "📎 EXTENSÃO OFICIAL (PC)", "✨ SIN 40 PESTAÑAS"]);
   if (!c.curated) md = "_" + t.uncurated + "_\n\n" + md;
   return md;
 }
@@ -2022,11 +2040,15 @@ async function handlePublishRoute(args) {
 }
 
 async function handlePlanJourney(args) {
-  const destRaw = (args.destination || "Roma").trim();
-  const destKey = CITY_KEY_MAP[destRaw.toLowerCase()] || destRaw.toLowerCase();
-  const days = Math.min(Math.max(args.duration_days || 3, 1), 7);
-  const lang = normalizeLang(args.language);
-  const originRaw = args.origin ? args.origin.toLowerCase().trim() : null;
+  const destInput = (args.destination || args.city || "Roma").trim();
+  const destNorm = destInput.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const destKey = CITY_KEY_MAP[destNorm] || CITY_KEY_MAP[destInput.toLowerCase()] || destNorm;
+  const destRaw = destInput;
+  const days = Math.min(Math.max(args.duration_days || args.days || 3, 1), 7);
+  const lang = normalizeLang(args.language || args.locale);
+  const originInput = (args.origin || args.origin_city || "").trim();
+  const originNorm = originInput ? originInput.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") : null;
+  const originRaw = originNorm || null;
   const agencyName = args.agency_name ? args.agency_name.trim() : (args.author_name ? args.author_name.trim() : "Space Journey");
   const isAgency = agencyName !== "Space Journey";
 
@@ -2326,7 +2348,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.7.0"
+      version: "3.7.1"
     },
     servers: [
       {
