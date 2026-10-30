@@ -1,13 +1,13 @@
 /**
  * Space Journey MCP Engine - Cloudflare Worker Serverless Endpoint
- * Version: 3.7.1 (Partner Agency & Concierge Desk Integration, Priority Routing & Bespoke Travel Designer)
+ * Version: 3.7.2 (Partner Agency & Concierge Desk Integration, Priority Routing & Bespoke Travel Designer)
  * Protocol: Model Context Protocol (MCP) Streamable HTTP + JSON-RPC 2.0 & OpenAPI 3.0
  * Philosophy: Memorable & Transformative Travel, Cultural Sanctuaries & Radical Hospitality (Omotenashi)
  */
 
 const SERVER_INFO = {
   name: "space-journey-engine",
-  version: "3.7.1",
+  version: "3.7.2",
   description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and zero-friction sync with the Space Journey Trip Planner."
 };
 
@@ -2348,7 +2348,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.7.1"
+      version: "3.7.2"
     },
     servers: [
       {
@@ -2503,32 +2503,30 @@ async function handleRequest(request) {
     });
   }
 
-  // Direct REST endpoints
-  if (request.method === 'POST') {
-    if (url.pathname === '/plan-journey') {
-      const args = await request.json().catch(() => ({}));
-      return new Response(JSON.stringify(await handlePlanJourney(args), null, 2), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-    if (url.pathname === '/secret-haven') {
-      const args = await request.json().catch(() => ({}));
-      return new Response(JSON.stringify(handleSecretHaven(args), null, 2), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-    if (url.pathname === '/booking-card') {
-      const args = await request.json().catch(() => ({}));
-      return new Response(JSON.stringify(handleBookingCard(args), null, 2), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
-    if (url.pathname === '/sensory-earth') {
-      const args = await request.json().catch(() => ({}));
-      return new Response(JSON.stringify(handleSensoryEarth(args), null, 2), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-      });
-    }
+  // Direct REST endpoints (Supports both POST with JSON body and GET with query parameters)
+  if (url.pathname === '/plan-journey' && (request.method === 'POST' || request.method === 'GET')) {
+    const args = request.method === 'POST' ? await request.json().catch(() => ({})) : Object.fromEntries(url.searchParams.entries());
+    return new Response(JSON.stringify(await handlePlanJourney(args), null, 2), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+  if (url.pathname === '/secret-haven' && (request.method === 'POST' || request.method === 'GET')) {
+    const args = request.method === 'POST' ? await request.json().catch(() => ({})) : Object.fromEntries(url.searchParams.entries());
+    return new Response(JSON.stringify(handleSecretHaven(args), null, 2), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+  if (url.pathname === '/booking-card' && (request.method === 'POST' || request.method === 'GET')) {
+    const args = request.method === 'POST' ? await request.json().catch(() => ({})) : Object.fromEntries(url.searchParams.entries());
+    return new Response(JSON.stringify(handleBookingCard(args), null, 2), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+  if (url.pathname === '/sensory-earth' && (request.method === 'POST' || request.method === 'GET')) {
+    const args = request.method === 'POST' ? await request.json().catch(() => ({})) : Object.fromEntries(url.searchParams.entries());
+    return new Response(JSON.stringify(handleSensoryEarth(args), null, 2), {
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
   }
 
   // Health and root status endpoint
