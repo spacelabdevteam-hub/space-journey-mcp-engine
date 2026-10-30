@@ -2326,7 +2326,7 @@ function getOpenApiSchema(origin) {
     info: {
       title: "Space Journey Travel Engine",
       description: "The 21st-century travel engine for memorable and transformative journeys. Designing travel with human pace, unforgettable cultural encounters, secret local sanctuaries, and immersive sensory atmospheres.",
-      version: "3.5.1"
+      version: "3.7.0"
     },
     servers: [
       {
