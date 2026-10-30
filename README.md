@@ -1,4 +1,4 @@
-# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.7)
+# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.7.1)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
