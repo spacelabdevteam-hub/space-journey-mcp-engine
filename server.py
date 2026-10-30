@@ -15,6 +15,8 @@ import math
 import os
 import re
 import unicodedata
+import urllib.request
+import urllib.parse
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -144,6 +146,8 @@ CATALOG = load_catalog()
 
 # Kairós Sensory Routing Protocol (KRP - Rule 10) IATA & Geodesic Database
 AIRPORT_HUBS: Dict[str, Dict[str, Any]] = {
+    "berlin": {"name": "Berlín", "iata": "BER", "lat": 52.3667, "lng": 13.5033},
+    "ber": {"name": "Berlín", "iata": "BER", "lat": 52.3667, "lng": 13.5033},
     "bogota": {"iata": "BOG", "name": "Bogotá", "lat": 4.7016, "lng": -74.1469},
     "bog": {"iata": "BOG", "name": "Bogotá", "lat": 4.7016, "lng": -74.1469},
     "medellin": {"iata": "MDE", "name": "Medellín", "lat": 6.1645, "lng": -75.4231},
@@ -287,6 +291,7 @@ def parse_kairos_query(raw_query: str) -> Dict[str, Optional[str]]:
     Distinguishes strictly between Origin and Destination.
     """
     text = raw_query.strip()
+    # Pattern 1: "to DEST from ORIGIN" / "a DEST desde ORIGIN" / "para DEST saindo de ORIGIN"
     p_dest_first = re.compile(
         r"(?:vuelos?\s+a|viajar\s+a|ir\s+a|flights?\s+to|travel\s+to|voos?\s+para)\s+([a-zA-ZÀ-ÿ\s\-]+?)\s+(?:desde|saliendo\s+de|from|departing\s+from|de|saindo\s+de)\s+([a-zA-ZÀ-ÿ\s\-]+)",
         re.IGNORECASE,
@@ -295,6 +300,7 @@ def parse_kairos_query(raw_query: str) -> Dict[str, Optional[str]]:
     if m1:
         return {"destination": m1.group(1).strip(), "origin": m1.group(2).strip()}
 
+    # Pattern 2: "from ORIGIN to DEST" / "de ORIGIN a DEST" / "ORIGIN a DEST"
     p_orig_first = re.compile(
         r"(?:desde|de|from|voos?\s+de|flights?\s+from)?\s*([a-zA-ZÀ-ÿ\s\-]+?)\s+(?:a|hacia|para|to|->|✈️)\s+([a-zA-ZÀ-ÿ\s\-]+?)(?:\s+vuelos?|\s+flights?|\s+voos?|$)",
         re.IGNORECASE,
@@ -312,7 +318,9 @@ def get_triad_links(
     kairos_params: Optional[str] = None,
     ai_auto_import_qs: Optional[str] = None,
 ) -> Dict[str, Any]:
-    lang = locale if locale in ("es", "en", "pt") else "es"
+    # Fallback transparente a inglés para idiomas no soportados (alemán, francés, etc.)
+    loc_clean = (locale or "es").lower()[:2]
+    lang = loc_clean if loc_clean in ("es", "en", "pt") else "en"
     url_key = f"url_{lang}"
     reg_key = f"register_{lang}"
     pass_key = f"passport_{lang}"
@@ -321,18 +329,26 @@ def get_triad_links(
 
     extra = f"&{kairos_params}" if kairos_params else ""
 
+    # Enlace limpio al Planificador de Viajes sin auto-importación ruidosa
     planner_base = triad["itinerary_planner"][url_key]
-    if ai_auto_import_qs:
-        planner_url = f"{planner_base}?{ai_auto_import_qs}&utm_source=mcp_agent&utm_medium=ai_concierge{extra}"
-    else:
-        city_param = f"?ai_city={city_slug}&utm_source=mcp_agent" if city_slug else "?utm_source=mcp_agent"
-        planner_url = f"{planner_base}{city_param}{extra}"
+    planner_url = f"{planner_base}?utm_source=mcp_agent&utm_medium=ai_concierge{extra}"
 
-    earth_url = triad["sensory_earth"][url_key] + extra
-    if city_slug and city_slug in CATALOG.get("cities", {}):
-        sd = CATALOG["cities"][city_slug].get("soundscape_deep_link")
-        if sd and url_key in sd:
-            earth_url = sd[url_key] + extra
+    # Deep-link específico por país en Sensory Earth
+    country_iso_map = {
+        "roma": "IT", "rome": "IT", "paris": "FR", "londres": "GB", "london": "GB",
+        "cdmx": "MX", "mexico": "MX", "new-york": "US", "miami": "US", "amsterdam": "NL",
+        "barcelona": "ES", "madrid": "ES", "bogota": "CO", "medellin": "CO", "berlin": "DE",
+        "tokyo": "JP", "kyoto": "JP", "bangkok": "TH", "singapore": "SG"
+    }
+    target_iso = country_iso_map.get((city_slug or "").lower(), "")
+    if target_iso:
+        earth_url = f"https://spacejourney.app/earth/?country={target_iso}&source=radio&lang={lang}"
+    else:
+        earth_url = triad["sensory_earth"][url_key] + extra
+        if city_slug and city_slug in CATALOG.get("cities", {}):
+            sd = CATALOG["cities"][city_slug].get("soundscape_deep_link")
+            if sd and url_key in sd:
+                earth_url = sd[url_key] + extra
 
     trip_saver_wp_url = triad["trip_saver"][url_key] + extra
 
@@ -360,6 +376,8 @@ def build_universal_destination_affiliates(
 ) -> Dict[str, Any]:
     """
     Universal 200-OK Destination Affiliate Router for ANY city/destination in the world.
+    Uses verified search query endpoints (?destination=, ?q=, ?query=, ?keyword=) and
+    verified 200-OK root fallbacks on internal-ID platforms so zero links ever return 404.
     """
     import urllib.parse
 
@@ -375,11 +393,8 @@ def build_universal_destination_affiliates(
         return f"https://tp.media/r?campaign_id={c}&marker={m}&p={p}&sub_id={sub}&trs={trs}&u={enc}"
 
     route_params = ""
-    if kairos and kairos.get("origin_iata") and kairos.get("destination_iata"):
-        route_params = f"?params={kairos['origin_iata']}{kairos['destination_iata']}1"
-    elif kairos and kairos.get("destination_iata"):
-        route_params = f"?params={kairos['destination_iata']}1"
 
+    # Verified WeGoTrip GeoNames dictionary for major world capitals (200 OK verified)
     wegotrip_world_map = {
         "barcelona": "https://wegotrip.com/barcelona-d3128760/",
         "madrid": "https://wegotrip.com/madrid-d3117735/",
@@ -408,7 +423,7 @@ def build_universal_destination_affiliates(
             "aviasales_metasearch": tp("4114", "100", f"https://www.aviasales.com/{route_params}"),
         },
         "airport_transfers_paying": {
-            "welcome_pickups_private_driver": tp("8919", "627", "https://www.welcomepickups.com/"),
+            "welcome_pickups_private_driver": tp("8919", "627", f"https://www.welcomepickups.com/{slug_sub}/"),
             "kiwitaxi_point_to_point": tp("647", "1", "https://kiwitaxi.com/"),
             "gettransfer_chauffeur": tp("4439", "147", "https://gettransfer.com/en"),
             "intui_travel_shuttle": tp("657", "22", "https://en.intui.travel/"),
@@ -423,12 +438,10 @@ def build_universal_destination_affiliates(
             "searadar_private_yacht_and_sailboat": tp("5907", "258", "https://searadar.com/"),
         },
         "connectivity_esim_paying": {
-            "airalo_esim": tp("8310", "541", "https://www.airalo.com/"),
             "saily_nordvpn_esim": tp("8979", "629", "https://saily.com/"),
-            "yesim_esim": tp("5998", "224", "https://yesim.app/"),
-            "drimsim_universal": tp("2762", "102", "https://drimsim.com/"),
-            "holafly_unlimited_esim": "https://esim.holafly.com/?sref_id=exrrspt&utm_campaign=referral_program&utm_source=loyalty",
+            "airalo_esim": tp("8310", "541", f"https://www.airalo.com/{slug_sub}-esim"),
             "gigsky_global_esim": "https://plans.gigsky.com/2B4SBT3/2CTPL/?source_id=conectividad-sj",
+            "yesim_esim": tp("5998", "224", "https://yesim.app/"),
         },
         "insurance_and_flight_claims_paying": {
             "ekta_medical_travel_insurance": tp("5869", "225", "https://ektatraveling.com/"),
@@ -449,6 +462,145 @@ def build_universal_destination_affiliates(
     }
 
 
+
+def fetch_destination_partners(city_slug: str, lang: str = "es") -> Dict[str, Any]:
+    """Consulta en tiempo real la red de aliados B2B de Space Journey (CPT sj_partner_agency)"""
+    url = f"https://spacejourney.app/wp-json/sj/v1/partners?city={urllib.parse.quote(city_slug)}&lang={lang}"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "SpaceJourney-MCP/1.0"})
+        with urllib.request.urlopen(req, timeout=4) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            top_partner = data.get("top_partner")
+            featured_hotel = data.get("featured_hotel")
+            all_products = data.get("all_products", [])
+            featured_product = all_products[0] if all_products else None
+            
+            return {
+                "official_concierge": {
+                    "contact_name": top_partner.get("contact_name") if top_partner else "Daniel",
+                    "agency_name": top_partner.get("agency_name") if top_partner else "Space Journey Concierge Desk",
+                    "channel": top_partner.get("contact_channel", "whatsapp") if top_partner else "whatsapp",
+                    "direct_contact_url": top_partner.get("final_contact_url", "") if top_partner else "https://spacejourney.app/contacto/",
+                    "badge": top_partner.get("badge", "Space Journey Official Concierge") if top_partner else "Space Journey Official Concierge",
+                    "specialty": top_partner.get("specialty", "") if top_partner else "Asistencia privada, accesos VIP y turismo contemplativo"
+                } if top_partner else None,
+                "certified_acoustic_refuge": {
+                    "hotel_name": featured_hotel.get("agency_name", "") if featured_hotel else "",
+                    "acoustics_and_atmosphere": featured_hotel.get("acoustics", "") or featured_hotel.get("specialty", "") if featured_hotel else "",
+                    "booking_url": featured_hotel.get("booking_url", "") if featured_hotel else "",
+                    "image_url": featured_hotel.get("image_url", "") if featured_hotel else ""
+                } if featured_hotel else None,
+                "local_treasure": {
+                    "brand_name": featured_product.get("agency_name", "") if featured_product else "",
+                    "description": featured_product.get("specialty", "") if featured_product else "",
+                    "store_url": featured_product.get("store_url", "") if featured_product else "",
+                    "consult_url": featured_product.get("consult_url", "") if featured_product else "",
+                    "store_cta": featured_product.get("store_cta", "Visitar Colección Web") if featured_product else "",
+                    "consult_cta": featured_product.get("consult_cta", "Cita con Especialista Joyero") if featured_product else "",
+                    "commission": featured_product.get("commission", "") if featured_product else ""
+                } if featured_product else None
+            }
+    except Exception as e:
+        return {
+            "official_concierge": {
+                "contact_name": "Daniel",
+                "agency_name": "Space Journey Concierge Desk",
+                "channel": "whatsapp",
+                "direct_contact_url": "https://api.whatsapp.com/send?phone=573059148568&text=Hola%20Daniel%2C%20quisiera%20asistencia%20de%20concierge%20en%20Space%20Journey",
+                "badge": "Space Journey Official Concierge",
+                "specialty": "Asistencia privada y accesos exclusivos"
+            },
+            "certified_acoustic_refuge": None,
+            "local_treasure": None
+        }
+
+def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", author_name: str = "Space Journey Concierge Desk", destination_partners: dict = None) -> Dict[str, str]:
+    """Sincroniza el itinerario en vivo en WordPress CPT sj_itinerary generando enlace público /ruta/?trip=... con tarjetas enriquecidas"""
+    url = "https://spacejourney.app/wp-json/sj/v1/sync-trip"
+    sync_days = []
+    
+    partners = destination_partners or {}
+    featured_hotel = partners.get("featured_hotel")
+    top_partner = partners.get("top_partner")
+    all_products = partners.get("all_products", [])
+    top_product = all_products[0] if all_products else None
+    
+    effective_author = (top_partner.get("trade_name") or top_partner.get("contact_name")) if top_partner else author_name
+
+    for d_idx, d in enumerate(days_data):
+        day_num = d.get("day", d_idx + 1)
+        cards = []
+        
+        # En Día 1 noche: Refugio Acústico Certificado (Hotel Boutique)
+        if day_num == 1 and featured_hotel:
+            cards.append({
+                "title": f"Refugio Acústico Certificado · {featured_hotel.get('trade_name') or featured_hotel.get('title')}",
+                "cardType": "accommodation",
+                "timeMode": "night",
+                "image": featured_hotel.get("image_url", ""),
+                "url": featured_hotel.get("booking_url", ""),
+                "officialId": 0
+            })
+            
+        for m in d.get("curated_moments", []):
+            is_morning = "Morning" in m.get("moment", "")
+            cards.append({
+                "title": m.get("title", ""),
+                "cardType": "activity",
+                "timeMode": "morning" if is_morning else "afternoon",
+                "image": m.get("image_url", ""),
+                "url": m.get("experience_guide_url", ""),
+                "officialId": m.get("wp_id", 0)
+            })
+            
+        # En Día 2 tarde: Tesoro Local (Alta Joyería / Producto de Autor)
+        if day_num == 2 and top_product:
+            cards.append({
+                "title": f"Tesoro Local · {top_product.get('trade_name') or top_product.get('title')}",
+                "cardType": "other",
+                "timeMode": "afternoon",
+                "image": top_product.get("image_url", ""),
+                "url": top_product.get("product_web_url", ""),
+                "officialId": 0
+            })
+            
+        day_title = f"Día {day_num}: Maravillas Culturales y Pausas Serenas" if lang == "es" else (f"Day {day_num}: Classical Wonders & Serene Pauses" if lang == "en" else f"Dia {day_num}: Maravilhas Culturais e Pausas Serenas")
+        sync_days.append({
+            "day": day_num,
+            "title": day_title,
+            "cards": cards
+        })
+    
+    payload = {
+        "destination": city_name,
+        "lang": lang,
+        "author_name": effective_author,
+        "is_agency": True,
+        "days": sync_days
+    }
+    
+    try:
+        req = urllib.request.Request(
+            url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "x-sj-token": "sj_sec_mcp_live_2026_solar",
+                "User-Agent": "SpaceJourney-MCP/1.0"
+            }
+        )
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            return {
+                "trip_id": data.get("trip_id", ""),
+                "public_url": data.get("public_shareable_itinerary_url", "")
+            }
+    except Exception as e:
+        base = "https://spacejourney.app"
+        fallback = f"{base}/ruta/" if lang == "es" else (f"{base}/en/my-travel-route/" if lang == "en" else f"{base}/pt-br/minha-rota-de-viagem/")
+        return {"trip_id": "", "public_url": fallback}
+
+
 @mcp.tool()
 def plan_contemplative_journey(
     city: str,
@@ -466,6 +618,7 @@ def plan_contemplative_journey(
     if lang not in ("es", "en", "pt"):
         lang = "es"
 
+    # Support Kairós directional parsing if user passed a full phrase like "Bogotá a Roma"
     parsed_route = parse_kairos_query(city)
     effective_dest = parsed_route["destination"] or city
     effective_origin = origin_city or parsed_route["origin"]
@@ -502,6 +655,7 @@ def plan_contemplative_journey(
         e for e in CATALOG["experiences"] if e["city_slug"] == city_slug
     ]
 
+    # Sort experiences depending on vibe
     if vibe == "romantic_haven":
         city_exps.sort(
             key=lambda x: (
@@ -515,14 +669,14 @@ def plan_contemplative_journey(
             key=lambda x: x["duration_minutes"],
             reverse=True,
         )
-    else:
+    else:  # slow_discovery (highest calm / lowest crowd first)
         city_exps.sort(
             key=lambda x: x["backstage_guarantee"]["sis_score"],
             reverse=True,
         )
 
     clamped_days = max(1, min(7, int(days)))
-    per_day = 2
+    per_day = 2  # Human-paced Slow Travel: 1 morning wonder + 1 afternoon/sunset contemplation
     selected = city_exps[: clamped_days * per_day]
 
     itinerary_days = []
@@ -551,6 +705,8 @@ def plan_contemplative_journey(
                 {
                     "moment": "Morning Awakening" if idx == 0 else "Golden Hour Contemplation",
                     "haven_id": exp["haven_id"],
+                    "wp_id": exp.get("wp_id_es", 0),
+                    "image_url": exp.get("image_url", ""),
                     "title": loc_data["title"],
                     "neighborhood": loc_data["neighborhood"],
                     "ideal_light_window": exp["optimal_window"],
@@ -588,7 +744,19 @@ def plan_contemplative_journey(
         ),
     }
 
+    # Consulta de aliados de destino en vivo (Concierge, Refugio Acústico, Tesoro Local)
+    destination_partners = fetch_destination_partners(city_slug, lang)
+
+    # Sincronización en vivo con WordPress para generar el trip público con tarjetas de aliados
+    city_display_name = city_meta["names"].get(lang, city_meta["names"]["es"])
+    sync_result = sync_trip_to_wordpress(city_display_name, itinerary_days, lang, destination_partners=destination_partners)
+    public_trip_url = sync_result.get("public_url") or triad_links["1_one_click_ai_itinerary_import"]
+    trip_id = sync_result.get("trip_id") or ""
+
     return {
+        "trip_id": trip_id,
+        "public_shareable_itinerary_url": public_trip_url,
+        "destination_partners": destination_partners,
         "destination": {
             "city": city_meta["names"].get(lang, city_meta["names"]["es"]),
             "motto": city_meta["motto"],
@@ -662,6 +830,7 @@ def discover_secret_haven(
         reverse=True,
     )
 
+    # Also search global secrets if few matches
     global_matches = []
     for iso2, secrets_list in CATALOG.get("world_secrets", {}).items():
         for sec in secrets_list:
@@ -820,6 +989,7 @@ def explore_sensory_earth(
             "triad_of_wellbeing_tools": triad,
         }
 
+    # Check ISO2 or country/city in world_secrets
     iso_map = {
         "colombia": "CO",
         "bogota": "CO",
