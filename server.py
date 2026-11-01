@@ -20,6 +20,70 @@ import urllib.parse
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+TOOL_METADATA: Dict[str, Dict[str, Any]] = {
+    "plan_contemplative_journey": {
+        "readOnlyHint": False,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+        "annotations": {
+            "readOnlyHint": False,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": True,
+        },
+    },
+    "discover_secret_haven": {
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+        "annotations": {
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": False,
+        },
+    },
+    "generate_booking_card": {
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+        "annotations": {
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": False,
+        },
+    },
+    "explore_sensory_earth": {
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+        "annotations": {
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": False,
+        },
+    },
+    "publish_itinerary_route": {
+        "readOnlyHint": False,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+        "annotations": {
+            "readOnlyHint": False,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": True,
+        },
+    },
+}
+
+
 try:
     from mcp.server.fastmcp import FastMCP
     mcp = FastMCP("space-journey-engine")
@@ -61,14 +125,24 @@ except Exception:
                     sys.stdout.write(json.dumps(resp) + "\n")
                     sys.stdout.flush()
                 elif method == "tools/list":
-                    tools_list = [
-                        {
+                    tools_list = []
+                    for k, v in self.tools.items():
+                        meta = TOOL_METADATA.get(k, {})
+                        tools_list.append({
                             "name": k,
                             "description": (v.__doc__ or "").strip(),
+                            "readOnlyHint": meta.get("readOnlyHint", False),
+                            "destructiveHint": meta.get("destructiveHint", False),
+                            "idempotentHint": meta.get("idempotentHint", True),
+                            "openWorldHint": meta.get("openWorldHint", False),
+                            "annotations": meta.get("annotations", {
+                                "readOnlyHint": meta.get("readOnlyHint", False),
+                                "destructiveHint": meta.get("destructiveHint", False),
+                                "idempotentHint": meta.get("idempotentHint", True),
+                                "openWorldHint": meta.get("openWorldHint", False),
+                            }),
                             "inputSchema": {"type": "object"},
-                        }
-                        for k, v in self.tools.items()
-                    ]
+                        })
                     resp = {"jsonrpc": "2.0", "id": req_id, "result": {"tools": tools_list}}
                     sys.stdout.write(json.dumps(resp) + "\n")
                     sys.stdout.flush()
@@ -1054,6 +1128,34 @@ def explore_sensory_earth(
         "triad_of_wellbeing_tools": triad,
     }
 
+
+
+@mcp.tool()
+def publish_itinerary_route(
+    destination: str,
+    days: List[Dict[str, Any]],
+    language: str = "es",
+    author_name: str = "Space Journey Concierge Desk",
+) -> Dict[str, Any]:
+    """Publish a custom day-by-day itinerary route to the Space Journey public platform and return its shareable link."""
+    lang = "es" if language.lower().startswith("es") else ("pt" if language.lower().startswith("pt") else "en")
+    partners = fetch_destination_partners(destination, lang=lang)
+    sync_res = sync_trip_to_wordpress(
+        city_name=destination,
+        days_data=days,
+        lang=lang,
+        author_name=author_name,
+        destination_partners=partners,
+    )
+    triad = get_triad_links(lang)
+    return {
+        "status": "published",
+        "destination": destination,
+        "language": lang,
+        "shareable_route_url": sync_res.get("public_url"),
+        "trip_id": sync_res.get("trip_id"),
+        "triad_of_wellbeing_tools": triad,
+    }
 
 if __name__ == "__main__":
     mcp.run()
