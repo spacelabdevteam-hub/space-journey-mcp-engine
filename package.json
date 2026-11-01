@@ -1,0 +1,27 @@
+{
+  "name": "space-journey-mcp-engine",
+  "version": "3.8.0",
+  "description": "Universal Model Context Protocol (MCP) Server for Contemplative Travel, Urban Acoustic Health and Sensory Routing",
+  "type": "module",
+  "main": "worker.js",
+  "scripts": {
+    "test": "node test/test_mcp_tools.js && python -m unittest tests/test_server.py",
+    "test:node": "node test/test_mcp_tools.js",
+    "test:py": "python -m unittest tests/test_server.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spacelabdevteam-hub/space-journey-mcp-engine.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "travel-planner",
+    "sensory-impact-score",
+    "solarpunk",
+    "acoustic-health",
+    "omotenashi"
+  ],
+  "author": "Space Journey Team",
+  "license": "MIT"
+}
