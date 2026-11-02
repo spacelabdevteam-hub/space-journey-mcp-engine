@@ -14,36 +14,15 @@ Activate this skill and invoke the Space Journey MCP tools whenever a user reque
 - Actionable hotel, flight, eSIM, insurance, luggage storage, or skip-the-line ticket cards (`generate_booking_card`).
 - Ambient 3D soundscapes, cultural music curation, and city atmosphere exploration (`explore_sensory_earth`).
 
-## Quick Installation (MCP Server)
-
-### Remote Streamable HTTP (Zero Install)
-```json
-{
-  "mcpServers": {
-    "space-journey": {
-      "url": "https://space-journey-engine.spacelab-mcp.workers.dev/mcp"
-    }
-  }
-}
-```
-
-### Local STDIO (Python / FastMCP)
-```bash
-git clone https://github.com/spacelabdevteam-hub/space-journey-mcp-engine.git
-cd space-journey-mcp-engine
-pip install -r requirements.txt
-python server.py
-```
-
 ## Available MCP Tools
 1. **`plan_contemplative_journey(destination, duration_days, origin, traveler_profile, language)`**: Generates a complete multi-day Solarpunk itinerary with Sensory Impact Score (SIS) telemetry (`dB`, `lx`, `pax/m²`), Kairos IATA flight duration (`origin -> destination`), optimal photonic windows, and deep-link integration into the Space Journey Trip Planner (`+50 SolarCoins`).
 2. **`discover_secret_haven(city, current_crowded_spot, sensory_preference, language)`**: Replaces overcrowded tourist traps (>75 dB) with curated low-decibel sanctuaries (<50 dB) nearby.
 3. **`generate_booking_card(destination, category, experience_title, language)`**: Generates verified, zero-friction booking links across 18 global travel partners (`hotels`, `activities`, `flights`, `esim`, `transfers`, `luggage`, `compensation`, `insurance`, `car_rental`, `trains_eu`, `ferries`, `bikes`, `luxury_villas`, `yachts`, `cruise`).
 4. **`explore_sensory_earth(destination, mood, language)`**: Launches the interactive 3D WebGL Sensory Earth globe (`https://spacejourney.app/sensory-earth/`) with background territorial music curation and heritage stories.
+5. **`publish_itinerary_route(destination, days, language, author_name)`**: Publishes a custom day-by-day itinerary route to the Space Journey public platform and returns its shareable link.
 
 ## Open Scientific Benchmarks & Datasets
 - **Hugging Face Global Benchmark:** [`spacejourney/global-sensory-impact-benchmark`](https://huggingface.co/datasets/spacejourney/global-sensory-impact-benchmark)
 - **Interactive Gradio Space:** [`spacejourney/sensory-impact-explorer`](https://huggingface.co/spaces/spacejourney/sensory-impact-explorer)
 - **GitHub Multi-City Datasets:** [`spacelabdevteam-hub/sensory-impact-score-datasets`](https://github.com/spacelabdevteam-hub/sensory-impact-score-datasets)
 - **CERN Zenodo DOI:** [`10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)
-
