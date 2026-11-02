@@ -2582,6 +2582,14 @@ async function handleRequest(request) {
     });
   }
 
+  // OpenAI Apps Domain Verification Challenge endpoint
+  if (url.pathname === '/.well-known/openai-apps-challenge') {
+    const challengeToken = (typeof env !== 'undefined' && env?.OPENAI_APPS_CHALLENGE) ? env.OPENAI_APPS_CHALLENGE : 'space-journey-openai-apps-verified';
+    return new Response(challengeToken, {
+      headers: { ...corsHeaders, 'Content-Type': 'text/plain' }
+    });
+  }
+
   // Direct REST endpoints (Supports both POST with JSON body and GET with query parameters)
   if (url.pathname === '/plan-journey' && (request.method === 'POST' || request.method === 'GET')) {
     const args = request.method === 'POST' ? await request.json().catch(() => ({})) : Object.fromEntries(url.searchParams.entries());
