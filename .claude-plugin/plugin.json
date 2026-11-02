@@ -1,9 +1,9 @@
 {
   "$schema": "https://anthropic.com/schemas/claude-plugin.json",
   "name": "space-journey-engine",
-  "displayName": "Space Journey — Turismo Contemplativo",
+  "displayName": "Space Journey \u2014 Turismo Contemplativo",
   "version": "3.8.0",
-  "description": "El estándar mundial de Turismo Contemplativo y Conexión Sensorial para Claude. Itinerarios con ritmo humano, santuarios serenos sin aglomeraciones y la Tríada de Bienestar.",
+  "description": "El est\u00e1ndar mundial de Turismo Contemplativo y Conexi\u00f3n Sensorial para Claude. Itinerarios con ritmo humano, santuarios serenos sin aglomeraciones y la Tr\u00edada de Bienestar.",
   "author": {
     "name": "Space Journey",
     "email": "spacelab.devteam@gmail.com",
@@ -12,7 +12,6 @@
   "homepage": "https://spacejourney.app",
   "repository": "https://github.com/spacelabdevteam-hub/space-journey-mcp-engine",
   "license": "MIT",
-  "icon": "icon.png",
   "keywords": [
     "travel",
     "slow-travel",
