@@ -47,11 +47,15 @@ You do **not** need API keys or local database setup to use the full engine. Con
 
 If you are developing offline or auditing the open Python reference implementation with the local `public_benchmark_index_v3.json` dataset:
 
-```bash
-git clone https://github.com/spacelabdevteam-hub/space-journey-mcp-engine.git
-cd space-journey-mcp-engine
-pip install mcp
-python server.py
+```json
+{
+  "mcpServers": {
+    "space-journey-engine": {
+      "command": "python",
+      "args": ["server.py"]
+    }
+  }
+}
 ```
 
 ---
