@@ -84,6 +84,72 @@ TOOL_METADATA: Dict[str, Dict[str, Any]] = {
 }
 
 
+TOOL_SCHEMAS: Dict[str, Dict[str, Any]] = {
+    "plan_contemplative_journey": {
+        "type": "object",
+        "properties": {
+            "city": {"type": "string", "description": "Destination city (e.g. Rome, Paris, CDMX, Tokyo, London, NYC, Miami, Bogota)"},
+            "destination": {"type": "string", "description": "Destination city name (alias for city)"},
+            "days": {"type": "integer", "description": "Duration in days (1-7)", "default": 3},
+            "duration_days": {"type": "integer", "description": "Duration in days (alias for days)", "default": 3},
+            "vibe": {"type": "string", "description": "Travel style", "default": "slow_discovery"},
+            "origin_city": {"type": "string", "description": "Origin city (e.g. Bogota, Madrid, NYC)"},
+            "origin": {"type": "string", "description": "Origin city (alias for origin_city)"},
+            "locale": {"type": "string", "description": "Language: es, en, pt", "default": "es"},
+            "language": {"type": "string", "description": "Language code (alias for locale)", "default": "es"}
+        },
+        "required": ["city"]
+    },
+    "discover_secret_haven": {
+        "type": "object",
+        "properties": {
+            "area_or_landmark": {"type": "string", "description": "Landmark, neighborhood or area (e.g. Colosseum, Trastevere, Montmartre, Chapultepec)"},
+            "city": {"type": "string", "description": "City name (e.g. Rome, Paris, CDMX, London, New York)", "default": "Rome"},
+            "current_crowded_spot": {"type": "string", "description": "Busy spot to find a secret haven nearby (alias for area_or_landmark)"},
+            "time_of_day": {"type": "string", "description": "Time of day (e.g. 18:00, Golden Hour, Morning, Night)", "default": "Golden Hour"},
+            "sensory_preference": {"type": "string", "description": "Atmosphere preference (historic courtyards, secret gardens, serene viewpoints)", "default": "historic courtyards"},
+            "locale": {"type": "string", "description": "Language: es, en, pt", "default": "es"},
+            "language": {"type": "string", "description": "Language code (alias for locale)", "default": "es"}
+        },
+        "required": ["area_or_landmark"]
+    },
+    "generate_booking_card": {
+        "type": "object",
+        "properties": {
+            "haven_id": {"type": "string", "description": "Destination city or haven ID (e.g. Rome, Paris, CDMX, MIA-3380)"},
+            "destination": {"type": "string", "description": "Destination city name (alias for haven_id)"},
+            "category": {"type": "string", "description": "Category (hotels, activities, flights, esim, transfers, luggage)", "default": "hotels"},
+            "experience_title": {"type": "string", "description": "Optional specific experience or stay title"},
+            "locale": {"type": "string", "description": "Language: es, en, pt", "default": "es"},
+            "language": {"type": "string", "description": "Language code (alias for locale)", "default": "es"}
+        },
+        "required": ["haven_id"]
+    },
+    "explore_sensory_earth": {
+        "type": "object",
+        "properties": {
+            "country_or_city": {"type": "string", "description": "City or country to explore (e.g. Rome, Italy, Mexico, Japan)"},
+            "destination": {"type": "string", "description": "Destination name (alias for country_or_city)"},
+            "mood": {"type": "string", "description": "Atmosphere mood (golden hour, botanical, ancestral, nocturnal)", "default": "golden hour"},
+            "locale": {"type": "string", "description": "Language: es, en, pt", "default": "es"},
+            "language": {"type": "string", "description": "Language code (alias for locale)", "default": "es"}
+        },
+        "required": ["country_or_city"]
+    },
+    "publish_itinerary_route": {
+        "type": "object",
+        "properties": {
+            "destination": {"type": "string", "description": "Destination city"},
+            "days": {"type": "array", "items": {"type": "object"}, "description": "Array of day objects with morning, afternoon, evening activities"},
+            "language": {"type": "string", "description": "Language: es, en, pt", "default": "es"},
+            "locale": {"type": "string", "description": "Language code (alias for language)", "default": "es"},
+            "author_name": {"type": "string", "description": "Author name", "default": "Space Journey Concierge Desk"}
+        },
+        "required": ["destination", "days"]
+    }
+}
+
+
 try:
     from mcp.server.fastmcp import FastMCP
     mcp = FastMCP("space-journey-engine")
@@ -124,6 +190,10 @@ except Exception:
                     }
                     sys.stdout.write(json.dumps(resp) + "\n")
                     sys.stdout.flush()
+                elif method == "ping":
+                    resp = {"jsonrpc": "2.0", "id": req_id, "result": {}}
+                    sys.stdout.write(json.dumps(resp) + "\n")
+                    sys.stdout.flush()
                 elif method == "tools/list":
                     tools_list = []
                     for k, v in self.tools.items():
@@ -141,7 +211,7 @@ except Exception:
                                 "idempotentHint": meta.get("idempotentHint", True),
                                 "openWorldHint": meta.get("openWorldHint", False),
                             }),
-                            "inputSchema": {"type": "object"},
+                            "inputSchema": TOOL_SCHEMAS.get(k, {"type": "object"}),
                         })
                     resp = {"jsonrpc": "2.0", "id": req_id, "result": {"tools": tools_list}}
                     sys.stdout.write(json.dumps(resp) + "\n")
@@ -151,16 +221,44 @@ except Exception:
                     tname = params.get("name")
                     targs = params.get("arguments", {})
                     if tname in self.tools:
-                        out = self.tools[tname](**targs)
-                        resp = {
-                            "jsonrpc": "2.0",
-                            "id": req_id,
-                            "result": {
-                                "content": [
-                                    {"type": "text", "text": json.dumps(out, ensure_ascii=False, indent=2)}
-                                ]
-                            },
-                        }
+                        try:
+                            call_args = dict(targs) if targs else {}
+                            if tname == "discover_secret_haven":
+                                if "area_or_landmark" not in call_args:
+                                    call_args["area_or_landmark"] = call_args.get("current_crowded_spot") or call_args.get("city") or "Colosseum"
+                            elif tname == "plan_contemplative_journey":
+                                if "city" not in call_args and "destination" in call_args:
+                                    call_args["city"] = call_args["destination"]
+                                if "days" not in call_args and "duration_days" in call_args:
+                                    call_args["days"] = call_args["duration_days"]
+                            elif tname == "generate_booking_card":
+                                if "haven_id" not in call_args and "destination" in call_args:
+                                    call_args["haven_id"] = call_args["destination"]
+                            elif tname == "explore_sensory_earth":
+                                if "country_or_city" not in call_args and "destination" in call_args:
+                                    call_args["country_or_city"] = call_args["destination"]
+
+                            out = self.tools[tname](**call_args)
+                            resp = {
+                                "jsonrpc": "2.0",
+                                "id": req_id,
+                                "result": {
+                                    "content": [
+                                        {"type": "text", "text": json.dumps(out, ensure_ascii=False, indent=2)}
+                                    ]
+                                },
+                            }
+                        except Exception as e:
+                            resp = {
+                                "jsonrpc": "2.0",
+                                "id": req_id,
+                                "result": {
+                                    "isError": True,
+                                    "content": [
+                                        {"type": "text", "text": f"Error in tool '{tname}': {str(e)}"}
+                                    ]
+                                },
+                            }
                     else:
                         resp = {
                             "jsonrpc": "2.0",
@@ -909,17 +1007,26 @@ def plan_contemplative_journey(
 
 @mcp.tool()
 def discover_secret_haven(
-    area_or_landmark: str,
+    area_or_landmark: str = "Colosseum",
+    city: Optional[str] = None,
+    current_crowded_spot: Optional[str] = None,
+    time_of_day: Optional[str] = None,
+    sensory_preference: Optional[str] = None,
     locale: str = "es",
+    language: Optional[str] = None,
+    **kwargs,
 ) -> Dict[str, Any]:
     """
     Finds peaceful sanctuaries, hidden gardens, crowd-free viewpoints, and curated cultural experiences near a specific neighborhood, landmark, or city (e.g. 'Trastevere', 'Colosseum', 'Montmartre', 'Chapultepec', 'Central Park', 'Everglades', 'Westminster').
     """
-    lang = locale.lower()[:2] if locale else "es"
+    lang = (language or locale or "es").lower()[:2]
     if lang not in ("es", "en", "pt"):
         lang = "es"
 
-    q = normalize_str(area_or_landmark)
+    target_query = area_or_landmark or current_crowded_spot or city or "Colosseum"
+    if city and city.lower() not in target_query.lower():
+        target_query = f"{city} {target_query}"
+    q = normalize_str(target_query)
     matches = []
 
     for exp in CATALOG["experiences"]:
