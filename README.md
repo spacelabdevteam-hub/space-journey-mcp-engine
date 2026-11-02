@@ -21,7 +21,7 @@ Conventional search engines and LLM travel assistants route millions of traveler
 1. **Acoustic & Photic Urban Telemetry:** Real-time and time-windowed decibel (dB), illuminance (lx), and crowd-density benchmarks across **64 curated cultural sanctuaries** in **Rome, Paris, London, Mexico City, New York, and Miami**—plus universal Kairós routing for **any city on Earth**.
 2. **Kairós Directional Routing Protocol (KRP):** Automatic origin-destination disambiguation (`BOG ✈️ MAD`, `JFK ✈️ FCO`), IATA airport normalization, and great-circle flight duration estimation.
 3. **227-Country Sensory Earth Integration:** Direct deep-linking into [**Sensory Earth 3D**](https://spacejourney.app/sensory-earth/), an open WebGL globe preserving regional musical heritage and cultural dedications across 227 countries and territories.
-4. **Zero-Trust Privacy & GDPR by Design:** Stateless MCP architecture. Zero personal identifiable information (PII), zero tracking cookies, and full interoperability with local and open-weights LLMs.
+4. **Zero-Trust Privacy & GDPR by Design:** Stateless MCP architecture. Zero personal identifiable information (PII), zero tracking cookies, and full interoperability with local and open-weights LLMs. Review our full [Privacy Policy](https://spacejourney.app/politica-de-privacidad/).
 
 ---
 
