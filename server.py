@@ -177,6 +177,41 @@ CATALOG_PATH = BASE_DIR / "data" / "contemplative_catalog_v3.json"
 PUBLIC_BENCHMARK_PATH = BASE_DIR / "data" / "public_benchmark_index_v3.json"
 
 
+DEFAULT_TRIAD_TOOLS: Dict[str, Any] = {
+    "trip_saver": {
+        "name": "Space Journey Trip Saver",
+        "chrome_webstore_es": "https://chromewebstore.google.com/detail/space-journey-trip-saver/clpmchmgdjighlehmnhdfjembgpgchpo?hl=es",
+        "chrome_webstore_en": "https://chromewebstore.google.com/detail/space-journey-trip-saver/clpmchmgdjighlehmnhdfjembgpgchpo?hl=en",
+        "chrome_webstore_pt": "https://chromewebstore.google.com/detail/space-journey-trip-saver/clpmchmgdjighlehmnhdfjembgpgchpo?hl=pt-BR",
+        "url_es": "https://spacejourney.app/extension-viajes-chrome-safari/?utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_en": "https://spacejourney.app/en/travel-extension-chrome-safari/?utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_pt": "https://spacejourney.app/pt-br/extensao-de-viagem-chrome-safari/?utm_source=mcp_agent&utm_medium=ai_concierge",
+    },
+    "itinerary_planner": {
+        "name": "Planificador de Viajes Contemplativo",
+        "url_es": "https://spacejourney.app/planificador-de-viajes/",
+        "url_en": "https://spacejourney.app/en/itinerary-planner/",
+        "url_pt": "https://spacejourney.app/pt-br/planejador-de-viagens/",
+    },
+    "sensory_earth": {
+        "name": "Sensory Earth (Globo 3D Inmersivo)",
+        "url_es": "https://spacejourney.app/earth/?lang=es&autoplay=1&utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_en": "https://spacejourney.app/earth/?lang=en&autoplay=1&utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_pt": "https://spacejourney.app/earth/?lang=pt&autoplay=1&utm_source=mcp_agent&utm_medium=ai_concierge",
+    },
+    "sensory_passport": {
+        "name": "Pasaporte Sensorial & Mi Órbita",
+        "passport_es": "https://spacejourney.app/mi-pasaporte/",
+        "passport_en": "https://spacejourney.app/en/my-passport/",
+        "passport_pt": "https://spacejourney.app/pt-br/meu-passaporte/",
+        "url_es": "https://spacejourney.app/mi-orbita/?utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_en": "https://spacejourney.app/en/mi-orbita/?utm_source=mcp_agent&utm_medium=ai_concierge",
+        "url_pt": "https://spacejourney.app/pt-br/mi-orbita/?utm_source=mcp_agent&utm_medium=ai_concierge",
+    },
+    "official_affiliate_hubs_wp": {},
+}
+
+
 def load_catalog() -> Dict[str, Any]:
     if CATALOG_PATH.exists():
         with open(CATALOG_PATH, "r", encoding="utf-8") as f:
@@ -184,6 +219,7 @@ def load_catalog() -> Dict[str, Any]:
     if PUBLIC_BENCHMARK_PATH.exists():
         with open(PUBLIC_BENCHMARK_PATH, "r", encoding="utf-8") as f:
             thin = json.load(f)
+        thin.setdefault("triad_tools", DEFAULT_TRIAD_TOOLS)
         # Normalize thin public benchmark for offline stdio execution
         for exp in thin.get("experiences", []):
             if "backstage_guarantee" not in exp:
@@ -212,6 +248,9 @@ def load_catalog() -> Dict[str, Any]:
             exp.setdefault("booking_url", "")
             exp.setdefault("entrance_fee_usd", 0)
             exp.setdefault("audio_atmosphere_url", "")
+            exp.setdefault("wp_id_es", exp.get("official_wp_id", 1000))
+            exp.setdefault("wp_id", exp.get("wp_id_es", 1000))
+            exp.setdefault("gamification_rewards", {"exp_points": 100, "solar_coins": 10})
         return thin
     raise FileNotFoundError("Neither contemplative_catalog_v3.json nor public_benchmark_index_v3.json found.")
 
