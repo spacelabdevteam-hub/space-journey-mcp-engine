@@ -160,7 +160,7 @@ except Exception:
             self.name = name
             self.tools = {}
 
-        def tool(self):
+        def tool(self, *args, **kwargs):
             def decorator(fn):
                 self.tools[fn.__name__] = fn
                 return fn
@@ -812,7 +812,14 @@ def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", au
         return {"trip_id": "", "public_url": fallback}
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "readOnlyHint": False,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    }
+)
 def plan_contemplative_journey(
     city: str,
     days: int = 3,
@@ -1005,7 +1012,14 @@ def plan_contemplative_journey(
     }
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    }
+)
 def discover_secret_haven(
     area_or_landmark: str = "Colosseum",
     city: Optional[str] = None,
@@ -1097,7 +1111,14 @@ def discover_secret_haven(
     }
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    }
+)
 def generate_booking_card(
     haven_id: str,
     locale: str = "es",
@@ -1176,7 +1197,14 @@ def generate_booking_card(
     }
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "readOnlyHint": True,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": False,
+    }
+)
 def explore_sensory_earth(
     country_or_city: str,
     locale: str = "es",
@@ -1276,7 +1304,14 @@ def explore_sensory_earth(
 
 
 
-@mcp.tool()
+@mcp.tool(
+    annotations={
+        "readOnlyHint": False,
+        "destructiveHint": False,
+        "idempotentHint": True,
+        "openWorldHint": True,
+    }
+)
 def publish_itinerary_route(
     destination: str,
     days: List[Dict[str, Any]],
