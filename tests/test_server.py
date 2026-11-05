@@ -4,6 +4,7 @@ Exercises all tools, annotations, and schemas against the local server implement
 """
 import sys
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 # Ensure parent directory is in python path
@@ -21,6 +22,11 @@ from server import (
 
 
 class TestSpaceJourneyMcpServer(unittest.TestCase):
+    def setUp(self):
+        self.net = patch('server.urllib.request.urlopen', side_effect=OSError('offline test'))
+        self.net.start()
+        self.addCleanup(self.net.stop)
+
     def test_tools_annotations_declared(self):
         """Audit that all tools declare all 4 hints as booleans."""
         expected_tools = [
@@ -72,7 +78,8 @@ class TestSpaceJourneyMcpServer(unittest.TestCase):
     def test_publish_itinerary_route(self):
         """Test publish_itinerary_route tool by name."""
         dummy_days = [{"day": 1, "title": "Day 1", "curated_moments": []}]
-        res = publish_itinerary_route(destination="Rome", days=dummy_days, language="es")
+        with patch("server.sync_trip_to_wordpress", return_value={"trip_id": "fixture", "public_url": "https://spacejourney.app/ruta/?trip=fixture"}):
+            res = publish_itinerary_route(destination="Rome", days=dummy_days, language="es")
         self.assertEqual(res.get("status"), "published")
         self.assertIn("shareable_route_url", res)
 

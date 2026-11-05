@@ -24,12 +24,12 @@ TOOL_METADATA: Dict[str, Dict[str, Any]] = {
     "plan_contemplative_journey": {
         "readOnlyHint": False,
         "destructiveHint": False,
-        "idempotentHint": True,
+        "idempotentHint": False,
         "openWorldHint": True,
         "annotations": {
             "readOnlyHint": False,
             "destructiveHint": False,
-            "idempotentHint": True,
+            "idempotentHint": False,
             "openWorldHint": True,
         },
     },
@@ -72,12 +72,12 @@ TOOL_METADATA: Dict[str, Dict[str, Any]] = {
     "publish_itinerary_route": {
         "readOnlyHint": False,
         "destructiveHint": False,
-        "idempotentHint": True,
+        "idempotentHint": False,
         "openWorldHint": True,
         "annotations": {
             "readOnlyHint": False,
             "destructiveHint": False,
-            "idempotentHint": True,
+            "idempotentHint": False,
             "openWorldHint": True,
         },
     },
@@ -153,7 +153,7 @@ TOOL_SCHEMAS: Dict[str, Dict[str, Any]] = {
 try:
     from mcp.server.fastmcp import FastMCP
     mcp = FastMCP("space-journey-engine")
-except Exception:
+except ImportError:
     # Graceful fallback for headless/sandboxed test environments or lightweight JSON-RPC stdio mode
     class _FallbackMCP:
         def __init__(self, name: str):
@@ -255,7 +255,7 @@ except Exception:
                                 "result": {
                                     "isError": True,
                                     "content": [
-                                        {"type": "text", "text": f"Error in tool '{tname}': {str(e)}"}
+                                        {"type": "text", "text": "Tool execution failed"}
                                     ]
                                 },
                             }
@@ -318,6 +318,7 @@ def load_catalog() -> Dict[str, Any]:
         with open(PUBLIC_BENCHMARK_PATH, "r", encoding="utf-8") as f:
             thin = json.load(f)
         thin.setdefault("triad_tools", DEFAULT_TRIAD_TOOLS)
+        thin.setdefault("cities", {})
         # Normalize thin public benchmark for offline stdio execution
         for exp in thin.get("experiences", []):
             if "backstage_guarantee" not in exp:
@@ -790,13 +791,15 @@ def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", au
         "days": sync_days
     }
     
+    if not os.environ.get("SJ_SYNC_TOKEN"):
+        return {"trip_id": "", "public_url": ""}
     try:
         req = urllib.request.Request(
             url,
             data=json.dumps(payload).encode("utf-8"),
             headers={
                 "Content-Type": "application/json",
-                "x-sj-token": "sj_sec_mcp_live_2026_solar",
+                "x-sj-token": os.environ.get("SJ_SYNC_TOKEN", ""),
                 "User-Agent": "SpaceJourney-MCP/1.0"
             }
         )
@@ -816,7 +819,7 @@ def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", au
     annotations={
         "readOnlyHint": False,
         "destructiveHint": False,
-        "idempotentHint": True,
+        "idempotentHint": False,
         "openWorldHint": True,
     }
 )
@@ -1308,7 +1311,7 @@ def explore_sensory_earth(
     annotations={
         "readOnlyHint": False,
         "destructiveHint": False,
-        "idempotentHint": True,
+        "idempotentHint": False,
         "openWorldHint": True,
     }
 )
@@ -1330,7 +1333,7 @@ def publish_itinerary_route(
     )
     triad = get_triad_links(lang)
     return {
-        "status": "published",
+        "status": "published" if sync_res.get("trip_id") else "not_published",
         "destination": destination,
         "language": lang,
         "shareable_route_url": sync_res.get("public_url"),
