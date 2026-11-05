@@ -8,6 +8,8 @@ import worker from '../worker.js';
 
 console.log('🧪 Starting Space Journey MCP Engine Test Suite...\n');
 
+// No test may reach WordPress or create public itineraries.
+globalThis.fetch = async () => new Response(JSON.stringify({data: [], trip_id: 'fixture-trip', public_shareable_itinerary_url: 'https://spacejourney.app/ruta/?trip=fixture-trip'}), {headers: {'Content-Type': 'application/json'}});
 let testsPassed = 0;
 let testsFailed = 0;
 

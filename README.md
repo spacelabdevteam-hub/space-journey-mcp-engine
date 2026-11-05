@@ -127,3 +127,27 @@ Explore our city-level Parquet datasets and interactive explorers on Hugging Fac
 }
 ```
 
+
+
+## Reproducible verification and publishing credentials
+
+Install Python 3.11+ and Node.js 22+, then run:
+
+```sh
+python -m pip install -r requirements.txt
+npm test
+```
+
+The suite exercises all five named tools in both implementations without real
+WordPress writes, plus malformed HTTP requests and an actual Python stdio
+initialization/discovery exchange. CI runs the same checks on pushes and PRs.
+The public benchmark works without the private literary catalog.
+
+For route publication, set `SJ_SYNC_TOKEN` as a Cloudflare secret binding or
+Python environment variable. No publication occurs without that credential.
+Read [SECURITY.md](SECURITY.md) before migrating: the old committed credential
+must be revoked on the receiver and replaced in the running deployment together.
+Repository tests do not deploy the Worker or alter production WordPress.
+
+M8ven assesses code, execution and adoption independently. Passing this suite
+is evidence for verification, not a promise of a particular trust score.
