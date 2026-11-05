@@ -122,7 +122,9 @@ await runAsyncTest('Tool Execution: explore_sensory_earth', async () => {
   assert.equal(res.jsonrpc, '2.0');
   const content = JSON.parse(res.result.content[0].text);
   assert.ok(content.immersive_portal_url, 'Must provide immersive_portal_url');
-  assert.ok(content.immersive_portal_url.includes('spacejourney.app/sensory-earth/'), 'URL must match Sensory Earth domain');
+  const portal = new URL(content.immersive_portal_url);
+  assert.equal(portal.origin, 'https://spacejourney.app');
+  assert.equal(portal.pathname, '/earth/');
 });
 
 // 6. Tool Execution: plan_contemplative_journey (Curated Routing)
