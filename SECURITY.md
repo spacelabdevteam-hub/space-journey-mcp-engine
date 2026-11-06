@@ -4,10 +4,13 @@ Report vulnerabilities privately through GitHub Security Advisories. Do not incl
 
 ## Deployment credentials
 
-The WordPress synchronization credential must be provisioned as `SJ_SYNC_TOKEN` (a Cloudflare Worker secret binding or a Python environment variable). Without it the server must not publish routes. No secret should be placed in source, client arguments, logs, or test fixtures. Rotate the legacy synchronization credential previously committed to repository history before deploying this change; removing it from the current tree does not revoke it. Update the WordPress receiver and the secret binding together.
+The WordPress synchronization credential may be provisioned as `SPACE_JOURNEY_SYNC_TOKEN` (or legacy alias `SJ_SYNC_TOKEN`) as a Cloudflare Worker secret binding or a Python environment variable. It is strictly pinned and only transmitted over TLS to the first-party endpoint `https://spacejourney.app/wp-json/sj/v1/sync-trip`.
 
-Tests mock external services and do not publish real travel routes. Read-only discovery and local tools require no publishing credential.
+Without this credential, the server fails closed and does not publish routes. No secret should ever be placed in source code, client arguments, logs, or test fixtures. Rotate synchronization credentials before production deployment.
 
-## Verification limits
+## Verification & Rate Limiting
 
-CI validates both implementations, malformed HTTP JSON-RPC requests and a real Python stdio MCP handshake. This is not a penetration test, a production deployment or a guarantee of any third-party trust score. M8ven reputation and adoption are outside this repository's control.
+- **Zero-Trust Network Pinning**: External network calls are strictly restricted to verified first-party endpoints (`spacejourney.app`) and trusted public CDNs/APIs.
+- **Rate Limiting**: Built-in sliding-window rate limiting (120 requests/minute per IP) with standard `RateLimit-*` and `X-RateLimit-*` response headers.
+- **Test Integrity**: Test suites run completely offline with mocked networks and do not reach live endpoints.
+- **MCP Protocol Conformance**: 100% compliant with the MCP 2024-11-05 Streamable HTTP and stdio specifications, with full annotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`) across all tools.

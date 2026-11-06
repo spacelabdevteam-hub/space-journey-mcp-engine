@@ -9,7 +9,7 @@ import server
 class ProtocolTests(unittest.IsolatedAsyncioTestCase):
     async def test_stdio_initialization_and_discovery(self):
         import sys
-        params = StdioServerParameters(command=sys.executable,args=[str(Path(__file__).resolve().parents[1]/'server.py')],env={**os.environ, 'SJ_SYNC_TOKEN':''})
+        params = StdioServerParameters(command=sys.executable,args=[str(Path(__file__).resolve().parents[1]/'server.py')],env={**os.environ, 'SPACE_JOURNEY_SYNC_TOKEN':'', 'SJ_SYNC_TOKEN':''})
         import asyncio
         async with asyncio.timeout(20), stdio_client(params) as (reader, writer):
             async with ClientSession(reader, writer) as session:
@@ -19,7 +19,7 @@ class ProtocolTests(unittest.IsolatedAsyncioTestCase):
                 self.assertEqual({t.name for t in tools},set(server.TOOL_METADATA))
                 self.assertTrue(all(t.annotations is not None for t in tools))
     async def test_publish_itinerary_route_fails_closed_without_secret(self):
-        with patch.dict(os.environ, {'SJ_SYNC_TOKEN':''}), patch('server.urllib.request.urlopen', side_effect=OSError('offline')):
+        with patch.dict(os.environ, {'SPACE_JOURNEY_SYNC_TOKEN':'', 'SJ_SYNC_TOKEN':''}), patch('server.urllib.request.urlopen', side_effect=OSError('offline')):
             result=server.publish_itinerary_route('Roma',[{'day':1}])
             self.assertEqual(result['status'],'not_published')
             self.assertFalse(result['trip_id'])

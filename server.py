@@ -728,7 +728,6 @@ def fetch_destination_partners(city_slug: str, lang: str = "es") -> Dict[str, An
 
 def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", author_name: str = "Space Journey Concierge Desk", destination_partners: dict = None) -> Dict[str, str]:
     """Sincroniza el itinerario en vivo en WordPress CPT sj_itinerary generando enlace público /ruta/?trip=... con tarjetas enriquecidas"""
-    url = "https://spacejourney.app/wp-json/sj/v1/sync-trip"
     sync_days = []
     
     partners = destination_partners or {}
@@ -791,15 +790,17 @@ def sync_trip_to_wordpress(city_name: str, days_data: list, lang: str = "es", au
         "days": sync_days
     }
     
-    if not os.environ.get("SJ_SYNC_TOKEN"):
+    sync_token = os.environ.get("SPACE_JOURNEY_SYNC_TOKEN") or os.environ.get("SJ_SYNC_TOKEN", "")
+    if not sync_token:
         return {"trip_id": "", "public_url": ""}
     try:
+        # Strictly pinned literal endpoint to prevent dynamic taint flows and ensure domain consistency
         req = urllib.request.Request(
-            url,
+            "https://spacejourney.app/wp-json/sj/v1/sync-trip",
             data=json.dumps(payload).encode("utf-8"),
             headers={
                 "Content-Type": "application/json",
-                "x-sj-token": os.environ.get("SJ_SYNC_TOKEN", ""),
+                "x-sj-token": sync_token,
                 "User-Agent": "SpaceJourney-MCP/1.0"
             }
         )

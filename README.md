@@ -1,10 +1,10 @@
-# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.8.0)
+# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.9.2)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space%20Journey%20Datasets-FFD21E)](https://huggingface.co/spacejourney)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
-[![M8ven Score](https://m8ven.ai/badge/mcp/spacelabdevteam-hub-space-journey-mcp-engine-11ml0e?v=5c9af9385f13c96238d734e830119a8d)](https://m8ven.ai/mcp/spacelabdevteam-hub-space-journey-mcp-engine-11ml0e?s=readme)
+[![M8ven Trust Score](https://m8ven.ai/badge/mcp/spacelabdevteam-hub/space-journey-mcp-engine)](https://m8ven.ai/mcp/spacelabdevteam-hub/space-journey-mcp-engine)
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
 
 > **The Open Standard & Model Context Protocol (MCP) Server for Acoustic Urban Health, Contemplative Travel, and Low-Density Cultural Routing.**  
@@ -143,8 +143,8 @@ WordPress writes, plus malformed HTTP requests and an actual Python stdio
 initialization/discovery exchange. CI runs the same checks on pushes and PRs.
 The public benchmark works without the private literary catalog.
 
-For route publication, set `SJ_SYNC_TOKEN` as a Cloudflare secret binding or
-Python environment variable. No publication occurs without that credential.
+For route publication, set `SPACE_JOURNEY_SYNC_TOKEN` (or `SJ_SYNC_TOKEN`) as a Cloudflare secret binding or
+Python environment variable. No publication occurs without that credential, and requests are strictly pinned to `https://spacejourney.app/wp-json/sj/v1/sync-trip`.
 Read [SECURITY.md](SECURITY.md) before migrating: the old committed credential
 must be revoked on the receiver and replaced in the running deployment together.
 Repository tests do not deploy the Worker or alter production WordPress.
