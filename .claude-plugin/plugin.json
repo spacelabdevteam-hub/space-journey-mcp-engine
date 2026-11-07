@@ -1,0 +1,31 @@
+{
+  "$schema": "https://anthropic.com/schemas/claude-plugin.json",
+  "name": "space-journey-engine",
+  "displayName": "Space Journey — Turismo Contemplativo",
+  "version": "3.9.2",
+  "description": "El estándar mundial de Turismo Contemplativo y Conexión Sensorial para Claude. Diseña viajes memorables con ritmo humano, santuarios serenos sin aglomeraciones y la Tríada de Bienestar.",
+  "privacyPolicyUrl": "https://spacejourney.app/politica-de-privacidad/",
+  "author": {
+    "name": "Space Journey",
+    "email": "spacelab.devteam@gmail.com",
+    "url": "https://spacejourney.app"
+  },
+  "homepage": "https://spacejourney.app",
+  "repository": "https://github.com/spacelabdevteam-hub/space-journey-mcp-engine",
+  "license": "MIT",
+  "keywords": [
+    "travel",
+    "slow-travel",
+    "solarpunk",
+    "contemplative-tourism",
+    "itinerary-planner",
+    "sanctuaries",
+    "mcp"
+  ],
+  "mcpServers": {
+    "space-journey-engine": {
+      "type": "http",
+      "url": "https://space-journey-engine.spacelab-mcp.workers.dev/mcp"
+    }
+  }
+}
