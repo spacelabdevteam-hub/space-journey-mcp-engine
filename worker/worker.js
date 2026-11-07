@@ -2709,7 +2709,7 @@ async function handleRequest(request, env = {}) {
       if (method === 'tools/list') {
         return new Response(JSON.stringify({
           jsonrpc: "2.0",
-          result: { tools: TOOLS },
+          result: { tools: WORKER_TOOLS },
           id
         }), {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
