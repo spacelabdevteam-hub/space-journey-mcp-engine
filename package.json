@@ -27,5 +27,11 @@
     "omotenashi"
   ],
   "author": "Space Journey Team",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
