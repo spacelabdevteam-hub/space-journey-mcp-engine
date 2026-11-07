@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../worker.js';
+import worker from '../worker/worker.js';
 const call = (body, env = {}) => worker.fetch(new Request('https://example.test/mcp', {method:'POST',body:JSON.stringify(body)}), env);
 for (const payload of [null, [], {}, {jsonrpc:'1.0',method:'tools/list'}]) test('invalid envelope '+JSON.stringify(payload), async()=>{const r=await call(payload);assert.equal(r.status,400);assert.equal((await r.json()).error.code,-32600);});
 test('arguments cannot be an array',async()=>{const r=await call({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'publish_itinerary_route',arguments:[]}});assert.equal((await r.json()).error.code,-32602);});
