@@ -3,7 +3,7 @@
   "version": "3.9.2",
   "description": "Universal Model Context Protocol (MCP) Server for Contemplative Travel, Urban Acoustic Health and Sensory Routing",
   "type": "module",
-  "main": "worker.js",
+  "main": "worker/worker.js",
   "homepage": "https://spacejourney.app",
   "repository": {
     "type": "git",

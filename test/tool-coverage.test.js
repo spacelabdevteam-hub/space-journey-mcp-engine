@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import worker from '../worker.js';
+import worker from '../worker/worker.js';
 globalThis.fetch = async()=>Response.json({data:[]});
 test('plan_contemplative_journey', async()=>{const r=await worker.fetch(new Request('https://example.test/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'plan_contemplative_journey',arguments:{"destination": "Roma", "duration_days": 2}}})})); assert.equal(r.status,200);const d=await r.json();assert.ok(!d.error);const out=JSON.parse(d.result.content[0].text);assert.ok('destination' in out);});
 test('discover_secret_haven', async()=>{const r=await worker.fetch(new Request('https://example.test/mcp',{method:'POST',body:JSON.stringify({jsonrpc:'2.0',id:1,method:'tools/call',params:{name:'discover_secret_haven',arguments:{"city": "Roma"}}})})); assert.equal(r.status,200);const d=await r.json();assert.ok(!d.error);const out=JSON.parse(d.result.content[0].text);assert.ok('secret_haven_recommendation' in out);});

@@ -11,7 +11,7 @@ import worker, {
   generate_booking_card,
   explore_sensory_earth,
   publish_itinerary_route
-} from '../worker.js';
+} from '../worker/worker.js';
 
 // Mock external fetch for deterministic execution
 globalThis.fetch = async () => new Response(JSON.stringify({ data: [], trip_id: 'test-fixture' }), {
