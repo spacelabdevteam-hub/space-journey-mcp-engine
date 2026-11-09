@@ -4,6 +4,7 @@
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space%20Journey%20Datasets-FFD21E)](https://huggingface.co/spacejourney)
 [![Hugging Face Article](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Technical%20Article-yellow.svg)](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation)
+[![GitHub Discussions](https://img.shields.io/badge/Discussions-Join%20Debate%20%235-059669?style=flat&logo=github)](https://github.com/spacelabdevteam-hub/space-journey-mcp-engine/discussions/5)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
 [![M8ven Trust Score](https://m8ven.ai/badge/mcp/spacelabdevteam-hub/space-journey-mcp-engine)](https://m8ven.ai/mcp/spacelabdevteam-hub/space-journey-mcp-engine)
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
@@ -26,6 +27,10 @@
   </p>
   <br />
 </div>
+
+
+> [!NOTE]
+> 💬 **Scientific Peer Review & Community Debate:** We invite urban planners, soundscape ecologists, and AI developers to join [**GitHub Discussion #5: Urban Acoustic Telemetry & SIS Index v3.0**](https://github.com/spacelabdevteam-hub/space-journey-mcp-engine/discussions/5) alongside our [Hugging Face Technical Publication](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation).
 
 ---
 
