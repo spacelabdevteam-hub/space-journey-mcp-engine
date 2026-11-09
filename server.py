@@ -333,8 +333,8 @@ def load_catalog() -> Dict[str, Any]:
                     lang_k: {
                         "title": titles.get(lang_k, exp.get("haven_id", "")),
                         "neighborhood": exp.get("city_slug", "").title(),
-                        "soul_narrative": "Full contemplative literary chronicle served via https://mcp.spacelab.network/mcp",
-                        "sensory_journey": "Full contemplative literary chronicle served via https://mcp.spacelab.network/mcp",
+                        "soul_narrative": "Full contemplative literary chronicle served via https://space-journey-engine.spacelab-mcp.workers.dev/mcp",
+                        "sensory_journey": "Full contemplative literary chronicle served via https://space-journey-engine.spacelab-mcp.workers.dev/mcp",
                         "golden_spot_secret": f"Discover the complete +1 secret at {urls.get(lang_k, 'https://spacejourney.app')}",
                         "light_atmosphere": f"Optimal window: {exp.get('optimal_window', '08:00 - 10:00')}",
                         "ideal_season": "Year-round",
