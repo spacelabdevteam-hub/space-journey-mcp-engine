@@ -40,7 +40,7 @@ tags:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
-[![Live MCP Server](https://img.shields.io/badge/MCP_Endpoint-mcp.spacelab.network-10B981)](https://mcp.spacelab.network/mcp)
+[![Live MCP Server](https://img.shields.io/badge/MCP_Endpoint-Cloudflare_Workers_SSE-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
 
 ## Dataset Summary
 
@@ -58,7 +58,7 @@ Instead of static offline queries, AI developers can connect any **Model Context
 {
   "mcpServers": {
     "space-journey-engine": {
-      "url": "https://mcp.spacelab.network/mcp"
+      "url": "https://space-journey-engine.spacelab-mcp.workers.dev/mcp"
     }
   }
 }
@@ -86,7 +86,7 @@ Instead of static offline queries, AI developers can connect any **Model Context
 ## 📜 Licensing & Citation (Dual-Layer Moat)
 
 - **Tabular SIS Metrics (`public_benchmark_index_v3.json`):** Licensed under **CC-BY-4.0 International**. Requires attribution to Space Journey and citation of CERN Zenodo DOI `10.5281/zenodo.22756473`.
-- **Full Contemplative Narratives & Audio Vault:** Served dynamically via `https://mcp.spacelab.network/mcp` and `https://spacejourney.app`. Copyright © 2026 Space Journey. All Rights Reserved.
+- **Full Contemplative Narratives & Audio Vault:** Served dynamically via `https://space-journey-engine.spacelab-mcp.workers.dev/mcp` and `https://spacejourney.app`. Copyright © 2026 Space Journey. All Rights Reserved.
 
 ```bibtex
 @dataset{duque_romero_2026_sis,
