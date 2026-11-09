@@ -11,9 +11,21 @@
 > **The Open Standard & Model Context Protocol (MCP) Server for Acoustic Urban Health, Contemplative Travel, and Low-Density Cultural Routing.**  
 > *Aligned with World Health Organization (WHO) Environmental Noise Guidelines (WHO Lden < 53 dB).*
 
-> 📖 **Featured Technical Publication:** Read our peer-grounded whitepaper on the Hugging Face Community Blog:  
-> [**Measuring Urban Quiet: Acoustic Telemetry, Elevation Profiles, and the Open Sensory Impact Score (SIS v3.0)**](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation)  
-> *(Published Nov 9, 2026 · CERN Zenodo DOI: [10.5281/zenodo.22756473](https://doi.org/10.5281/zenodo.22756473))*
+<div align="center">
+  <br />
+  <a href="https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation">
+    <img src="https://huggingface.co/spaces/spacejourney/sensory-impact-explorer/resolve/main/assets/sensory_earth_cover.jpg" width="100%" alt="Measuring Urban Quiet: Acoustic Telemetry, Elevation Profiles, and the Open Sensory Impact Score (SIS v3.0)" style="border-radius: 14px; box-shadow: 0 8px 30px rgba(16, 185, 129, 0.25); border: 1px solid rgba(16, 185, 129, 0.35);" />
+  </a>
+  <p>
+    <b>📖 Official Technical Whitepaper:</b> 
+    <a href="https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation">
+      <em>Measuring Urban Quiet: Acoustic Telemetry, Elevation Profiles, and the Open Sensory Impact Score (SIS v3.0)</em>
+    </a> 
+    <br />
+    <sub>Published Nov 9, 2026 on the Hugging Face Community Blog · Permanent CERN Zenodo Archive: <a href="https://doi.org/10.5281/zenodo.22756473"><code>10.5281/zenodo.22756473</code></a></sub>
+  </p>
+  <br />
+</div>
 
 ---
 
