@@ -3,12 +3,17 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
 [![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space%20Journey%20Datasets-FFD21E)](https://huggingface.co/spacejourney)
+[![Hugging Face Article](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Technical%20Article-yellow.svg)](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
 [![M8ven Trust Score](https://m8ven.ai/badge/mcp/spacelabdevteam-hub/space-journey-mcp-engine)](https://m8ven.ai/mcp/spacelabdevteam-hub/space-journey-mcp-engine)
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
 
 > **The Open Standard & Model Context Protocol (MCP) Server for Acoustic Urban Health, Contemplative Travel, and Low-Density Cultural Routing.**  
 > *Aligned with World Health Organization (WHO) Environmental Noise Guidelines (WHO Lden < 53 dB).*
+
+> 📖 **Featured Technical Publication:** Read our peer-grounded whitepaper on the Hugging Face Community Blog:  
+> [**Measuring Urban Quiet: Acoustic Telemetry, Elevation Profiles, and the Open Sensory Impact Score (SIS v3.0)**](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation)  
+> *(Published Nov 9, 2026 · CERN Zenodo DOI: [10.5281/zenodo.22756473](https://doi.org/10.5281/zenodo.22756473))*
 
 ---
 
