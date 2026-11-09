@@ -5,7 +5,15 @@
  */
 
 import readline from 'node:readline';
-import worker from './worker.js';
+
+// Support both root worker.js and worker/worker.js
+let workerModule;
+try {
+  workerModule = await import('./worker/worker.js');
+} catch {
+  workerModule = await import('./worker.js');
+}
+const worker = workerModule.default || workerModule;
 
 const rl = readline.createInterface({
   input: process.stdin,

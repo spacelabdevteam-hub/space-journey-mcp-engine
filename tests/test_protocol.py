@@ -16,7 +16,8 @@ class ProtocolTests(unittest.IsolatedAsyncioTestCase):
         async with asyncio.timeout(20), stdio_client(params) as (reader, writer):
             async with ClientSession(reader, writer) as session:
                 result = await session.initialize()
-                self.assertEqual(result.serverInfo.name,'space-journey-engine')
+                server_info = getattr(result, 'server_info', getattr(result, 'serverInfo', None))
+                self.assertEqual(server_info.name,'space-journey-engine')
                 tools = (await session.list_tools()).tools
                 self.assertEqual({t.name for t in tools},set(server.TOOL_METADATA))
                 self.assertTrue(all(t.annotations is not None for t in tools))
