@@ -1,14 +1,16 @@
 import unittest
 import os
+import sys
 from pathlib import Path
 from unittest.mock import patch
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import server
 
 class ProtocolTests(unittest.IsolatedAsyncioTestCase):
     async def test_stdio_initialization_and_discovery(self):
-        import sys
         params = StdioServerParameters(command=sys.executable,args=[str(Path(__file__).resolve().parents[1]/'server.py')],env={**os.environ, 'SPACE_JOURNEY_SYNC_TOKEN':'', 'SJ_SYNC_TOKEN':''})
         import asyncio
         async with asyncio.timeout(20), stdio_client(params) as (reader, writer):

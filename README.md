@@ -1,4 +1,4 @@
-# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.9.2)
+# 🌿 Space Journey — Contemplative Travel & Sensory Impact Engine (MCP Server v3.9.4)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22756473.svg)](https://doi.org/10.5281/zenodo.22756473)
 [![WHO Acoustic Guideline](https://img.shields.io/badge/WHO_Guideline-53_dB_Lden-006699)](https://spacejourney.app/standards/sensory-impact-score/)
@@ -18,7 +18,7 @@ Conventional search engines and LLM travel assistants route millions of traveler
 
 **Space Journey** introduces a **Public Digital Commons** for sensory-aware human mobility. Powered by the peer-cited **Sensory Impact Score (SIS)** ([DOI: `10.5281/zenodo.22756473`](https://doi.org/10.5281/zenodo.22756473)) and the **Kairós Sensory Routing Protocol (KRP)**, this MCP Server equips any AI Agent (Claude, OpenWebUI, Llama, Mistral, DeepSeek, Cursor, Gemini) with:
 
-1. **Acoustic & Photic Urban Telemetry:** Real-time and time-windowed decibel (dB), illuminance (lx), and crowd-density benchmarks across **64 curated cultural sanctuaries** in **Rome, Paris, London, Mexico City, New York, and Miami**—plus universal Kairós routing for **any city on Earth**.
+1. **Acoustic, Photic & Topographic Urban Telemetry (ESA Copernicus DEM GLO-90):** Real-time and time-windowed decibel (dB), illuminance (lx), crowd-density, and satellite elevation/biomechanical exertion benchmarks across **94 curated cultural sanctuaries** in **Rome, Paris, London, Mexico City, New York, and Miami**—plus universal Kairós routing for **any city on Earth**.
 2. **Kairós Directional Routing Protocol (KRP):** Automatic origin-destination disambiguation (`BOG ✈️ MAD`, `JFK ✈️ FCO`), IATA airport normalization, and great-circle flight duration estimation.
 3. **227-Country Sensory Earth Integration:** Direct deep-linking into [**Sensory Earth 3D**](https://spacejourney.app/sensory-earth/), an open WebGL globe preserving regional musical heritage and cultural dedications across 227 countries and territories.
 4. **Zero-Trust Privacy & GDPR by Design:** Stateless MCP architecture. Zero personal identifiable information (PII), zero tracking cookies, and full interoperability with local and open-weights LLMs. Review our full [Privacy Policy](https://spacejourney.app/politica-de-privacidad/).
@@ -60,7 +60,7 @@ If you are developing offline or auditing the open Python reference implementati
 
 ---
 
-## 🛠️ Available MCP Tools (v3.7 Universal Ingestion)
+## 🛠️ Available MCP Tools (v3.9.4 Universal Ingestion)
 
 | Tool Name | Purpose & Output |
 | :--- | :--- |
@@ -80,7 +80,7 @@ $$\text{SIS} = 100 - \left( 0.35 \cdot P_{\text{noise}}(dB) + 0.30 \cdot P_{\tex
 Where:
 - **$P_{\text{noise}}(dB)$:** Non-linear acoustic penalty anchored to the **WHO 53 dB Lden** threshold.
 - **$P_{\text{crowd}}(\rho)$:** Pedestrian density penalty (pax/m²) derived from hourly visitation curves.
-- **$P_{\text{exertion}}(E)$:** Biomechanical and thermal friction index.
+- **$P_{\text{exertion}}(E)$:** Biomechanical and thermal friction index computed using **ESA Copernicus DEM GLO-90** satellite elevation (`elevation_m`, `relative_relief_m`).
 - **$B_{\text{light}}(\text{lx}, \theta_{\odot})$:** Photic harmony bonus during golden hour and architectural twilight.
 
 | SIS Tier | Score Range | Acoustic Profile | Typical Urban Environment |
@@ -121,13 +121,11 @@ Explore our city-level Parquet datasets and interactive explorers on Hugging Fac
   title        = {{The Sensory Impact Score (SIS): An Open Acoustic, Photic, and Crowd-Density Benchmark for Contemplative Urban Mobility}},
   year         = 2026,
   publisher    = {Zenodo / CERN},
-  version      = {3.0.0},
+  version      = {3.3.0},
   doi          = {10.5281/zenodo.22756473},
   url          = {https://doi.org/10.5281/zenodo.22756473}
 }
 ```
-
-
 
 ## Reproducible verification and publishing credentials
 
