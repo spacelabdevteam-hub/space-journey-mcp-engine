@@ -1,9 +1,9 @@
 {
   "name": "space-journey-mcp-engine",
-  "version": "3.9.2",
+  "version": "3.9.4",
   "description": "Universal Model Context Protocol (MCP) Server for Contemplative Travel, Urban Acoustic Health and Sensory Routing",
   "type": "module",
-  "main": "worker/worker.js",
+  "main": "worker.js",
   "homepage": "https://spacejourney.app",
   "repository": {
     "type": "git",
@@ -27,11 +27,5 @@
     "omotenashi"
   ],
   "author": "Space Journey Team",
-  "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
+  "license": "MIT"
 }
