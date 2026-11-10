@@ -66,7 +66,7 @@ Instead of static offline queries, AI developers can connect any **Model Context
 
 - **Canonical Standard & Documentation:** [https://spacejourney.app/standards/sensory-impact-score/](https://spacejourney.app/standards/sensory-impact-score/)
 - **Interactive 1-Click Itinerary Planner:** [https://spacejourney.app/planificador-de-viajes/](https://spacejourney.app/planificador-de-viajes/)
-- **Sensory Earth (3D WebGL Globe — 227 Countries):** [https://spacejourney.app/sensory-earth/](https://spacejourney.app/sensory-earth/)
+- **Sensory Earth (3D WebGL Globe — 227 Countries):** [https://spacejourney.app/earth/](https://spacejourney.app/earth/)
 - **The Sensory Atlas (Isometric WebGL Playable):** [https://spacejourney.app/play/roma-atlas/](https://spacejourney.app/play/roma-atlas/)
 - **Trip Saver Browser Extension:** [https://spacejourney.app/extension-viajes-chrome-safari/](https://spacejourney.app/extension-viajes-chrome-safari/)
 
