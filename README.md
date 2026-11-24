@@ -6,6 +6,8 @@
 [![Hugging Face Article](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Technical%20Article-yellow.svg)](https://huggingface.co/blog/spacejourney/measuring-urban-quiet-acoustic-telemetry-elevation)
 [![GitHub Discussions](https://img.shields.io/badge/Discussions-Join%20Debate%20%235-059669?style=flat&logo=github)](https://github.com/spacelabdevteam-hub/space-journey-mcp-engine/discussions/5)
 [![MCP Protocol](https://img.shields.io/badge/MCP-2024--11--05%20Streamable%20HTTP-10B981)](https://space-journey-engine.spacelab-mcp.workers.dev/mcp)
+[![Space Journey MCP connector](https://glama.ai/mcp/connectors/dev.workers.spacelab-mcp.space-journey-engine/space-journey/badges/score.svg)](https://glama.ai/mcp/connectors/dev.workers.spacelab-mcp.space-journey-engine/space-journey)
+[![spacelabdevteam-hub/space-journey-mcp-engine MCP server](https://glama.ai/mcp/servers/spacelabdevteam-hub/space-journey-mcp-engine/badges/score.svg)](https://glama.ai/mcp/servers/spacelabdevteam-hub/space-journey-mcp-engine)
 [![M8ven Trust Score](https://m8ven.ai/badge/mcp/spacelabdevteam-hub/space-journey-mcp-engine)](https://m8ven.ai/mcp/spacelabdevteam-hub/space-journey-mcp-engine)
 [![License: MIT + CC-BY-4.0](https://img.shields.io/badge/License-MIT%20%2F%20CC--BY--4.0-E8C57D)](./LICENSE)
 
